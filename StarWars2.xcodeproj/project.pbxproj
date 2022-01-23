@@ -11,6 +11,28 @@
 		911B52E1279D037B001A8169 /* TableCellDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911B52E0279D037B001A8169 /* TableCellDataSource.swift */; };
 		911B52E3279D0719001A8169 /* UIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911B52E2279D0719001A8169 /* UIStoryboard.swift */; };
 		911B52E5279D0986001A8169 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911B52E4279D0986001A8169 /* HomeViewModel.swift */; };
+		91800366279DF90000F0FEDD /* StarWarsItemsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91800365279DF90000F0FEDD /* StarWarsItemsModel.swift */; };
+		91800368279DF95800F0FEDD /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91800367279DF95800F0FEDD /* BaseModel.swift */; };
+		9180036B279DFA5C00F0FEDD /* ParserHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9180036A279DFA5C00F0FEDD /* ParserHelper.swift */; };
+		9180036E279DFA8E00F0FEDD /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9180036D279DFA8E00F0FEDD /* Result.swift */; };
+		91800370279DFAB100F0FEDD /* ErrorResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9180036F279DFAB100F0FEDD /* ErrorResult.swift */; };
+		91800372279DFBA100F0FEDD /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91800371279DFBA100F0FEDD /* Gender.swift */; };
+		91800374279DFC2E00F0FEDD /* StarWars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91800373279DFC2E00F0FEDD /* StarWars.swift */; };
+		91800376279E008300F0FEDD /* PlanetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91800375279E008300F0FEDD /* PlanetModel.swift */; };
+		91800378279E018200F0FEDD /* PeopleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91800377279E018200F0FEDD /* PeopleModel.swift */; };
+		9180037A279E01CC00F0FEDD /* FilmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91800379279E01CC00F0FEDD /* FilmModel.swift */; };
+		91800380279E036800F0FEDD /* ReachabilityError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9180037E279E036800F0FEDD /* ReachabilityError.swift */; };
+		91800381279E036800F0FEDD /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9180037F279E036800F0FEDD /* Reachability.swift */; };
+		91800383279E041100F0FEDD /* PlanetRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91800382279E041100F0FEDD /* PlanetRouter.swift */; };
+		91800385279E041E00F0FEDD /* PeopleRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91800384279E041E00F0FEDD /* PeopleRouter.swift */; };
+		91800388279E046300F0FEDD /* Parceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91800387279E046300F0FEDD /* Parceable.swift */; };
+		9180038B279E049900F0FEDD /* PeopleRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9180038A279E049900F0FEDD /* PeopleRouterProtocol.swift */; };
+		91800392279E051400F0FEDD /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9180038F279E051400F0FEDD /* NetworkService.swift */; };
+		91800393279E051400F0FEDD /* NetworkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91800390279E051400F0FEDD /* NetworkHandler.swift */; };
+		91800394279E051400F0FEDD /* NetworkMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91800391279E051400F0FEDD /* NetworkMethod.swift */; };
+		91800396279E058800F0FEDD /* NetworkingDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91800395279E058800F0FEDD /* NetworkingDataSource.swift */; };
+		91800398279E065900F0FEDD /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91800397279E065900F0FEDD /* APIManager.swift */; };
+		9180039B279E08A100F0FEDD /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9180039A279E08A100F0FEDD /* ListViewModel.swift */; };
 		91D64077279CC2C6003D9C21 /* StarWars2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D64076279CC2C6003D9C21 /* StarWars2Tests.swift */; };
 		91D64081279CC2C6003D9C21 /* StarWars2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D64080279CC2C6003D9C21 /* StarWars2UITests.swift */; };
 		91D64083279CC2C6003D9C21 /* StarWars2UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D64082279CC2C6003D9C21 /* StarWars2UITestsLaunchTests.swift */; };
@@ -57,6 +79,28 @@
 		911B52E0279D037B001A8169 /* TableCellDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCellDataSource.swift; sourceTree = "<group>"; };
 		911B52E2279D0719001A8169 /* UIStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboard.swift; sourceTree = "<group>"; };
 		911B52E4279D0986001A8169 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		91800365279DF90000F0FEDD /* StarWarsItemsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsItemsModel.swift; sourceTree = "<group>"; };
+		91800367279DF95800F0FEDD /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
+		9180036A279DFA5C00F0FEDD /* ParserHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParserHelper.swift; sourceTree = "<group>"; };
+		9180036D279DFA8E00F0FEDD /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		9180036F279DFAB100F0FEDD /* ErrorResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResult.swift; sourceTree = "<group>"; };
+		91800371279DFBA100F0FEDD /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
+		91800373279DFC2E00F0FEDD /* StarWars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWars.swift; sourceTree = "<group>"; };
+		91800375279E008300F0FEDD /* PlanetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetModel.swift; sourceTree = "<group>"; };
+		91800377279E018200F0FEDD /* PeopleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleModel.swift; sourceTree = "<group>"; };
+		91800379279E01CC00F0FEDD /* FilmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmModel.swift; sourceTree = "<group>"; };
+		9180037E279E036800F0FEDD /* ReachabilityError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReachabilityError.swift; sourceTree = "<group>"; };
+		9180037F279E036800F0FEDD /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		91800382279E041100F0FEDD /* PlanetRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetRouter.swift; sourceTree = "<group>"; };
+		91800384279E041E00F0FEDD /* PeopleRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleRouter.swift; sourceTree = "<group>"; };
+		91800387279E046300F0FEDD /* Parceable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parceable.swift; sourceTree = "<group>"; };
+		9180038A279E049900F0FEDD /* PeopleRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleRouterProtocol.swift; sourceTree = "<group>"; };
+		9180038F279E051400F0FEDD /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		91800390279E051400F0FEDD /* NetworkHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkHandler.swift; sourceTree = "<group>"; };
+		91800391279E051400F0FEDD /* NetworkMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkMethod.swift; sourceTree = "<group>"; };
+		91800395279E058800F0FEDD /* NetworkingDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingDataSource.swift; sourceTree = "<group>"; };
+		91800397279E065900F0FEDD /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		9180039A279E08A100F0FEDD /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		91D64059279CC2C4003D9C21 /* StarWars2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarWars2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91D64072279CC2C6003D9C21 /* StarWars2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StarWars2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		91D64076279CC2C6003D9C21 /* StarWars2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWars2Tests.swift; sourceTree = "<group>"; };
@@ -110,6 +154,93 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		91800369279DFA5100F0FEDD /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				9180036C279DFA7D00F0FEDD /* Parcer */,
+				9180037C279E031B00F0FEDD /* Result */,
+				9180038E279E051400F0FEDD /* Network */,
+				91800386279E042200F0FEDD /* APIWrapper */,
+				91800389279E047400F0FEDD /* Protocols */,
+				91800399279E06C800F0FEDD /* API */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		9180036C279DFA7D00F0FEDD /* Parcer */ = {
+			isa = PBXGroup;
+			children = (
+				9180036A279DFA5C00F0FEDD /* ParserHelper.swift */,
+			);
+			path = Parcer;
+			sourceTree = "<group>";
+		};
+		9180037B279E02B500F0FEDD /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				91800367279DF95800F0FEDD /* BaseModel.swift */,
+				91800371279DFBA100F0FEDD /* Gender.swift */,
+				91800373279DFC2E00F0FEDD /* StarWars.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		9180037C279E031B00F0FEDD /* Result */ = {
+			isa = PBXGroup;
+			children = (
+				9180036D279DFA8E00F0FEDD /* Result.swift */,
+				9180036F279DFAB100F0FEDD /* ErrorResult.swift */,
+			);
+			path = Result;
+			sourceTree = "<group>";
+		};
+		9180037D279E036800F0FEDD /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				9180037E279E036800F0FEDD /* ReachabilityError.swift */,
+				9180037F279E036800F0FEDD /* Reachability.swift */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
+		91800386279E042200F0FEDD /* APIWrapper */ = {
+			isa = PBXGroup;
+			children = (
+				91800382279E041100F0FEDD /* PlanetRouter.swift */,
+				91800384279E041E00F0FEDD /* PeopleRouter.swift */,
+			);
+			path = APIWrapper;
+			sourceTree = "<group>";
+		};
+		91800389279E047400F0FEDD /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				91800387279E046300F0FEDD /* Parceable.swift */,
+				9180038A279E049900F0FEDD /* PeopleRouterProtocol.swift */,
+				91800395279E058800F0FEDD /* NetworkingDataSource.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		9180038E279E051400F0FEDD /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				9180038F279E051400F0FEDD /* NetworkService.swift */,
+				91800390279E051400F0FEDD /* NetworkHandler.swift */,
+				91800391279E051400F0FEDD /* NetworkMethod.swift */,
+			);
+			name = Network;
+			path = StarWars2/Network/Network;
+			sourceTree = SOURCE_ROOT;
+		};
+		91800399279E06C800F0FEDD /* API */ = {
+			isa = PBXGroup;
+			children = (
+				91800397279E065900F0FEDD /* APIManager.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		91D64050279CC2C4003D9C21 = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +283,7 @@
 			isa = PBXGroup;
 			children = (
 				91D640E8279CDC1F003D9C21 /* Info.plist */,
+				91800369279DFA5100F0FEDD /* Network */,
 				91D640AC279CC6CD003D9C21 /* Resources */,
 				91D640AE279CC6CD003D9C21 /* Architecture */,
 				91D640B3279CC6CD003D9C21 /* AppSpecific */,
@@ -183,6 +315,7 @@
 			isa = PBXGroup;
 			children = (
 				911B52E4279D0986001A8169 /* HomeViewModel.swift */,
+				9180039A279E08A100F0FEDD /* ListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -190,6 +323,11 @@
 		91D640B1279CC6CD003D9C21 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9180037B279E02B500F0FEDD /* Common */,
+				91800365279DF90000F0FEDD /* StarWarsItemsModel.swift */,
+				91800375279E008300F0FEDD /* PlanetModel.swift */,
+				91800377279E018200F0FEDD /* PeopleModel.swift */,
+				91800379279E01CC00F0FEDD /* FilmModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -225,6 +363,7 @@
 		91D640BE279CC6CD003D9C21 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				9180037D279E036800F0FEDD /* Reachability */,
 				91D640BF279CC6CD003D9C21 /* Constants */,
 				91D640C1279CC6CD003D9C21 /* Extensions */,
 				911B52DE279D035B001A8169 /* TableCellDelegate.swift */,
@@ -407,24 +546,46 @@
 			buildActionMask = 2147483647;
 			files = (
 				911B52E5279D0986001A8169 /* HomeViewModel.swift in Sources */,
+				91800388279E046300F0FEDD /* Parceable.swift in Sources */,
+				91800380279E036800F0FEDD /* ReachabilityError.swift in Sources */,
 				91D640E1279CD5F3003D9C21 /* DetailViewController.swift in Sources */,
+				91800374279DFC2E00F0FEDD /* StarWars.swift in Sources */,
 				91D640DD279CD5D5003D9C21 /* ListViewCell.swift in Sources */,
+				91800366279DF90000F0FEDD /* StarWarsItemsModel.swift in Sources */,
+				91800376279E008300F0FEDD /* PlanetModel.swift in Sources */,
+				91800394279E051400F0FEDD /* NetworkMethod.swift in Sources */,
 				91D640E3279CD60E003D9C21 /* DetailRowViewCell.swift in Sources */,
 				911B52E1279D037B001A8169 /* TableCellDataSource.swift in Sources */,
 				91D640CF279CC6CD003D9C21 /* DateFormatter.swift in Sources */,
 				91D640DF279CD5E9003D9C21 /* ListViewController.swift in Sources */,
+				91800378279E018200F0FEDD /* PeopleModel.swift in Sources */,
+				91800392279E051400F0FEDD /* NetworkService.swift in Sources */,
 				911B52E3279D0719001A8169 /* UIStoryboard.swift in Sources */,
+				91800368279DF95800F0FEDD /* BaseModel.swift in Sources */,
 				911B52DF279D035B001A8169 /* TableCellDelegate.swift in Sources */,
+				91800372279DFBA100F0FEDD /* Gender.swift in Sources */,
 				91D640CE279CC6CD003D9C21 /* Constants.swift in Sources */,
 				91D640CA279CC6CD003D9C21 /* AppDelegate.swift in Sources */,
+				91800393279E051400F0FEDD /* NetworkHandler.swift in Sources */,
+				91800383279E041100F0FEDD /* PlanetRouter.swift in Sources */,
+				91800381279E036800F0FEDD /* Reachability.swift in Sources */,
+				91800396279E058800F0FEDD /* NetworkingDataSource.swift in Sources */,
+				9180036E279DFA8E00F0FEDD /* Result.swift in Sources */,
+				9180036B279DFA5C00F0FEDD /* ParserHelper.swift in Sources */,
 				91D640CC279CC6CD003D9C21 /* SceneDelegate.swift in Sources */,
 				91D640DB279CD023003D9C21 /* HomeViewCell.swift in Sources */,
 				91D640D8279CCFAA003D9C21 /* HomeViewController.swift in Sources */,
+				91800385279E041E00F0FEDD /* PeopleRouter.swift in Sources */,
 				91D640E7279CD639003D9C21 /* DetailCardViewCell.swift in Sources */,
+				91800398279E065900F0FEDD /* APIManager.swift in Sources */,
 				91D640CD279CC6CD003D9C21 /* StarWars2.xcdatamodeld in Sources */,
 				91D640D5279CCDBC003D9C21 /* UIView.swift in Sources */,
+				91800370279DFAB100F0FEDD /* ErrorResult.swift in Sources */,
 				91D640E5279CD620003D9C21 /* DetailTabViewCell.swift in Sources */,
+				9180037A279E01CC00F0FEDD /* FilmModel.swift in Sources */,
 				91D640D0279CC6CD003D9C21 /* Double.swift in Sources */,
+				9180038B279E049900F0FEDD /* PeopleRouterProtocol.swift in Sources */,
+				9180039B279E08A100F0FEDD /* ListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

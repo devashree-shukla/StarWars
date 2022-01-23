@@ -9,7 +9,7 @@
         <attribute name="openingCrawl" optional="YES" attributeType="String"/>
         <attribute name="planets" optional="YES" attributeType="Transformable"/>
         <attribute name="producer" optional="YES" attributeType="String"/>
-        <attribute name="release_date" optional="YES" attributeType="String"/>
+        <attribute name="releaseDate" optional="YES" attributeType="String"/>
         <attribute name="species" optional="YES" attributeType="Transformable"/>
         <attribute name="starships" optional="YES" attributeType="Transformable"/>
         <attribute name="title" optional="YES" attributeType="String"/>
@@ -121,12 +121,12 @@
         <relationship name="relatedPilots" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Residents" inverseName="relatedVehicles" inverseEntity="Residents"/>
     </entity>
     <elements>
-        <element name="Films" positionX="-808.1083374023438" positionY="-156.0460815429688" width="128" height="313"/>
-        <element name="Planets" positionX="-633.8488159179688" positionY="-537.5203552246094" width="128" height="268"/>
-        <element name="Residents" positionX="-434.8572387695312" positionY="-109.0579681396484" width="128" height="328"/>
-        <element name="Spices" positionX="44.4713134765625" positionY="-537.1807403564453" width="128" height="283"/>
-        <element name="Starships" positionX="340.2356567382812" positionY="-520.1447601318359" width="128" height="328"/>
+        <element name="Films" positionX="-821.0027160644531" positionY="-116.6943969726563" width="128" height="313"/>
+        <element name="Planets" positionX="-744.6051025390625" positionY="-508.7118225097656" width="128" height="268"/>
+        <element name="Residents" positionX="-525.7838134765625" positionY="-227.5497894287109" width="128" height="328"/>
+        <element name="Spices" positionX="-30.029052734375" positionY="-564.5822143554688" width="128" height="283"/>
+        <element name="Starships" positionX="139.0560913085937" positionY="-471.0981292724609" width="128" height="328"/>
         <element name="StarWarsItems" positionX="-267.2369384765625" positionY="-511.4563446044922" width="128" height="73"/>
-        <element name="Vehicles" positionX="86.07666015625" positionY="-147.9781188964844" width="128" height="298"/>
+        <element name="Vehicles" positionX="1.421142578125" positionY="-86.70108032226565" width="128" height="298"/>
     </elements>
 </model>
