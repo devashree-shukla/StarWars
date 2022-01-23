@@ -122,7 +122,8 @@ An iOS application about Star Wars that allows users to see all reelated informa
 
 - This image shows database design for all table. Also added relationships between records, delete rules, one/many relationships among all.
 
-<img width="1623" alt="Screenshot 2022-01-23 at 11 53 10 AM" src="https://user-images.githubusercontent.com/38584944/150696958-e7a5494b-7335-4a3a-b254-bf3c41062347.png">
+<img width="1618" alt="Screenshot 2022-01-24 at 2 13 03 AM" src="https://user-images.githubusercontent.com/38584944/150697312-d382dab9-2d68-4e2c-ad2e-67f4b80c2402.png">
+
 
 
 ## Testing Approach 
