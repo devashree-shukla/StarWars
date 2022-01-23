@@ -120,6 +120,7 @@ Swift 4.0+
 
 - This image shows database design for all table. Also added relationships between records, delete rules, one/many relationships among all.
 
+## Testing Approach 
 
 ## Other Wireframes for future improvements and new features 
 
