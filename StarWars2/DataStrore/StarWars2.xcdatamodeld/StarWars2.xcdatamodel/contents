@@ -6,7 +6,6 @@
         <attribute name="director" optional="YES" attributeType="String"/>
         <attribute name="edited" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="episodeId" optional="YES" attributeType="String"/>
-        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="openingCrawl" optional="YES" attributeType="String"/>
         <attribute name="planets" optional="YES" attributeType="Transformable"/>
         <attribute name="producer" optional="YES" attributeType="String"/>
@@ -28,7 +27,6 @@
         <attribute name="edited" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="films" optional="YES" attributeType="Transformable"/>
         <attribute name="gravity" optional="YES" attributeType="String"/>
-        <attribute name="id" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="orbitalPeriod" optional="YES" attributeType="String"/>
         <attribute name="population" optional="YES" attributeType="String"/>
@@ -100,15 +98,8 @@
         <relationship name="relatedPilots" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Residents" inverseName="relatedStarships" inverseEntity="Residents"/>
     </entity>
     <entity name="StarWarsItems" representedClassName="StarWarsItems" syncable="YES" codeGenerationType="class">
-        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="itemName" optional="YES" attributeType="String"/>
         <attribute name="itemValue" optional="YES" attributeType="String"/>
-        <relationship name="films" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Films"/>
-        <relationship name="planets" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Planets"/>
-        <relationship name="residents" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Residents"/>
-        <relationship name="spices" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Spices"/>
-        <relationship name="starships" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Starships"/>
-        <relationship name="vehicles" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Vehicles"/>
     </entity>
     <entity name="Vehicles" representedClassName="Vehicles" syncable="YES" codeGenerationType="class">
         <attribute name="cargoCapacity" optional="YES" attributeType="String"/>
@@ -130,12 +121,12 @@
         <relationship name="relatedPilots" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Residents" inverseName="relatedVehicles" inverseEntity="Residents"/>
     </entity>
     <elements>
-        <element name="StarWarsItems" positionX="-267.2369384765625" positionY="-511.4563446044922" width="128" height="178"/>
-        <element name="Planets" positionX="-633.8488159179688" positionY="-537.5203552246094" width="128" height="283"/>
+        <element name="Films" positionX="-808.1083374023438" positionY="-156.0460815429688" width="128" height="313"/>
+        <element name="Planets" positionX="-633.8488159179688" positionY="-537.5203552246094" width="128" height="268"/>
         <element name="Residents" positionX="-434.8572387695312" positionY="-109.0579681396484" width="128" height="328"/>
-        <element name="Films" positionX="-808.1083374023438" positionY="-156.0460815429688" width="128" height="328"/>
-        <element name="Vehicles" positionX="86.07666015625" positionY="-147.9781188964844" width="128" height="298"/>
         <element name="Spices" positionX="44.4713134765625" positionY="-537.1807403564453" width="128" height="283"/>
         <element name="Starships" positionX="340.2356567382812" positionY="-520.1447601318359" width="128" height="328"/>
+        <element name="StarWarsItems" positionX="-267.2369384765625" positionY="-511.4563446044922" width="128" height="73"/>
+        <element name="Vehicles" positionX="86.07666015625" positionY="-147.9781188964844" width="128" height="298"/>
     </elements>
 </model>

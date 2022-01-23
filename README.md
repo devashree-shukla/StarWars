@@ -106,7 +106,6 @@ An iOS application about Star Wars that allows users to see all reelated informa
 
 ## Entity relationship and core data
 
-- One roote StarWarsItem relates to Many Planet/People/Films/Starships/Spices/Vehicles
 - Many Plantes relates to Many Films/People
 - Many People relates to Many /Films/Starships/Spices/Vehicles
 - Many Film relates to Many Planet/People/Starships/Spices/Vehicles
