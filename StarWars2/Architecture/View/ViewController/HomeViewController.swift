@@ -14,9 +14,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        view.backgroundColor = .red
-        
+//        homeTableView.register(HomeViewCell.self, forCellReuseIdentifier: StoryboardIds.homeViewCell)
         homeTableView.register(HomeViewCell.self, forCellReuseIdentifier: StoryboardIds.homeViewCell)
     }
     
@@ -28,11 +26,16 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         return 2
     }
     
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: HomeViewCell = tableView.dequeueReusableCell(withIdentifier: StoryboardIds.homeViewCell,
-                                                               for: indexPath) as! HomeViewCell
+                                                                   for: indexPath) as! HomeViewCell
         return cell
     }
     
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        UITableView.automaticDimension
+    }
     
 }
