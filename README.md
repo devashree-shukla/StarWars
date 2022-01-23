@@ -4,9 +4,9 @@ An iOS application about Star Wars that allows users to see all reelated informa
 
 ## Requirements
 
-Xcode 13+
-iOS 13.0+
-Swift 4.0+
+- Xcode 13+
+- iOS 13.0+
+- Swift 4.0+
 
 ## Installation
 
