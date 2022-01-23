@@ -19,6 +19,7 @@ extension UIView {
         }
     }
     
+    
     @IBInspectable var borderWidth: CGFloat {
         get {
             return layer.borderWidth
@@ -27,6 +28,7 @@ extension UIView {
             layer.borderWidth = newValue
         }
     }
+    
     
     @IBInspectable var borderColor: UIColor? {
         get {

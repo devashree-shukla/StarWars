@@ -76,6 +76,7 @@
 		91D640E2279CD60E003D9C21 /* DetailRowViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRowViewCell.swift; sourceTree = "<group>"; };
 		91D640E4279CD620003D9C21 /* DetailTabViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTabViewCell.swift; sourceTree = "<group>"; };
 		91D640E6279CD639003D9C21 /* DetailCardViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCardViewCell.swift; sourceTree = "<group>"; };
+		91D640E8279CDC1F003D9C21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +145,7 @@
 		91D640AB279CC6CD003D9C21 /* StarWars2 */ = {
 			isa = PBXGroup;
 			children = (
+				91D640E8279CDC1F003D9C21 /* Info.plist */,
 				91D640AC279CC6CD003D9C21 /* Resources */,
 				91D640AE279CC6CD003D9C21 /* Architecture */,
 				91D640B3279CC6CD003D9C21 /* AppSpecific */,
@@ -591,7 +593,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2FXG4UVN94;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "";
+				INFOPLIST_FILE = StarWars2/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Star Wars";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -621,7 +624,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2FXG4UVN94;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "";
+				INFOPLIST_FILE = StarWars2/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Star Wars";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

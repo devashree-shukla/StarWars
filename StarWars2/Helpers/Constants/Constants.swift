@@ -34,3 +34,8 @@ struct StarWarsConstants {
     static let cornerRadius = 20.0
     
 }
+
+
+struct StoryboardIds {
+    static let homeViewCell = "HomeViewCell"
+}
