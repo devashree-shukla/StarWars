@@ -120,7 +120,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="tzL-tX-Lnx">
-                                <rect key="frame" x="20" y="10" width="374" height="842"/>
+                                <rect key="frame" x="20" y="108" width="374" height="744"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ListViewCell" id="lZq-bb-zwx" customClass="ListViewCell" customModule="StarWars2" customModuleProvider="target">
@@ -224,7 +224,7 @@
                             <constraint firstItem="tzL-tX-Lnx" firstAttribute="leading" secondItem="0Jp-V6-gN8" secondAttribute="leading" constant="20" id="Mcn-G3-FX2"/>
                             <constraint firstItem="P8l-DL-dMj" firstAttribute="top" secondItem="tzL-tX-Lnx" secondAttribute="bottom" constant="10" id="eXm-2f-fem"/>
                             <constraint firstAttribute="trailing" secondItem="tzL-tX-Lnx" secondAttribute="trailing" constant="20" id="vWp-xl-yWd"/>
-                            <constraint firstItem="tzL-tX-Lnx" firstAttribute="top" secondItem="0Jp-V6-gN8" secondAttribute="top" constant="10" id="xND-sh-JYs"/>
+                            <constraint firstItem="tzL-tX-Lnx" firstAttribute="top" secondItem="ld1-sF-k8H" secondAttribute="bottom" constant="20" id="xND-sh-JYs"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Planets" id="knx-iq-V9Z"/>
@@ -249,7 +249,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="liu-Ku-8Dd">
-                                <rect key="frame" x="20" y="10" width="374" height="842"/>
+                                <rect key="frame" x="20" y="108" width="374" height="744"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" name="AccentColor"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -384,7 +384,7 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="liu-Ku-8Dd" secondAttribute="trailing" constant="20" id="8rU-xc-crF"/>
                             <constraint firstItem="liu-Ku-8Dd" firstAttribute="leading" secondItem="QoR-Kt-YwS" secondAttribute="leading" constant="20" id="9WF-4X-uMG"/>
-                            <constraint firstItem="liu-Ku-8Dd" firstAttribute="top" secondItem="QoR-Kt-YwS" secondAttribute="top" constant="10" id="rLL-Gi-739"/>
+                            <constraint firstItem="liu-Ku-8Dd" firstAttribute="top" secondItem="th2-Qe-vyA" secondAttribute="bottom" constant="20" id="rLL-Gi-739"/>
                             <constraint firstItem="JBS-zN-in4" firstAttribute="top" secondItem="liu-Ku-8Dd" secondAttribute="bottom" constant="10" id="w37-DB-Ym9"/>
                         </constraints>
                     </view>
