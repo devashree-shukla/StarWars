@@ -106,6 +106,7 @@ Swift 4.0+
 
 ## Entity relationship and core data
 
+Notes : 
 - One roote StarWarsItem relates to Many Planet/People/Films/Starships/Spices/Vehicles
 - Many Plantes relates to Many Films/People
 - Many People relates to Many /Films/Starships/Spices/Vehicles
@@ -113,6 +114,8 @@ Swift 4.0+
 - Many Starships relates to Many Films/People 
 - Many Spices relates to Many Films/People
 - Mnay Vehicles relates to Many Films/People
+
+
 
 - This image shows database design for Root, Planet, Films and People table.
 
