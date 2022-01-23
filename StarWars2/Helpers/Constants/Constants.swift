@@ -40,4 +40,9 @@ struct StoryboardIds {
     static let homeViewCell = "HomeViewCell"
     static let listViewCell = "ListViewCell"
     static let detailRowViewCell = "DetailRowViewCell"
+    static let detailTabViewCell = "DetailTabViewCell"
+    
+    //Segues
+    static let showListSegue = "showList"
+    static let showDetailSegue = "showDetail"
 }

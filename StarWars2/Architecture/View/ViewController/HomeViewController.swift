@@ -12,10 +12,9 @@ class HomeViewController: UIViewController {
 
     @IBOutlet weak var homeTableView: UITableView!
     
-//    var homeViewModel: HomeViewModel?
     let starWarsItems = ["Planets", "Films"]
-    private var dataSourceNews : TableCellDataSource<UITableViewCell, String?>!
-    private var delegateNews : TableCellDelegate<UITableViewCell>!
+    private var dataSource : TableCellDataSource<UITableViewCell, String?>!
+    private var delegate : TableCellDelegate<UITableViewCell>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,15 +29,21 @@ extension HomeViewController {
     
     private func updateDataSource() {
         
-        dataSourceNews = TableCellDataSource(cellIdentifier: StoryboardIds.homeViewCell, items: starWarsItems, configureCell: { (cell, data, index) in
+        dataSource = TableCellDataSource(cellIdentifier: StoryboardIds.homeViewCell,
+                                         items: starWarsItems,
+                                         configureCell: { (cell, data, index) in
             (cell as? HomeViewCell)?.data = data
         })
         
-        delegateNews = TableCellDelegate(cellIdentifier: StoryboardIds.homeViewCell)
+        delegate = TableCellDelegate(cellIdentifier: StoryboardIds.homeViewCell)
+        
+        delegate.didSelect = { i in
+            self.performSegue(withIdentifier: StoryboardIds.showListSegue, sender: self)
+        }
         
         DispatchQueue.main.async {
-            self.homeTableView.dataSource = self.dataSourceNews
-            self.homeTableView.delegate = self.delegateNews
+            self.homeTableView.dataSource = self.dataSource
+            self.homeTableView.delegate = self.delegate
             self.homeTableView.reloadData()
         }
         
@@ -46,35 +51,13 @@ extension HomeViewController {
 
 }
 
+//MARK: - Navigation
 
-////MARK: - UITableViewDataSource, UITableViewDelegate
-//
-//extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
-//
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return starWarsItems.count
-//    }
-//
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: StoryboardIds.homeViewCell,
-//                                                 for: indexPath) as! HomeViewCell
-//        return cell
-//    }
-//
-//
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        UITableView.automaticDimension
-//    }
-//
-//
-//    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-//        0.0001
-//    }
-//
-//
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//
-//    }
-//
-//}
+extension HomeViewController {
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "" {
+            
+        }
+    }
+}

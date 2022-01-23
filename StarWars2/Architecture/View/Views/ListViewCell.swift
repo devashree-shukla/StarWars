@@ -13,6 +13,17 @@ class ListViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     
+    // MARK: - Variables
+    
+    var data: String? {
+        
+        didSet {
+            configureCell()
+        }
+        
+    }
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -25,3 +36,14 @@ class ListViewCell: UITableViewCell {
     }
 
 }
+
+//MARK: - Custom methods
+
+extension ListViewCell {
+    
+    private func configureCell() {
+        nameLabel.text = data
+    }
+    
+}
+

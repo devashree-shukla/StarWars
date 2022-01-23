@@ -9,6 +9,17 @@ import UIKit
 
 class DetailTabViewCell: UITableViewCell {
 
+    // MARK: - Variables
+    
+    var data: String? {
+        
+        didSet {
+
+        }
+        
+    }
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -11,35 +11,35 @@ class DetailViewController: UIViewController {
 
     @IBOutlet weak var detailTableView: UITableView!
     
+    private let details = ["Planets", "Films"]
+    private var dataSource : TableCellDataSource<UITableViewCell, String?>!
+    private var delegate : TableCellDelegate<UITableViewCell>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateDataSource()
     }
 
 }
 
 
-extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
+extension DetailViewController {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
-    }
-    
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: DetailRowViewCell = tableView.dequeueReusableCell(withIdentifier: StoryboardIds.homeViewCell,
-                                                                   for: indexPath) as! DetailRowViewCell
-        return cell
-    }
-    
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        UITableView.automaticDimension
-    }
-    
-    
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        0.0001
+    private func updateDataSource() {
+        
+        dataSource = TableCellDataSource(cellIdentifier: StoryboardIds.detailRowViewCell,
+                                         items: details,
+                                         configureCell: { (cell, data, index) in
+        })
+        
+        delegate = TableCellDelegate(cellIdentifier: StoryboardIds.detailRowViewCell)
+        
+        DispatchQueue.main.async {
+            self.detailTableView.dataSource = self.dataSource
+            self.detailTableView.delegate = self.delegate
+            self.detailTableView.reloadData()
+        }
+        
     }
     
 }
