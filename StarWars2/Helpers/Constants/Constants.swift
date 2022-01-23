@@ -38,4 +38,6 @@ struct StarWarsConstants {
 
 struct StoryboardIds {
     static let homeViewCell = "HomeViewCell"
+    static let listViewCell = "ListViewCell"
+    static let detailRowViewCell = "DetailRowViewCell"
 }

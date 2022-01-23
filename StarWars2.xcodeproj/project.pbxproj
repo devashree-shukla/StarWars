@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		911B52DF279D035B001A8169 /* TableCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911B52DE279D035B001A8169 /* TableCellDelegate.swift */; };
+		911B52E1279D037B001A8169 /* TableCellDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911B52E0279D037B001A8169 /* TableCellDataSource.swift */; };
+		911B52E3279D0719001A8169 /* UIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911B52E2279D0719001A8169 /* UIStoryboard.swift */; };
+		911B52E5279D0986001A8169 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911B52E4279D0986001A8169 /* HomeViewModel.swift */; };
 		91D64077279CC2C6003D9C21 /* StarWars2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D64076279CC2C6003D9C21 /* StarWars2Tests.swift */; };
 		91D64081279CC2C6003D9C21 /* StarWars2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D64080279CC2C6003D9C21 /* StarWars2UITests.swift */; };
 		91D64083279CC2C6003D9C21 /* StarWars2UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D64082279CC2C6003D9C21 /* StarWars2UITestsLaunchTests.swift */; };
 		91D640C5279CC6CD003D9C21 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 91D640AA279CC6CD003D9C21 /* README.md */; };
 		91D640C6279CC6CD003D9C21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91D640AD279CC6CD003D9C21 /* Assets.xcassets */; };
-		91D640C7279CC6CD003D9C21 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D640B0279CC6CD003D9C21 /* ViewController.swift */; };
 		91D640C8279CC6CD003D9C21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91D640B4279CC6CD003D9C21 /* LaunchScreen.storyboard */; };
 		91D640C9279CC6CD003D9C21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91D640B6279CC6CD003D9C21 /* Main.storyboard */; };
 		91D640CA279CC6CD003D9C21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D640B8279CC6CD003D9C21 /* AppDelegate.swift */; };
@@ -50,6 +53,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		911B52DE279D035B001A8169 /* TableCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCellDelegate.swift; sourceTree = "<group>"; };
+		911B52E0279D037B001A8169 /* TableCellDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCellDataSource.swift; sourceTree = "<group>"; };
+		911B52E2279D0719001A8169 /* UIStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboard.swift; sourceTree = "<group>"; };
+		911B52E4279D0986001A8169 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		91D64059279CC2C4003D9C21 /* StarWars2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarWars2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91D64072279CC2C6003D9C21 /* StarWars2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StarWars2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		91D64076279CC2C6003D9C21 /* StarWars2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWars2Tests.swift; sourceTree = "<group>"; };
@@ -58,7 +65,6 @@
 		91D64082279CC2C6003D9C21 /* StarWars2UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWars2UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		91D640AA279CC6CD003D9C21 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		91D640AD279CC6CD003D9C21 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		91D640B0279CC6CD003D9C21 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		91D640B5279CC6CD003D9C21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		91D640B7279CC6CD003D9C21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		91D640B8279CC6CD003D9C21 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -167,7 +173,6 @@
 			isa = PBXGroup;
 			children = (
 				91D640AF279CC6CD003D9C21 /* ViewModel */,
-				91D640B0279CC6CD003D9C21 /* ViewController.swift */,
 				91D640B1279CC6CD003D9C21 /* Model */,
 				91D640B2279CC6CD003D9C21 /* View */,
 			);
@@ -177,6 +182,7 @@
 		91D640AF279CC6CD003D9C21 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				911B52E4279D0986001A8169 /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -221,6 +227,8 @@
 			children = (
 				91D640BF279CC6CD003D9C21 /* Constants */,
 				91D640C1279CC6CD003D9C21 /* Extensions */,
+				911B52DE279D035B001A8169 /* TableCellDelegate.swift */,
+				911B52E0279D037B001A8169 /* TableCellDataSource.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -239,6 +247,7 @@
 				91D640C2279CC6CD003D9C21 /* DateFormatter.swift */,
 				91D640C3279CC6CD003D9C21 /* Double.swift */,
 				91D640D4279CCDBC003D9C21 /* UIView.swift */,
+				911B52E2279D0719001A8169 /* UIStoryboard.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -397,14 +406,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				911B52E5279D0986001A8169 /* HomeViewModel.swift in Sources */,
 				91D640E1279CD5F3003D9C21 /* DetailViewController.swift in Sources */,
 				91D640DD279CD5D5003D9C21 /* ListViewCell.swift in Sources */,
 				91D640E3279CD60E003D9C21 /* DetailRowViewCell.swift in Sources */,
+				911B52E1279D037B001A8169 /* TableCellDataSource.swift in Sources */,
 				91D640CF279CC6CD003D9C21 /* DateFormatter.swift in Sources */,
 				91D640DF279CD5E9003D9C21 /* ListViewController.swift in Sources */,
+				911B52E3279D0719001A8169 /* UIStoryboard.swift in Sources */,
+				911B52DF279D035B001A8169 /* TableCellDelegate.swift in Sources */,
 				91D640CE279CC6CD003D9C21 /* Constants.swift in Sources */,
 				91D640CA279CC6CD003D9C21 /* AppDelegate.swift in Sources */,
-				91D640C7279CC6CD003D9C21 /* ViewController.swift in Sources */,
 				91D640CC279CC6CD003D9C21 /* SceneDelegate.swift in Sources */,
 				91D640DB279CD023003D9C21 /* HomeViewCell.swift in Sources */,
 				91D640D8279CCFAA003D9C21 /* HomeViewController.swift in Sources */,

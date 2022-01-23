@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,81 +21,85 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="150" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="aH1-n7-NVK">
-                                <rect key="frame" x="20" y="10" width="374" height="842"/>
+                            <tableView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="130" estimatedRowHeight="130" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="CE7-t8-gpe">
+                                <rect key="frame" x="20" y="108" width="374" height="734"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" systemColor="systemTealColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomeViewCell" translatesAutoresizingMaskIntoConstraints="NO" id="QAF-wm-Oct" customClass="HomeViewCell" customModule="StarWars2" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="374" height="128"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HomeViewCell" id="8oH-ti-jyh" customClass="HomeViewCell" customModule="StarWars2" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="374" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QAF-wm-Oct" id="VPO-i9-Ncy">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="128"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8oH-ti-jyh" id="WWK-sM-SB0">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="130"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="BVS-rp-SNB">
-                                                    <rect key="frame" x="20" y="40" width="334" height="48"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SoJ-kU-1Ol">
+                                                    <rect key="frame" x="20" y="20" width="334" height="90"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Planets" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7nY-bW-YYM">
-                                                            <rect key="frame" x="0.0" y="0.0" width="334" height="48"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yyy-Mi-ho8">
+                                                            <rect key="frame" x="20" y="20" width="294" height="50"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <accessibility key="accessibilityConfiguration" hint="StarWarsItems" identifier="StarWarsItems"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="48" id="BqJ-2D-TUw"/>
+                                                                <constraint firstAttribute="height" constant="50" id="OGg-TL-PPu"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                             <color key="textColor" name="AccentColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                </stackView>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="yyy-Mi-ho8" secondAttribute="trailing" constant="20" id="4oU-bt-Yyq"/>
+                                                        <constraint firstItem="yyy-Mi-ho8" firstAttribute="centerY" secondItem="SoJ-kU-1Ol" secondAttribute="centerY" id="QKF-K7-vTY"/>
+                                                        <constraint firstItem="yyy-Mi-ho8" firstAttribute="leading" secondItem="SoJ-kU-1Ol" secondAttribute="leading" constant="20" id="br1-kl-WUK"/>
+                                                        <constraint firstAttribute="height" constant="130" id="oCb-ZO-y8t"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="20"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                            <real key="value" value="2"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                            <color key="value" name="AccentColor"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
                                             </subviews>
                                             <color key="backgroundColor" name="DarkBg"/>
                                             <constraints>
-                                                <constraint firstItem="BVS-rp-SNB" firstAttribute="top" secondItem="VPO-i9-Ncy" secondAttribute="top" constant="40" id="QvV-xR-Yfm"/>
-                                                <constraint firstItem="BVS-rp-SNB" firstAttribute="leading" secondItem="VPO-i9-Ncy" secondAttribute="leading" constant="20" id="XQ9-24-8lC"/>
-                                                <constraint firstAttribute="bottom" secondItem="BVS-rp-SNB" secondAttribute="bottom" constant="40" id="brx-wV-7rN"/>
-                                                <constraint firstAttribute="trailing" secondItem="BVS-rp-SNB" secondAttribute="trailing" constant="20" id="wRJ-uD-KVw"/>
+                                                <constraint firstItem="SoJ-kU-1Ol" firstAttribute="leading" secondItem="WWK-sM-SB0" secondAttribute="leading" constant="20" id="IBi-Mc-6U3"/>
+                                                <constraint firstItem="SoJ-kU-1Ol" firstAttribute="top" secondItem="WWK-sM-SB0" secondAttribute="top" constant="20" id="R8x-Lo-1tl"/>
+                                                <constraint firstAttribute="trailing" secondItem="SoJ-kU-1Ol" secondAttribute="trailing" constant="20" id="rCL-Jv-1E8"/>
+                                                <constraint firstAttribute="bottom" secondItem="SoJ-kU-1Ol" secondAttribute="bottom" constant="20" id="uEW-mI-Y6T"/>
                                             </constraints>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                    <real key="value" value="20"/>
-                                                </userDefinedRuntimeAttribute>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                    <real key="value" value="2"/>
-                                                </userDefinedRuntimeAttribute>
-                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                    <color key="value" name="AccentColor"/>
-                                                </userDefinedRuntimeAttribute>
-                                            </userDefinedRuntimeAttributes>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
-                                            <outlet property="titleLabel" destination="7nY-bW-YYM" id="KaE-Bo-Xki"/>
+                                            <outlet property="itemLabel" destination="yyy-Mi-ho8" id="BjN-d5-jlC"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="4RS-uk-A06"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="1gE-Au-oVI"/>
-                                </connections>
+                                <sections/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="A4V-0c-Oiw" firstAttribute="top" secondItem="aH1-n7-NVK" secondAttribute="bottom" constant="10" id="7VC-7p-gab"/>
-                            <constraint firstItem="aH1-n7-NVK" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="10" id="DEQ-ba-wYO"/>
-                            <constraint firstAttribute="trailing" secondItem="aH1-n7-NVK" secondAttribute="trailing" constant="20" id="WAQ-Sf-gPC"/>
-                            <constraint firstItem="aH1-n7-NVK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="pUq-HT-vJ8"/>
+                            <constraint firstItem="CE7-t8-gpe" firstAttribute="top" secondItem="a3G-Lh-mGa" secondAttribute="bottom" constant="20" id="Cvh-ZW-Y9H"/>
+                            <constraint firstItem="CE7-t8-gpe" firstAttribute="left" secondItem="8bC-Xf-vdC" secondAttribute="left" constant="20" id="P67-fw-cYY"/>
+                            <constraint firstAttribute="right" secondItem="CE7-t8-gpe" secondAttribute="right" constant="20" id="ZNS-lZ-8Zj"/>
+                            <constraint firstItem="A4V-0c-Oiw" firstAttribute="top" secondItem="CE7-t8-gpe" secondAttribute="bottom" constant="20" id="od1-Dj-3ry"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Star Wars" id="TcA-Qn-I7k"/>
                     <connections>
-                        <outlet property="homeTableView" destination="aH1-n7-NVK" id="soU-gt-nHz"/>
+                        <outlet property="homeTableView" destination="CE7-t8-gpe" id="o3v-0R-aA6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="378" y="-33"/>
+            <point key="canvasLocation" x="376.81159420289856" y="-33.482142857142854"/>
         </scene>
         <!--Planets-->
         <scene sceneID="ofp-Y9-ezP">
@@ -146,6 +151,9 @@
                                                                     <rect key="frame" x="0.0" y="0.0" width="344" height="17"/>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <accessibility key="accessibilityConfiguration" hint="title" identifier="title"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="17" id="NtT-Ri-72t"/>
+                                                                    </constraints>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                     <color key="textColor" name="AccentColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -154,6 +162,9 @@
                                                                     <rect key="frame" x="0.0" y="25" width="344" height="33.5"/>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <accessibility key="accessibilityConfiguration" hint="planet name" identifier="planet name"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="33.5" id="W9M-Ob-61b"/>
+                                                                    </constraints>
                                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="28"/>
                                                                     <color key="textColor" name="AccentColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -162,6 +173,9 @@
                                                                     <rect key="frame" x="0.0" y="66.5" width="344" height="20.5"/>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <accessibility key="accessibilityConfiguration" hint="description" identifier="description"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="20.5" id="8tY-9u-RIN"/>
+                                                                    </constraints>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <color key="textColor" name="AccentColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -192,6 +206,11 @@
                                             </userDefinedRuntimeAttributes>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="descriptionLabel" destination="yfM-jL-GSC" id="76j-d6-tt4"/>
+                                            <outlet property="nameLabel" destination="q29-fV-czn" id="5t4-2Z-8T2"/>
+                                            <outlet property="titleLabel" destination="c24-Ga-iwl" id="lge-VY-mbD"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -209,6 +228,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Planets" id="knx-iq-V9Z"/>
+                    <connections>
+                        <outlet property="listTableView" destination="tzL-tX-Lnx" id="BLM-dG-bzh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S5Y-bM-TA6" sceneMemberID="firstResponder"/>
             </objects>
@@ -396,7 +418,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="cJe-v4-Xin"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="9eW-k7-nxR"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MaR-Tp-Rl0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -412,5 +434,8 @@
         <namedColor name="DarkBg">
             <color red="0.1289999932050705" green="0.1289999932050705" blue="0.1289999932050705" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

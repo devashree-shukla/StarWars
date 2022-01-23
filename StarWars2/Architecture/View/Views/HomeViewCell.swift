@@ -9,20 +9,35 @@ import UIKit
 
 class HomeViewCell: UITableViewCell {
 
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var itemLabel: UILabel!
     
+    // MARK: - Variables
+    
+    var data: String? {
+        
+        didSet {
+            configureCell()
+        }
+        
+    }
     
     override func awakeFromNib() {
-        
         super.awakeFromNib()
-        titleLabel.text = " Hello"
     }
     
 
     override func setSelected(_ selected: Bool, animated: Bool) {
-    
         super.setSelected(selected, animated: animated)
-    
     }
 
+}
+
+//MARK: - Custom methods
+
+extension HomeViewCell {
+    
+    private func configureCell() {
+        itemLabel.text = data
+    }
+    
 }
