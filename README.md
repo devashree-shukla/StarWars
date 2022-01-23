@@ -116,9 +116,12 @@ Swift 4.0+
 
 - This image shows database design for Root, Planet, Films and People table.
 
+<img width="1355" alt="Screenshot 2022-01-23 at 11 21 43 AM" src="https://user-images.githubusercontent.com/38584944/150696950-9e09ac39-b626-49d4-8111-a9d2ebe8d5f5.png">
 
 
 - This image shows database design for all table. Also added relationships between records, delete rules, one/many relationships among all.
+
+<img width="1623" alt="Screenshot 2022-01-23 at 11 53 10 AM" src="https://user-images.githubusercontent.com/38584944/150696958-e7a5494b-7335-4a3a-b254-bf3c41062347.png">
 
 
 ## Other Wireframes for future improvements and new features 
