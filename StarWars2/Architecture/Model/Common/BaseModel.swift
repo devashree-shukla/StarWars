@@ -15,11 +15,11 @@ struct BaseModel: Codable {
     let count: Int
     let next: String
     let previous: String?
-    let results: [PlanetModel]?
+    let results: [PeopleModel]?
     
 }
 
-extension BaseModel {
+extension BaseModel: Parceable {
   
     static func parseObject(data: Data) -> Result<BaseModel, ErrorResult> {
         let decoder = JSONDecoder()

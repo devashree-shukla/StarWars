@@ -9,5 +9,5 @@ import Foundation
 
 
 protocol PeopleRouterProtocol {
-    func fetchConverter(_ completion: @escaping ((Result<PeopleModel, ErrorResult>) -> Void))
+    func fetchConverter(_ completion: @escaping ((Result<BaseModel, ErrorResult>) -> Void))
 }

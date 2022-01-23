@@ -19,7 +19,7 @@ final class PeopleRouter: NetworkHandler, PeopleRouterProtocol {
     }
 
     
-    func fetchConverter(_ completion: @escaping ((Result<PeopleModel, ErrorResult>) -> Void)) {
+    func fetchConverter(_ completion: @escaping ((Result<BaseModel, ErrorResult>) -> Void)) {
         self.cancelFetchService()
         print(endpoint.absoluteString)
         task = self.networking.loadData(url: endpoint, completion: self.networkResult(completion: completion))
