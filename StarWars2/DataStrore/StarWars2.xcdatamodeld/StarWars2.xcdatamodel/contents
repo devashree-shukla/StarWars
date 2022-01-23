@@ -15,8 +15,11 @@
         <attribute name="starships" optional="YES" attributeType="Transformable"/>
         <attribute name="title" optional="YES" attributeType="String"/>
         <attribute name="vehicles" optional="YES" attributeType="Transformable"/>
-        <relationship name="relatedCharacters" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Residents" inverseName="relatedFilms" inverseEntity="Residents"/>
-        <relationship name="relatedPlanets" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Planets" inverseName="relatedFilms" inverseEntity="Planets"/>
+        <relationship name="relatedCharacters" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Residents" inverseName="relatedFilms" inverseEntity="Residents"/>
+        <relationship name="relatedPlanets" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Planets" inverseName="relatedFilms" inverseEntity="Planets"/>
+        <relationship name="relatedSpices" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Spices" inverseName="relatedFilms" inverseEntity="Spices"/>
+        <relationship name="relatedStarships" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Starships" inverseName="relatedFilms" inverseEntity="Starships"/>
+        <relationship name="relatedVehicles" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Vehicles" inverseName="relatedFilms" inverseEntity="Vehicles"/>
     </entity>
     <entity name="Planets" representedClassName="Planets" syncable="YES" codeGenerationType="class">
         <attribute name="climate" optional="YES" attributeType="String"/>
@@ -33,8 +36,8 @@
         <attribute name="rotationPeriod" optional="YES" attributeType="String"/>
         <attribute name="surface_water" optional="YES" attributeType="String"/>
         <attribute name="terrain" optional="YES" attributeType="String"/>
-        <relationship name="relatedFilms" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Films" inverseName="relatedPlanets" inverseEntity="Films"/>
-        <relationship name="relatedResidents" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Residents"/>
+        <relationship name="relatedFilms" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Films" inverseName="relatedPlanets" inverseEntity="Films"/>
+        <relationship name="relatedResidents" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Residents"/>
     </entity>
     <entity name="Residents" representedClassName="Residents" syncable="YES" codeGenerationType="class">
         <attribute name="birthYear" optional="YES" attributeType="String"/>
@@ -42,7 +45,7 @@
         <attribute name="edited" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="eyeColor" optional="YES" attributeType="String"/>
         <attribute name="films" optional="YES" attributeType="Transformable"/>
-        <attribute name="gender" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="gender" optional="YES" attributeType="String"/>
         <attribute name="hairColor" optional="YES" attributeType="String"/>
         <attribute name="height" optional="YES" attributeType="String"/>
         <attribute name="homeworld" optional="YES" attributeType="String"/>
@@ -52,10 +55,50 @@
         <attribute name="species" optional="YES" attributeType="Transformable"/>
         <attribute name="starships" optional="YES" attributeType="Transformable"/>
         <attribute name="vehicles" optional="YES" attributeType="Transformable"/>
-        <relationship name="relatedFilms" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Films" inverseName="relatedCharacters" inverseEntity="Films"/>
+        <relationship name="relatedFilms" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Films" inverseName="relatedCharacters" inverseEntity="Films"/>
+        <relationship name="relatedSpices" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Spices" inverseName="relatedPeople" inverseEntity="Spices"/>
+        <relationship name="relatedStarships" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Starships" inverseName="relatedPilots" inverseEntity="Starships"/>
+        <relationship name="relatedVehicles" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Vehicles" inverseName="relatedPilots" inverseEntity="Vehicles"/>
     </entity>
-    <entity name="Spices" representedClassName="Spices" syncable="YES" codeGenerationType="class"/>
-    <entity name="Starships" representedClassName="Starships" syncable="YES" codeGenerationType="class"/>
+    <entity name="Spices" representedClassName="Spices" syncable="YES" codeGenerationType="class">
+        <attribute name="averageHeight" optional="YES" attributeType="String"/>
+        <attribute name="averageLifespan" optional="YES" attributeType="String"/>
+        <attribute name="classification" optional="YES" attributeType="String"/>
+        <attribute name="created" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="designation" optional="YES" attributeType="String"/>
+        <attribute name="edited" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="eyeColors" optional="YES" attributeType="String"/>
+        <attribute name="films" optional="YES" attributeType="Transformable"/>
+        <attribute name="hairColors" optional="YES" attributeType="String"/>
+        <attribute name="homeworld" optional="YES" attributeType="String"/>
+        <attribute name="language" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="people" optional="YES" attributeType="Transformable"/>
+        <attribute name="skinColors" optional="YES" attributeType="String"/>
+        <relationship name="relatedFilms" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Films" inverseName="relatedSpices" inverseEntity="Films"/>
+        <relationship name="relatedPeople" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Residents" inverseName="relatedSpices" inverseEntity="Residents"/>
+    </entity>
+    <entity name="Starships" representedClassName="Starships" syncable="YES" codeGenerationType="class">
+        <attribute name="cargoCapacity" optional="YES" attributeType="String"/>
+        <attribute name="consumables" optional="YES" attributeType="String"/>
+        <attribute name="costInCredits" optional="YES" attributeType="String"/>
+        <attribute name="created" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="crew" optional="YES" attributeType="String"/>
+        <attribute name="edited" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="films" optional="YES" attributeType="Transformable"/>
+        <attribute name="hyperdriveRating" optional="YES" attributeType="String"/>
+        <attribute name="length" optional="YES" attributeType="String"/>
+        <attribute name="manufacturer" optional="YES" attributeType="String"/>
+        <attribute name="maxAtmospheringSpeed" optional="YES" attributeType="String"/>
+        <attribute name="mglt" optional="YES" attributeType="String"/>
+        <attribute name="model" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="passengers" optional="YES" attributeType="String"/>
+        <attribute name="pilots" optional="YES" attributeType="Transformable"/>
+        <attribute name="starshipClass" optional="YES" attributeType="String"/>
+        <relationship name="relatedFilms" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Films" inverseName="relatedStarships" inverseEntity="Films"/>
+        <relationship name="relatedPilots" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Residents" inverseName="relatedStarships" inverseEntity="Residents"/>
+    </entity>
     <entity name="StarWarsItems" representedClassName="StarWarsItems" syncable="YES" codeGenerationType="class">
         <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="itemName" optional="YES" attributeType="String"/>
@@ -67,14 +110,32 @@
         <relationship name="starships" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Starships"/>
         <relationship name="vehicles" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Vehicles"/>
     </entity>
-    <entity name="Vehicles" representedClassName="Vehicles" syncable="YES" codeGenerationType="class"/>
+    <entity name="Vehicles" representedClassName="Vehicles" syncable="YES" codeGenerationType="class">
+        <attribute name="cargoCapacity" optional="YES" attributeType="String"/>
+        <attribute name="consumables" optional="YES" attributeType="String"/>
+        <attribute name="costInCredits" optional="YES" attributeType="String"/>
+        <attribute name="created" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="crew" optional="YES" attributeType="String"/>
+        <attribute name="edited" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="films" optional="YES" attributeType="Transformable"/>
+        <attribute name="length" optional="YES" attributeType="String"/>
+        <attribute name="manufacturer" optional="YES" attributeType="String"/>
+        <attribute name="maxAtmospheringSpeed" optional="YES" attributeType="String"/>
+        <attribute name="model" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="passengers" optional="YES" attributeType="String"/>
+        <attribute name="pilots" optional="YES" attributeType="Transformable"/>
+        <attribute name="vehicleClass" optional="YES" attributeType="String"/>
+        <relationship name="relatedFilms" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Films" inverseName="relatedVehicles" inverseEntity="Films"/>
+        <relationship name="relatedPilots" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Residents" inverseName="relatedVehicles" inverseEntity="Residents"/>
+    </entity>
     <elements>
-        <element name="StarWarsItems" positionX="-387.4091796875" positionY="-408.6335601806641" width="128" height="178"/>
-        <element name="Planets" positionX="-531.39599609375" positionY="-265.3558959960938" width="128" height="269"/>
-        <element name="Residents" positionX="-192.8118896484375" positionY="-9.082550048828125" width="128" height="269"/>
-        <element name="Films" positionX="-572.9690551757812" positionY="81.0867919921875" width="128" height="283"/>
-        <element name="Vehicles" positionX="87.0333251953125" positionY="-158.1564636230469" width="128" height="29"/>
-        <element name="Spices" positionX="74.68310546875" positionY="-384.2082672119141" width="128" height="29"/>
-        <element name="Starships" positionX="105.3085327148438" positionY="-267.95458984375" width="128" height="29"/>
+        <element name="StarWarsItems" positionX="-267.2369384765625" positionY="-511.4563446044922" width="128" height="178"/>
+        <element name="Planets" positionX="-633.8488159179688" positionY="-537.5203552246094" width="128" height="283"/>
+        <element name="Residents" positionX="-434.8572387695312" positionY="-109.0579681396484" width="128" height="328"/>
+        <element name="Films" positionX="-808.1083374023438" positionY="-156.0460815429688" width="128" height="328"/>
+        <element name="Vehicles" positionX="86.07666015625" positionY="-147.9781188964844" width="128" height="298"/>
+        <element name="Spices" positionX="44.4713134765625" positionY="-537.1807403564453" width="128" height="283"/>
+        <element name="Starships" positionX="340.2356567382812" positionY="-520.1447601318359" width="128" height="328"/>
     </elements>
 </model>
