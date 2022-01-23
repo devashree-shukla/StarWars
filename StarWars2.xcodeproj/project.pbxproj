@@ -21,7 +21,15 @@
 		91D640CE279CC6CD003D9C21 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D640C0279CC6CD003D9C21 /* Constants.swift */; };
 		91D640CF279CC6CD003D9C21 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D640C2279CC6CD003D9C21 /* DateFormatter.swift */; };
 		91D640D0279CC6CD003D9C21 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D640C3279CC6CD003D9C21 /* Double.swift */; };
-		91D640D1279CC6CD003D9C21 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D640C4279CC6CD003D9C21 /* Color.swift */; };
+		91D640D5279CCDBC003D9C21 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D640D4279CCDBC003D9C21 /* UIView.swift */; };
+		91D640D8279CCFAA003D9C21 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D640D7279CCFAA003D9C21 /* HomeViewController.swift */; };
+		91D640DB279CD023003D9C21 /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D640DA279CD023003D9C21 /* HomeViewCell.swift */; };
+		91D640DD279CD5D5003D9C21 /* ListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D640DC279CD5D5003D9C21 /* ListViewCell.swift */; };
+		91D640DF279CD5E9003D9C21 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D640DE279CD5E9003D9C21 /* ListViewController.swift */; };
+		91D640E1279CD5F3003D9C21 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D640E0279CD5F3003D9C21 /* DetailViewController.swift */; };
+		91D640E3279CD60E003D9C21 /* DetailRowViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D640E2279CD60E003D9C21 /* DetailRowViewCell.swift */; };
+		91D640E5279CD620003D9C21 /* DetailTabViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D640E4279CD620003D9C21 /* DetailTabViewCell.swift */; };
+		91D640E7279CD639003D9C21 /* DetailCardViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D640E6279CD639003D9C21 /* DetailCardViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,7 +67,15 @@
 		91D640C0279CC6CD003D9C21 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		91D640C2279CC6CD003D9C21 /* DateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		91D640C3279CC6CD003D9C21 /* Double.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
-		91D640C4279CC6CD003D9C21 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		91D640D4279CCDBC003D9C21 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		91D640D7279CCFAA003D9C21 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		91D640DA279CD023003D9C21 /* HomeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
+		91D640DC279CD5D5003D9C21 /* ListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewCell.swift; sourceTree = "<group>"; };
+		91D640DE279CD5E9003D9C21 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		91D640E0279CD5F3003D9C21 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		91D640E2279CD60E003D9C21 /* DetailRowViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRowViewCell.swift; sourceTree = "<group>"; };
+		91D640E4279CD620003D9C21 /* DetailTabViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTabViewCell.swift; sourceTree = "<group>"; };
+		91D640E6279CD639003D9C21 /* DetailCardViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCardViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +189,8 @@
 		91D640B2279CC6CD003D9C21 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				91D640D9279CD00C003D9C21 /* Views */,
+				91D640D6279CCF97003D9C21 /* ViewController */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -218,9 +236,31 @@
 			children = (
 				91D640C2279CC6CD003D9C21 /* DateFormatter.swift */,
 				91D640C3279CC6CD003D9C21 /* Double.swift */,
-				91D640C4279CC6CD003D9C21 /* Color.swift */,
+				91D640D4279CCDBC003D9C21 /* UIView.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		91D640D6279CCF97003D9C21 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				91D640D7279CCFAA003D9C21 /* HomeViewController.swift */,
+				91D640DE279CD5E9003D9C21 /* ListViewController.swift */,
+				91D640E0279CD5F3003D9C21 /* DetailViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		91D640D9279CD00C003D9C21 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				91D640DA279CD023003D9C21 /* HomeViewCell.swift */,
+				91D640DC279CD5D5003D9C21 /* ListViewCell.swift */,
+				91D640E2279CD60E003D9C21 /* DetailRowViewCell.swift */,
+				91D640E4279CD620003D9C21 /* DetailTabViewCell.swift */,
+				91D640E6279CD639003D9C21 /* DetailCardViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -355,13 +395,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91D640E1279CD5F3003D9C21 /* DetailViewController.swift in Sources */,
+				91D640DD279CD5D5003D9C21 /* ListViewCell.swift in Sources */,
+				91D640E3279CD60E003D9C21 /* DetailRowViewCell.swift in Sources */,
 				91D640CF279CC6CD003D9C21 /* DateFormatter.swift in Sources */,
+				91D640DF279CD5E9003D9C21 /* ListViewController.swift in Sources */,
 				91D640CE279CC6CD003D9C21 /* Constants.swift in Sources */,
 				91D640CA279CC6CD003D9C21 /* AppDelegate.swift in Sources */,
 				91D640C7279CC6CD003D9C21 /* ViewController.swift in Sources */,
 				91D640CC279CC6CD003D9C21 /* SceneDelegate.swift in Sources */,
-				91D640D1279CC6CD003D9C21 /* Color.swift in Sources */,
+				91D640DB279CD023003D9C21 /* HomeViewCell.swift in Sources */,
+				91D640D8279CCFAA003D9C21 /* HomeViewController.swift in Sources */,
+				91D640E7279CD639003D9C21 /* DetailCardViewCell.swift in Sources */,
 				91D640CD279CC6CD003D9C21 /* StarWars2.xcdatamodeld in Sources */,
+				91D640D5279CCDBC003D9C21 /* UIView.swift in Sources */,
+				91D640E5279CD620003D9C21 /* DetailTabViewCell.swift in Sources */,
 				91D640D0279CC6CD003D9C21 /* Double.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -541,8 +589,9 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2FXG4UVN94;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = /Users/devashreeks/Desktop/StarWars2/StarWars2/AppSpecific/Info.plist;
+				INFOPLIST_FILE = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -555,7 +604,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.devashree.starwars.StarWars2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.devashree.starwars;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -570,8 +619,9 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2FXG4UVN94;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = /Users/devashreeks/Desktop/StarWars2/StarWars2/AppSpecific/Info.plist;
+				INFOPLIST_FILE = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -584,7 +634,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.devashree.starwars.StarWars2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.devashree.starwars;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
