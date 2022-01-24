@@ -24,7 +24,6 @@
 		91800380279E036800F0FEDD /* ReachabilityError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9180037E279E036800F0FEDD /* ReachabilityError.swift */; };
 		91800381279E036800F0FEDD /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9180037F279E036800F0FEDD /* Reachability.swift */; };
 		91800383279E041100F0FEDD /* PlanetRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91800382279E041100F0FEDD /* PlanetRouter.swift */; };
-		91800385279E041E00F0FEDD /* PeopleRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91800384279E041E00F0FEDD /* PeopleRouter.swift */; };
 		91800388279E046300F0FEDD /* Parceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91800387279E046300F0FEDD /* Parceable.swift */; };
 		9180038B279E049900F0FEDD /* PeopleRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9180038A279E049900F0FEDD /* PeopleRouterProtocol.swift */; };
 		91800392279E051400F0FEDD /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9180038F279E051400F0FEDD /* NetworkService.swift */; };
@@ -92,7 +91,6 @@
 		9180037E279E036800F0FEDD /* ReachabilityError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReachabilityError.swift; sourceTree = "<group>"; };
 		9180037F279E036800F0FEDD /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		91800382279E041100F0FEDD /* PlanetRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetRouter.swift; sourceTree = "<group>"; };
-		91800384279E041E00F0FEDD /* PeopleRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleRouter.swift; sourceTree = "<group>"; };
 		91800387279E046300F0FEDD /* Parceable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parceable.swift; sourceTree = "<group>"; };
 		9180038A279E049900F0FEDD /* PeopleRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleRouterProtocol.swift; sourceTree = "<group>"; };
 		9180038F279E051400F0FEDD /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
@@ -207,7 +205,6 @@
 			isa = PBXGroup;
 			children = (
 				91800382279E041100F0FEDD /* PlanetRouter.swift */,
-				91800384279E041E00F0FEDD /* PeopleRouter.swift */,
 			);
 			path = APIWrapper;
 			sourceTree = "<group>";
@@ -575,7 +572,6 @@
 				91D640CC279CC6CD003D9C21 /* SceneDelegate.swift in Sources */,
 				91D640DB279CD023003D9C21 /* HomeViewCell.swift in Sources */,
 				91D640D8279CCFAA003D9C21 /* HomeViewController.swift in Sources */,
-				91800385279E041E00F0FEDD /* PeopleRouter.swift in Sources */,
 				91D640E7279CD639003D9C21 /* DetailCardViewCell.swift in Sources */,
 				91800398279E065900F0FEDD /* APIManager.swift in Sources */,
 				91D640CD279CC6CD003D9C21 /* StarWars2.xcdatamodeld in Sources */,

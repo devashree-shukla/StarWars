@@ -17,26 +17,6 @@ class ListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        PeopleRouter().fetchConverter { result in
-            DispatchQueue.main.async {
-                switch result {
-                case .success(let converter) :
-                    print(result)
-//                    if let results = converter.results {
-//                        self?.dataSource?.data.value = results
-//                        self?.filteredResults = self?.personHelper.parseEyeColorArray(results: results) ?? []
-//                        completion?(Result.success(true))
-//                    } else {
-//                        self?.onErrorHandling?(ErrorResult.parser(string: "unable to parse"))
-//                        completion?(Result.failure(ErrorResult.parser(string: "unable to parse")))
-//                    }
-                case .failure(let error) :
-                    print(error)
-//                    self?.onErrorHandling?(error)
-//                    completion?(Result.failure(error))
-                }
-            }
-        }
         updateDataSource()
     }
 

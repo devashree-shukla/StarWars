@@ -15,7 +15,7 @@ struct BaseModel: Codable {
     let count: Int
     let next: String
     let previous: String?
-    let results: [PeopleModel]?
+    let results: [PlanetModel]?
     
 }
 

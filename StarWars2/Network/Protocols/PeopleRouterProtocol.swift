@@ -8,6 +8,6 @@
 import Foundation
 
 
-protocol PeopleRouterProtocol {
+protocol PlanetRouterProtocol {
     func fetchConverter(_ completion: @escaping ((Result<BaseModel, ErrorResult>) -> Void))
 }
