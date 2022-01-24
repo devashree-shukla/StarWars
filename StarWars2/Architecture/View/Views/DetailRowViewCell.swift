@@ -60,18 +60,7 @@ extension DetailRowViewCell {
             descriptionLabel.text = (data?.values.first as? String)?.toDate()?.description
         case .terrain, .climate:
             (data?.values.first as? String)?.split(separator: ",").forEach {
-                
-                let lbl = UILabel()
-//                if let k = $0 {
-                    lbl.text = "  \($0.capitalized)  "
-//                }
-                lbl.backgroundColor = .systemBlue
-                lbl.translatesAutoresizingMaskIntoConstraints = false
-                lbl.clipsToBounds = true
-                lbl.sizeToFit()
-                lbl.numberOfLines = 0
-                stackView.addArrangedSubview(lbl)
-                lbl.cornerRadius = lbl.frame.height / 2
+                self.createLabel(String($0))
             }
             print(stackView.subviews.count)
         case .surfaceWater:
@@ -98,5 +87,21 @@ extension DetailRowViewCell {
             descriptionLabel.text = data?.values.description
         default: descriptionLabel.text = data?.values.first as? String
         }
+    }
+    
+    
+    private func createLabel(_ text: String?) {
+        guard let text = text else {
+            return
+        }
+        let lbl = UILabel()
+        lbl.text = "  \(text.capitalized))  "
+        lbl.backgroundColor = .systemBlue
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        lbl.clipsToBounds = true
+        lbl.sizeToFit()
+        lbl.numberOfLines = 0
+        stackView.addArrangedSubview(lbl)
+        lbl.cornerRadius = lbl.frame.height / 2
     }
 }
