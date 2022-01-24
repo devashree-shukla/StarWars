@@ -34,6 +34,8 @@
 		9180039B279E08A100F0FEDD /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9180039A279E08A100F0FEDD /* ListViewModel.swift */; };
 		9180039D279E379C00F0FEDD /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9180039C279E379C00F0FEDD /* ActivityIndicator.swift */; };
 		9180039F279E38D300F0FEDD /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9180039E279E38D300F0FEDD /* UIViewController.swift */; };
+		918003A3279E4F9700F0FEDD /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918003A2279E4F9700F0FEDD /* DetailViewModel.swift */; };
+		91CB9686279EE4D500CFCADD /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CB9685279EE4D500CFCADD /* UIStackView.swift */; };
 		91D64077279CC2C6003D9C21 /* StarWars2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D64076279CC2C6003D9C21 /* StarWars2Tests.swift */; };
 		91D64081279CC2C6003D9C21 /* StarWars2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D64080279CC2C6003D9C21 /* StarWars2UITests.swift */; };
 		91D64083279CC2C6003D9C21 /* StarWars2UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D64082279CC2C6003D9C21 /* StarWars2UITestsLaunchTests.swift */; };
@@ -45,7 +47,7 @@
 		91D640CC279CC6CD003D9C21 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D640BA279CC6CD003D9C21 /* SceneDelegate.swift */; };
 		91D640CD279CC6CD003D9C21 /* StarWars2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 91D640BC279CC6CD003D9C21 /* StarWars2.xcdatamodeld */; };
 		91D640CE279CC6CD003D9C21 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D640C0279CC6CD003D9C21 /* Constants.swift */; };
-		91D640CF279CC6CD003D9C21 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D640C2279CC6CD003D9C21 /* DateFormatter.swift */; };
+		91D640CF279CC6CD003D9C21 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D640C2279CC6CD003D9C21 /* String.swift */; };
 		91D640D0279CC6CD003D9C21 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D640C3279CC6CD003D9C21 /* Double.swift */; };
 		91D640D5279CCDBC003D9C21 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D640D4279CCDBC003D9C21 /* UIView.swift */; };
 		91D640D8279CCFAA003D9C21 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D640D7279CCFAA003D9C21 /* HomeViewController.swift */; };
@@ -54,8 +56,6 @@
 		91D640DF279CD5E9003D9C21 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D640DE279CD5E9003D9C21 /* ListViewController.swift */; };
 		91D640E1279CD5F3003D9C21 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D640E0279CD5F3003D9C21 /* DetailViewController.swift */; };
 		91D640E3279CD60E003D9C21 /* DetailRowViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D640E2279CD60E003D9C21 /* DetailRowViewCell.swift */; };
-		91D640E5279CD620003D9C21 /* DetailTabViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D640E4279CD620003D9C21 /* DetailTabViewCell.swift */; };
-		91D640E7279CD639003D9C21 /* DetailCardViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D640E6279CD639003D9C21 /* DetailCardViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +103,8 @@
 		9180039A279E08A100F0FEDD /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		9180039C279E379C00F0FEDD /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		9180039E279E38D300F0FEDD /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		918003A2279E4F9700F0FEDD /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		91CB9685279EE4D500CFCADD /* UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
 		91D64059279CC2C4003D9C21 /* StarWars2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarWars2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91D64072279CC2C6003D9C21 /* StarWars2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StarWars2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		91D64076279CC2C6003D9C21 /* StarWars2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWars2Tests.swift; sourceTree = "<group>"; };
@@ -117,7 +119,7 @@
 		91D640BA279CC6CD003D9C21 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		91D640BD279CC6CD003D9C21 /* StarWars2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StarWars2.xcdatamodel; sourceTree = "<group>"; };
 		91D640C0279CC6CD003D9C21 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		91D640C2279CC6CD003D9C21 /* DateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
+		91D640C2279CC6CD003D9C21 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		91D640C3279CC6CD003D9C21 /* Double.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		91D640D4279CCDBC003D9C21 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		91D640D7279CCFAA003D9C21 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -126,8 +128,6 @@
 		91D640DE279CD5E9003D9C21 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		91D640E0279CD5F3003D9C21 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		91D640E2279CD60E003D9C21 /* DetailRowViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRowViewCell.swift; sourceTree = "<group>"; };
-		91D640E4279CD620003D9C21 /* DetailTabViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTabViewCell.swift; sourceTree = "<group>"; };
-		91D640E6279CD639003D9C21 /* DetailCardViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCardViewCell.swift; sourceTree = "<group>"; };
 		91D640E8279CDC1F003D9C21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -317,6 +317,7 @@
 			children = (
 				911B52E4279D0986001A8169 /* HomeViewModel.swift */,
 				9180039A279E08A100F0FEDD /* ListViewModel.swift */,
+				918003A2279E4F9700F0FEDD /* DetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -385,11 +386,12 @@
 		91D640C1279CC6CD003D9C21 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				91D640C2279CC6CD003D9C21 /* DateFormatter.swift */,
+				91D640C2279CC6CD003D9C21 /* String.swift */,
 				91D640C3279CC6CD003D9C21 /* Double.swift */,
 				91D640D4279CCDBC003D9C21 /* UIView.swift */,
 				911B52E2279D0719001A8169 /* UIStoryboard.swift */,
 				9180039E279E38D300F0FEDD /* UIViewController.swift */,
+				91CB9685279EE4D500CFCADD /* UIStackView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -410,8 +412,6 @@
 				91D640DA279CD023003D9C21 /* HomeViewCell.swift */,
 				91D640DC279CD5D5003D9C21 /* ListViewCell.swift */,
 				91D640E2279CD60E003D9C21 /* DetailRowViewCell.swift */,
-				91D640E4279CD620003D9C21 /* DetailTabViewCell.swift */,
-				91D640E6279CD639003D9C21 /* DetailCardViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -550,6 +550,7 @@
 			files = (
 				911B52E5279D0986001A8169 /* HomeViewModel.swift in Sources */,
 				91800388279E046300F0FEDD /* Parceable.swift in Sources */,
+				918003A3279E4F9700F0FEDD /* DetailViewModel.swift in Sources */,
 				91800380279E036800F0FEDD /* ReachabilityError.swift in Sources */,
 				91D640E1279CD5F3003D9C21 /* DetailViewController.swift in Sources */,
 				9180039F279E38D300F0FEDD /* UIViewController.swift in Sources */,
@@ -560,7 +561,7 @@
 				91800394279E051400F0FEDD /* NetworkMethod.swift in Sources */,
 				91D640E3279CD60E003D9C21 /* DetailRowViewCell.swift in Sources */,
 				911B52E1279D037B001A8169 /* TableCellDataSource.swift in Sources */,
-				91D640CF279CC6CD003D9C21 /* DateFormatter.swift in Sources */,
+				91D640CF279CC6CD003D9C21 /* String.swift in Sources */,
 				91D640DF279CD5E9003D9C21 /* ListViewController.swift in Sources */,
 				91800378279E018200F0FEDD /* PeopleModel.swift in Sources */,
 				91800392279E051400F0FEDD /* NetworkService.swift in Sources */,
@@ -580,12 +581,11 @@
 				91D640CC279CC6CD003D9C21 /* SceneDelegate.swift in Sources */,
 				91D640DB279CD023003D9C21 /* HomeViewCell.swift in Sources */,
 				91D640D8279CCFAA003D9C21 /* HomeViewController.swift in Sources */,
-				91D640E7279CD639003D9C21 /* DetailCardViewCell.swift in Sources */,
 				91800398279E065900F0FEDD /* APIManager.swift in Sources */,
 				91D640CD279CC6CD003D9C21 /* StarWars2.xcdatamodeld in Sources */,
 				91D640D5279CCDBC003D9C21 /* UIView.swift in Sources */,
 				91800370279DFAB100F0FEDD /* ErrorResult.swift in Sources */,
-				91D640E5279CD620003D9C21 /* DetailTabViewCell.swift in Sources */,
+				91CB9686279EE4D500CFCADD /* UIStackView.swift in Sources */,
 				9180037A279E01CC00F0FEDD /* FilmModel.swift in Sources */,
 				91D640D0279CC6CD003D9C21 /* Double.swift in Sources */,
 				9180038B279E049900F0FEDD /* PeopleRouterProtocol.swift in Sources */,

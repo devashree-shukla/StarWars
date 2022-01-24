@@ -42,7 +42,9 @@ class TableCellDataSource<CELL : UITableViewCell,T> : NSObject, UITableViewDataS
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
         let item = self.items[indexPath.row]
-        self.configureCell(cell as! CELL, item, indexPath.row)
+        if let cell = cell as? CELL {
+            self.configureCell(cell, item, indexPath.row)
+        }
         return cell
         
     }

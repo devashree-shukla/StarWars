@@ -9,6 +9,8 @@ import UIKit
 
 class HomeViewCell: UITableViewCell {
 
+    // MARK: - IBOutlets
+    
     @IBOutlet weak var itemLabel: UILabel!
     
     // MARK: - Variables

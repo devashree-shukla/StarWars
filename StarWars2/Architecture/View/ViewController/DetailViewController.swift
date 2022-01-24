@@ -11,13 +11,18 @@ class DetailViewController: UIViewController {
 
     @IBOutlet weak var detailTableView: UITableView!
     
-    private let details = ["Planets", "Films"]
-    private var dataSource : TableCellDataSource<UITableViewCell, String?>!
+    lazy var viewModel: DetailViewModelProtocol = {
+        let viewModel = DetailViewModel()
+        return viewModel
+    }()
+    private var dataSource : TableCellDataSource<DetailRowViewCell, [String: Any]>!
     private var delegate : TableCellDelegate<UITableViewCell>!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         updateDataSource()
+        title = viewModel.item?.name
     }
 
 }
@@ -26,10 +31,10 @@ class DetailViewController: UIViewController {
 extension DetailViewController {
     
     private func updateDataSource() {
-        
         dataSource = TableCellDataSource(cellIdentifier: StoryboardIds.detailRowViewCell,
-                                         items: details,
+                                         items: viewModel.items!,
                                          configureCell: { (cell, data, index) in
+            cell.data = data
         })
         
         delegate = TableCellDelegate(cellIdentifier: StoryboardIds.detailRowViewCell)
@@ -43,3 +48,4 @@ extension DetailViewController {
     }
     
 }
+ 

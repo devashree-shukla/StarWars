@@ -30,9 +30,9 @@ class ListViewController: UIViewController {
                 self?.listTableView.dataSource = self?.dataSource
                 self?.listTableView.delegate = self?.delegate
                 self?.listTableView.reloadData()
+                self?.updatenavigationTitle()
             }
         }
-        
     }
 }
 
@@ -61,6 +61,11 @@ extension ListViewController {
         }
         
     }
+    
+    
+    func updatenavigationTitle() {
+        title = (navigationItem.title ?? "") + "(\(viewModel.data.count) records)"
+    }
 
 }
 
@@ -70,8 +75,8 @@ extension ListViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == StoryboardIds.showDetailSegue {
-            if let vc = segue.destination as? DetailViewController {
-                
+            if let vc = segue.destination as? DetailViewController, let index = listTableView.indexPathForSelectedRow?.row {
+                vc.viewModel.item = viewModel.data[index]
             }
         }
     }

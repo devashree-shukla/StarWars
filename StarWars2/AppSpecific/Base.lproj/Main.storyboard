@@ -35,8 +35,13 @@
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="55X-Dh-2sq">
                                                     <rect key="frame" x="5" y="5" width="364" height="120"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </imageView>
-                                                <view alpha="0.45000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SoJ-kU-1Ol">
+                                                <view opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SoJ-kU-1Ol">
                                                     <rect key="frame" x="20" y="20" width="334" height="90"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yyy-Mi-ho8">
@@ -261,17 +266,17 @@
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailRowViewCell" id="BO8-Pe-HJi" customClass="DetailRowViewCell" customModule="StarWars2" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="374" height="117.5"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="374" height="184.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BO8-Pe-HJi" id="G34-hC-1IN">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="117.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="184.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="eJN-FM-mvb">
-                                                    <rect key="frame" x="0.0" y="20" width="374" height="77.5"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="eJN-FM-mvb">
+                                                    <rect key="frame" x="0.0" y="20" width="374" height="144.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="85i-G2-IRR">
-                                                            <rect key="frame" x="20" y="8" width="334" height="21"/>
+                                                            <rect key="frame" x="20" y="8" width="24.5" height="21"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <accessibility key="accessibilityConfiguration" hint="title" identifier="title"/>
                                                             <constraints>
@@ -282,16 +287,16 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="value" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8jY-d8-Qsu">
-                                                            <rect key="frame" x="20" y="39" width="334" height="30.5"/>
+                                                            <rect key="frame" x="20" y="39" width="40.5" height="20.5"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <accessibility key="accessibilityConfiguration" hint="value" identifier="value"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="30" id="V4Q-5T-vCQ"/>
-                                                            </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" name="AccentColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="D1T-qW-mc5">
+                                                            <rect key="frame" x="20" y="69.5" width="334" height="67"/>
+                                                        </stackView>
                                                     </subviews>
                                                     <color key="backgroundColor" name="DarkBg"/>
                                                     <edgeInsets key="layoutMargins" top="8" left="20" bottom="8" right="20"/>
@@ -316,16 +321,70 @@
                                             </userDefinedRuntimeAttributes>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="descriptionLabel" destination="8jY-d8-Qsu" id="AWM-fW-uUJ"/>
+                                            <outlet property="stackView" destination="D1T-qW-mc5" id="8o2-dv-eZ8"/>
+                                            <outlet property="titleLabel" destination="85i-G2-IRR" id="S43-xq-fqj"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailCardViewCell" id="l8u-Os-O7n" customClass="DetailCardViewCell" customModule="StarWars2" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="229" width="374" height="77.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="l8u-Os-O7n" id="W1b-Qd-3MK">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="77.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="BSq-dH-EcS">
+                                                    <rect key="frame" x="0.0" y="20" width="374" height="37.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x5A-U3-cWc">
+                                                            <rect key="frame" x="20" y="8" width="334" height="21.5"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <accessibility key="accessibilityConfiguration" hint="title" identifier="title"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="21" id="BaQ-Qm-OtI"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <color key="textColor" name="AccentColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" name="DarkBg"/>
+                                                    <edgeInsets key="layoutMargins" top="8" left="20" bottom="8" right="20"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                            <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </stackView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="BSq-dH-EcS" firstAttribute="top" secondItem="W1b-Qd-3MK" secondAttribute="top" constant="20" id="525-8E-5oG"/>
+                                                <constraint firstItem="BSq-dH-EcS" firstAttribute="leading" secondItem="W1b-Qd-3MK" secondAttribute="leading" id="8pO-Fg-3M3"/>
+                                                <constraint firstAttribute="trailing" secondItem="BSq-dH-EcS" secondAttribute="trailing" id="Ywv-mm-s5n"/>
+                                                <constraint firstAttribute="bottom" secondItem="BSq-dH-EcS" secondAttribute="bottom" constant="20" id="pYk-hh-W22"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                    <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="titleLabel" destination="x5A-U3-cWc" id="pRQ-6c-ThN"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailTabViewCell" id="8eM-OE-slm" customClass="DetailTabViewCell" customModule="StarWars2" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="162" width="374" height="91.5"/>
+                                        <rect key="frame" x="0.0" y="306.5" width="374" height="128.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8eM-OE-slm" id="Qtd-aH-GWu">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="91.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="128.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="O2C-7u-JPi">
-                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="91.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="128.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g68-dW-dzW">
                                                             <rect key="frame" x="15" y="15" width="24.5" height="21"/>
@@ -338,28 +397,9 @@
                                                             <color key="textColor" name="AccentColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  value  " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FjF-tf-jIJ">
-                                                            <rect key="frame" x="15" y="46" width="58.5" height="30.5"/>
-                                                            <color key="backgroundColor" name="AccentColor"/>
-                                                            <accessibility key="accessibilityConfiguration" hint="description" identifier="description"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="30" id="pxe-OH-Qh6"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <nil key="highlightedColor"/>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                    <real key="value" value="2"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                    <color key="value" name="AccentColor"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                    <real key="value" value="15"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                            </userDefinedRuntimeAttributes>
-                                                        </label>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2jm-je-1iS">
+                                                            <rect key="frame" x="15" y="46" width="58.5" height="67.5"/>
+                                                        </stackView>
                                                     </subviews>
                                                     <edgeInsets key="layoutMargins" top="15" left="15" bottom="15" right="15"/>
                                                 </stackView>
@@ -378,6 +418,10 @@
                                             </userDefinedRuntimeAttributes>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="stackView" destination="2jm-je-1iS" id="XBh-oU-Xdd"/>
+                                            <outlet property="titleLabel" destination="g68-dW-dzW" id="H14-fK-k03"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <userDefinedRuntimeAttributes>
@@ -420,7 +464,7 @@
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" name="AccentColor"/>
                         <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="textShadowColor" systemColor="systemYellowColor"/>
                             <offsetWrapper key="textShadowOffset" horizontal="5" vertical="5"/>
