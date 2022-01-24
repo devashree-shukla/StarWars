@@ -11,7 +11,6 @@ class ListViewController: UIViewController {
 
     @IBOutlet weak var listTableView: UITableView!
     
-    fileprivate var activityIndicator: ActivityIndicator = ActivityIndicator()
     lazy var viewModel: ListViewModelProtocol = {
         let viewModel = ListViewModel()
         return viewModel
@@ -22,9 +21,13 @@ class ListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        activityIndicator.start()
+        view.showDefaultActivityIndicator()
+        viewModel.onErrorHandling = { [weak self] error in
+            self?.view.hideDefaultActivityIndicator()
+            self?.showAlert(msg: StarWarsConstants.Texts.errorMessage)
+        }
         viewModel.fetchData { [weak self] _ in
-            self?.activityIndicator.stop()
+            self?.view.hideDefaultActivityIndicator()
             DispatchQueue.main.async {
                 self?.updateDataSource()
                 self?.listTableView.dataSource = self?.dataSource
@@ -55,16 +58,11 @@ extension ListViewController {
             self.performSegue(withIdentifier: StoryboardIds.showDetailSegue, sender: self)
         }
         
-        viewModel.onErrorHandling = { [weak self] error in
-            self?.activityIndicator.stop()
-            self?.showAlert(msg: StarWarsConstants.Texts.errorMessage)
-        }
-        
     }
     
     
     func updatenavigationTitle() {
-        title = (navigationItem.title ?? "") + "(\(viewModel.data.count) records)"
+        title = viewModel.navigationTitle
     }
 
 }

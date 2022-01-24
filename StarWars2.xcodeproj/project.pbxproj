@@ -32,7 +32,6 @@
 		91800396279E058800F0FEDD /* NetworkingDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91800395279E058800F0FEDD /* NetworkingDataSource.swift */; };
 		91800398279E065900F0FEDD /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91800397279E065900F0FEDD /* APIManager.swift */; };
 		9180039B279E08A100F0FEDD /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9180039A279E08A100F0FEDD /* ListViewModel.swift */; };
-		9180039D279E379C00F0FEDD /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9180039C279E379C00F0FEDD /* ActivityIndicator.swift */; };
 		9180039F279E38D300F0FEDD /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9180039E279E38D300F0FEDD /* UIViewController.swift */; };
 		918003A3279E4F9700F0FEDD /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918003A2279E4F9700F0FEDD /* DetailViewModel.swift */; };
 		91CB9686279EE4D500CFCADD /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CB9685279EE4D500CFCADD /* UIStackView.swift */; };
@@ -101,7 +100,6 @@
 		91800395279E058800F0FEDD /* NetworkingDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingDataSource.swift; sourceTree = "<group>"; };
 		91800397279E065900F0FEDD /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		9180039A279E08A100F0FEDD /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
-		9180039C279E379C00F0FEDD /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		9180039E279E38D300F0FEDD /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		918003A2279E4F9700F0FEDD /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		91CB9685279EE4D500CFCADD /* UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
@@ -370,7 +368,6 @@
 				91D640C1279CC6CD003D9C21 /* Extensions */,
 				911B52DE279D035B001A8169 /* TableCellDelegate.swift */,
 				911B52E0279D037B001A8169 /* TableCellDataSource.swift */,
-				9180039C279E379C00F0FEDD /* ActivityIndicator.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -566,7 +563,6 @@
 				91800378279E018200F0FEDD /* PeopleModel.swift in Sources */,
 				91800392279E051400F0FEDD /* NetworkService.swift in Sources */,
 				911B52E3279D0719001A8169 /* UIStoryboard.swift in Sources */,
-				9180039D279E379C00F0FEDD /* ActivityIndicator.swift in Sources */,
 				91800368279DF95800F0FEDD /* BaseModel.swift in Sources */,
 				911B52DF279D035B001A8169 /* TableCellDelegate.swift in Sources */,
 				91800372279DFBA100F0FEDD /* Gender.swift in Sources */,

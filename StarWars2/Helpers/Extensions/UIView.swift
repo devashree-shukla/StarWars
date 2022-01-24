@@ -39,5 +39,49 @@ extension UIView {
             layer.borderColor = newValue?.cgColor
         }
     }
+    
 }
 
+
+//MARK: - Activity inidicator
+
+extension UIView {
+    
+    func showDefaultActivityIndicator(shouldDisableUserInteraction: Bool = false) {
+      
+        self.removeAnyOldActivityIndicators()
+        let activityIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.large)
+        activityIndicator.center = CGPoint(x: self.bounds.midX, y: self.bounds.midY)
+        activityIndicator.color = .white
+        activityIndicator.hidesWhenStopped = true
+        self.addSubview(activityIndicator)
+        self.bringSubviewToFront(activityIndicator)
+        self.isUserInteractionEnabled = !shouldDisableUserInteraction
+        activityIndicator.startAnimating()
+   
+    }
+    
+
+    func hideDefaultActivityIndicator() {
+
+        for subview in self.subviews {
+            if let indicator = subview as? UIActivityIndicatorView {
+                indicator.stopAnimating()
+            }
+        }
+        self.isUserInteractionEnabled = true
+   
+    }
+    
+    
+    fileprivate func removeAnyOldActivityIndicators() {
+     
+        for subview in self.subviews {
+            if let indicator = subview as? UIActivityIndicatorView {
+                indicator.stopAnimating()
+            }
+        }
+        
+    }
+    
+}
