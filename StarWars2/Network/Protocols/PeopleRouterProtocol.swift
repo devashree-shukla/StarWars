@@ -8,6 +8,6 @@
 import Foundation
 
 
-protocol PlanetRouterProtocol {
+protocol RouterProtocol {
     func fetchConverter(_ completion: @escaping ((Result<BaseModel, ErrorResult>) -> Void))
 }

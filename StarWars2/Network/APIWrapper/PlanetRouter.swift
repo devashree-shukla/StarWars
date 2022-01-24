@@ -8,20 +8,24 @@
 import Foundation
 
 
-final class PlanetRouter: NetworkHandler, PlanetRouterProtocol {
+final class PlanetRouter: NetworkHandler, RouterProtocol {
 
-    private let endpoint = APIManager.allPlanetsURL
+    private let endpoint: URL?
     var task: URLSessionTask?
     private var networking: NetworkingDataSource!
 
-    init(withNetworking networking: NetworkingDataSource = NetworkService()) {
+    init(withNetworking networking: NetworkingDataSource = NetworkService(), type: StarWars) {
         self.networking = networking
+        self.endpoint = APIManager.starWarsAPI(type: type)
     }
 
     
     func fetchConverter(_ completion: @escaping ((Result<BaseModel, ErrorResult>) -> Void)) {
         self.cancelFetchService()
-        print(endpoint.absoluteString)
+        print(endpoint?.absoluteString)
+        guard let endpoint = endpoint else {
+            return
+        }
         task = self.networking.loadData(url: endpoint, completion: self.networkResult(completion: completion))
     }
     

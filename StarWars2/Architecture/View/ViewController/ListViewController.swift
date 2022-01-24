@@ -50,6 +50,7 @@ extension ListViewController {
                                          items: viewModel.data,
                                          configureCell: { (cell, data, index) in
             (cell as? ListViewCell)?.data = data
+            (cell as? ListViewCell)?.titleLabel.text = "\(index + 1)".planetString
         })
 
         delegate = TableCellDelegate(cellIdentifier: StoryboardIds.listViewCell)

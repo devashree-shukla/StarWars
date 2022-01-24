@@ -54,17 +54,17 @@ extension DetailRowViewCell {
     
     func configureCell() {
         titleLabel.text = DetailDisplayFields.displayFieldType(data?.keys.first ?? "").1
-        
+        stackView.removeAllSubviews()
         switch DetailDisplayFields.displayFieldType(data?.keys.first ?? "").0 {
         case .created, .edited :
             descriptionLabel.text = (data?.values.first as? String)?.toDate()?.description
         case .terrain, .climate:
-            data?.values.forEach {
-                stackView.removeAllSubviews()
+            (data?.values.first as? String)?.split(separator: ",").forEach {
+                
                 let lbl = UILabel()
-                if let k = $0 as? String {
-                    lbl.text = "  \(k)  "
-                }
+//                if let k = $0 {
+                    lbl.text = "  \($0.capitalized)  "
+//                }
                 lbl.backgroundColor = .systemBlue
                 lbl.translatesAutoresizingMaskIntoConstraints = false
                 lbl.clipsToBounds = true
@@ -73,6 +73,7 @@ extension DetailRowViewCell {
                 stackView.addArrangedSubview(lbl)
                 lbl.cornerRadius = lbl.frame.height / 2
             }
+            print(stackView.subviews.count)
         case .surfaceWater:
             if let k = data?.values.first as? String {
                 descriptionLabel.text = k.percetageString

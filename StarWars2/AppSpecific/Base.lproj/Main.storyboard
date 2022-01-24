@@ -262,18 +262,18 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="liu-Ku-8Dd">
                                 <rect key="frame" x="20" y="160" width="374" height="692"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="separatorColor" name="AccentColor"/>
+                                <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailRowViewCell" id="BO8-Pe-HJi" customClass="DetailRowViewCell" customModule="StarWars2" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="374" height="184.5"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="374" height="188"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BO8-Pe-HJi" id="G34-hC-1IN">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="184.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="188"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="eJN-FM-mvb">
-                                                    <rect key="frame" x="0.0" y="20" width="374" height="144.5"/>
+                                                <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="eJN-FM-mvb">
+                                                    <rect key="frame" x="0.0" y="20" width="374" height="148"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="85i-G2-IRR">
                                                             <rect key="frame" x="20" y="8" width="24.5" height="21"/>
@@ -295,14 +295,20 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="D1T-qW-mc5">
-                                                            <rect key="frame" x="20" y="69.5" width="334" height="67"/>
+                                                            <rect key="frame" x="20" y="69.5" width="334" height="70.5"/>
                                                         </stackView>
                                                     </subviews>
                                                     <color key="backgroundColor" name="DarkBg"/>
                                                     <edgeInsets key="layoutMargins" top="8" left="20" bottom="8" right="20"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                            <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="value" name="AccentColor"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                            <real key="value" value="0.5"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </stackView>
@@ -328,7 +334,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailCardViewCell" id="l8u-Os-O7n" customClass="DetailCardViewCell" customModule="StarWars2" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="229" width="374" height="77.5"/>
+                                        <rect key="frame" x="0.0" y="232.5" width="374" height="77.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="l8u-Os-O7n" id="W1b-Qd-3MK">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="77.5"/>
@@ -377,14 +383,14 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailTabViewCell" id="8eM-OE-slm" customClass="DetailTabViewCell" customModule="StarWars2" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="306.5" width="374" height="128.5"/>
+                                        <rect key="frame" x="0.0" y="310" width="374" height="132"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8eM-OE-slm" id="Qtd-aH-GWu">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="128.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="132"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="O2C-7u-JPi">
-                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="128.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="132"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g68-dW-dzW">
                                                             <rect key="frame" x="15" y="15" width="24.5" height="21"/>
@@ -398,7 +404,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2jm-je-1iS">
-                                                            <rect key="frame" x="15" y="46" width="58.5" height="67.5"/>
+                                                            <rect key="frame" x="15" y="46" width="58.5" height="71"/>
                                                         </stackView>
                                                     </subviews>
                                                     <edgeInsets key="layoutMargins" top="15" left="15" bottom="15" right="15"/>

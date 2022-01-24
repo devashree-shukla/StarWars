@@ -8,7 +8,7 @@
 import Foundation
 
 enum Method: String {
-    case allPersons = "people/"
+    case allPeople = "people/"
     case allFilms = "films/"
     case allPlanets = "planets/"
     case allSpecies = "species/"
@@ -25,8 +25,8 @@ struct APIManager {
     }
 
     
-    static var allPersonsURL: URL {
-        return starWarsAPIURL(method: .allPersons)
+    static var allPeopleURL: URL {
+        return starWarsAPIURL(method: .allPeople)
     }
 
     
@@ -56,6 +56,18 @@ struct APIManager {
         let baseURL = URL(string: baseURLString)!
         let finalURL = URL(string: method.rawValue, relativeTo: baseURL)!
         return finalURL
+    }
+    
+    
+    static func starWarsAPI(type: StarWars) -> URL {
+        switch type {
+        case .planets: return allPlanetsURL
+        case .people: return allPeopleURL
+        case .films: return allFilmsURL
+        case .starships: return allStarshipsURL
+        case .spices: return allSpeciesURL
+        case .vehicles: return allVehiclesURL
+        }
     }
 }
 

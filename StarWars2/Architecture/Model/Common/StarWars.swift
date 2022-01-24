@@ -28,14 +28,14 @@ enum StarWars: CustomStringConvertible, CaseIterable {
     }
     
     
-    var serviceName: PlanetRouterProtocol? {
+    var serviceName: RouterProtocol? {
         switch self {
-        case .planets: return PlanetRouter()
-        case .people: return nil
-        case .films: return nil
-        case .starships: return nil
-        case .spices: return nil
-        case .vehicles: return nil
+        case .planets: return PlanetRouter(type: .planets)
+        case .people: return PlanetRouter(type: .people)
+        case .films: return PlanetRouter(type: .films)
+        case .starships: return PlanetRouter(type: .starships)
+        case .spices: return PlanetRouter(type: .spices)
+        case .vehicles: return PlanetRouter(type: .vehicles)
         }
     }
 }

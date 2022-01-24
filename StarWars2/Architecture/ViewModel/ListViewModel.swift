@@ -20,7 +20,7 @@ protocol ListViewModelProtocol {
 class ListViewModel: ListViewModelProtocol {
     
     // MARK: - Input
-    private var service: PlanetRouterProtocol?
+    private var service: RouterProtocol?
     var starWarsItem: StarWars = .planets
     
     //MARK: - Output
@@ -56,5 +56,43 @@ class ListViewModel: ListViewModelProtocol {
                 }
         }
     }
+    
+    
+//    private func getData() {
+//        DispatchQueue.global(qos: .background).async {
+//            let dispatchGroup = DispatchGroup()
+//            dispatchGroup.enter()
+//            APIService.getData(name: 1, query: nil) { (data) in
+//                DispatchQueue.main.async {
+//                    guard let d = data else { return }
+//                    guard let items = BaseModel<BareActsData>.build(d) else { return }
+//                    self.allData.bareActsData = items.data
+//                    dispatchGroup.leave()
+//                }
+//            } failure: { (error) in
+//                self.showAlert(msg: StringConstants.AlertMessages.sameUserErrorMessage)
+//                dispatchGroup.leave()
+//            }
+//
+//            dispatchGroup.enter()
+//            APIService.getData(name: 2, query: nil) { (data) in
+//                DispatchQueue.main.async {
+//                    guard let d = data else { return }
+//                    guard let items = BaseModel<JudgementsData>.build(d) else { return }
+//                    self.allData.judgementsData = items.data
+//                    dispatchGroup.leave()
+//                }
+//            } failure: { (error) in
+//                self.showAlert(msg: StringConstants.AlertMessages.sameUserErrorMessage)
+//                dispatchGroup.leave()
+//            }
+//
+//            dispatchGroup.notify(queue: .main) {
+//                self?.data = results
+//                completion?(Result.success(true))
+//            }
+//        }
+//
+//    }
     
 }

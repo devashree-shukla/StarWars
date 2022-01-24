@@ -18,6 +18,11 @@ extension String {
     }
     
     
+    var planetString: String {
+        "PLANET \(self)"
+    }
+    
+    
     var percetageString: String {
         "\(self) (%)"
     }
