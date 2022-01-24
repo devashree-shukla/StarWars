@@ -12,7 +12,10 @@ final class NetworkService: NetworkingDataSource {
     private var session: URLSession!
 
     init(_ session: URLSession = URLSession(configuration: .default)) {
-        self.session = session
+        let sessionConfig = URLSessionConfiguration.default
+        sessionConfig.timeoutIntervalForRequest = 30.0
+        sessionConfig.timeoutIntervalForResource = 60.0
+        self.session = URLSession(configuration: sessionConfig)
     }
 
     
