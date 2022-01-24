@@ -32,7 +32,7 @@ extension ListViewController {
         dataSource = TableCellDataSource(cellIdentifier: StoryboardIds.listViewCell,
                                          items: planets,
                                          configureCell: { (cell, data, index) in
-            (cell as? HomeViewCell)?.data = data
+//            (cell as? HomeViewCell)?.data = data
         })
         
         delegate = TableCellDelegate(cellIdentifier: StoryboardIds.listViewCell)

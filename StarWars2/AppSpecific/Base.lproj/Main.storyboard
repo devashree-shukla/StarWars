@@ -33,7 +33,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="130"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SoJ-kU-1Ol">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="55X-Dh-2sq">
+                                                    <rect key="frame" x="5" y="5" width="364" height="120"/>
+                                                </imageView>
+                                                <view alpha="0.45000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SoJ-kU-1Ol">
                                                     <rect key="frame" x="20" y="20" width="334" height="90"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yyy-Mi-ho8">
@@ -47,7 +50,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="yyy-Mi-ho8" secondAttribute="trailing" constant="20" id="4oU-bt-Yyq"/>
                                                         <constraint firstItem="yyy-Mi-ho8" firstAttribute="centerY" secondItem="SoJ-kU-1Ol" secondAttribute="centerY" id="QKF-K7-vTY"/>
@@ -69,8 +72,12 @@
                                             </subviews>
                                             <color key="backgroundColor" name="DarkBg"/>
                                             <constraints>
+                                                <constraint firstItem="55X-Dh-2sq" firstAttribute="leading" secondItem="WWK-sM-SB0" secondAttribute="leading" constant="5" id="9TJ-r1-Cv2"/>
                                                 <constraint firstItem="SoJ-kU-1Ol" firstAttribute="leading" secondItem="WWK-sM-SB0" secondAttribute="leading" constant="20" id="IBi-Mc-6U3"/>
+                                                <constraint firstAttribute="bottom" secondItem="55X-Dh-2sq" secondAttribute="bottom" constant="5" id="PjM-r9-fVi"/>
                                                 <constraint firstItem="SoJ-kU-1Ol" firstAttribute="top" secondItem="WWK-sM-SB0" secondAttribute="top" constant="20" id="R8x-Lo-1tl"/>
+                                                <constraint firstItem="55X-Dh-2sq" firstAttribute="top" secondItem="WWK-sM-SB0" secondAttribute="top" constant="5" id="dqA-ij-F6u"/>
+                                                <constraint firstAttribute="trailing" secondItem="55X-Dh-2sq" secondAttribute="trailing" constant="5" id="ib4-4g-iP5"/>
                                                 <constraint firstAttribute="trailing" secondItem="SoJ-kU-1Ol" secondAttribute="trailing" constant="20" id="rCL-Jv-1E8"/>
                                                 <constraint firstAttribute="bottom" secondItem="SoJ-kU-1Ol" secondAttribute="bottom" constant="20" id="uEW-mI-Y6T"/>
                                             </constraints>
@@ -433,6 +440,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bg" width="2803" height="1576.5"/>
         <image name="planetsPlacholder" width="1920" height="1080"/>
         <namedColor name="AccentColor">
             <color red="0.046999998390674591" green="0.9100000262260437" blue="0.72500002384185791" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -13,7 +13,7 @@ class HomeViewCell: UITableViewCell {
     
     // MARK: - Variables
     
-    var data: String? {
+    var data: StarWars? {
         
         didSet {
             configureCell()
@@ -37,7 +37,7 @@ class HomeViewCell: UITableViewCell {
 extension HomeViewCell {
     
     private func configureCell() {
-        itemLabel.text = data
+        itemLabel.text = data?.description
     }
     
 }

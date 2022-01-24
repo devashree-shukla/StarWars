@@ -12,8 +12,12 @@ class HomeViewController: UIViewController {
 
     @IBOutlet weak var homeTableView: UITableView!
     
-    let starWarsItems = ["Planets", "Films"]
-    private var dataSource : TableCellDataSource<UITableViewCell, String?>!
+    lazy var viewModel: HomeViewModelProtocol = {
+        let viewModel = HomeViewModel()
+        return viewModel
+    }()
+    
+    private var dataSource : TableCellDataSource<UITableViewCell, StarWars>!
     private var delegate : TableCellDelegate<UITableViewCell>!
     
     override func viewDidLoad() {
@@ -30,7 +34,7 @@ extension HomeViewController {
     private func updateDataSource() {
         
         dataSource = TableCellDataSource(cellIdentifier: StoryboardIds.homeViewCell,
-                                         items: starWarsItems,
+                                         items: viewModel.starWarsItems,
                                          configureCell: { (cell, data, index) in
             (cell as? HomeViewCell)?.data = data
         })
