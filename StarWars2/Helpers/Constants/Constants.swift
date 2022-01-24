@@ -18,6 +18,8 @@ struct StarWarsConstants {
         static let planets = "Planets"
         static let planet = "Planet"
         
+        static let errorMessage = "Something went wrong, Try Again!"
+        static let noInternet = "No intenet available, Please check."
     }
     
     

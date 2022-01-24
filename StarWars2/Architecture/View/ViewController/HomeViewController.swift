@@ -60,8 +60,10 @@ extension HomeViewController {
 extension HomeViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "" {
-            
+        if segue.identifier == StoryboardIds.showListSegue {
+            if let vc = segue.destination as? ListViewController {
+                vc.viewModel.starWarsItem = viewModel.selectedItem(index: homeTableView.indexPathForSelectedRow?.row ?? 0)
+            }
         }
     }
 }

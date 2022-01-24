@@ -15,7 +15,7 @@ class ListViewCell: UITableViewCell {
     
     // MARK: - Variables
     
-    var data: String? {
+    var data: PlanetModel? {
         
         didSet {
             configureCell()
@@ -42,7 +42,9 @@ class ListViewCell: UITableViewCell {
 extension ListViewCell {
     
     private func configureCell() {
-        nameLabel.text = data
+        nameLabel.text = data?.name
+        titleLabel.text = data?.name
+        descriptionLabel.text = data?.planetDescription
     }
     
 }

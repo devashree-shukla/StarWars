@@ -17,5 +17,9 @@ struct PlanetModel: Codable, Equatable {
     let surfaceWater: String
     let orbitalPeriod, rotationPeriod: String
     let terrain: String
+    
+    var planetDescription: String {
+        "Having \(residents.count) residents and appeared in \(films.count) films. Also, having \(climate) and \(surfaceWater) % water sources "
+    }
 }
 
