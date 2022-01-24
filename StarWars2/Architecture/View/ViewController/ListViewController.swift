@@ -15,7 +15,7 @@ class ListViewController: UIViewController {
         let viewModel = ListViewModel()
         return viewModel
     }()
-    private var dataSource : TableCellDataSource<UITableViewCell, PlanetModel?>!
+    private var dataSource : TableCellDataSource<UITableViewCell, PlanetListModel?>!
     private var delegate : TableCellDelegate<UITableViewCell>!
     
     
@@ -47,9 +47,9 @@ extension ListViewController {
     private func updateDataSource() {
         
         dataSource = TableCellDataSource(cellIdentifier: StoryboardIds.listViewCell,
-                                         items: viewModel.data,
+                                         items: viewModel.planetArray,
                                          configureCell: { (cell, data, index) in
-            (cell as? ListViewCell)?.data = data
+            (cell as? ListViewCell)?.data = data?.planets
             (cell as? ListViewCell)?.titleLabel.text = "\(index + 1)".planetString
         })
 
@@ -75,7 +75,7 @@ extension ListViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == StoryboardIds.showDetailSegue {
             if let vc = segue.destination as? DetailViewController, let index = listTableView.indexPathForSelectedRow?.row {
-                vc.viewModel.item = viewModel.data[index]
+                vc.viewModel.item = viewModel.planetArray[index]
             }
         }
     }

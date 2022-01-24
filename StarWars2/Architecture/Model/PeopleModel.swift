@@ -15,3 +15,18 @@ struct PeopleModel: Codable, Equatable {
     let films, species, vehicles, starships: [String]
     let created, edited: String
 }
+
+
+extension PeopleModel: Parceable {
+    
+    static func parseObject(data: Data) -> Result<PeopleModel, ErrorResult> {
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        if let result = try? decoder.decode(PeopleModel.self, from: data) {
+            return Result.success(result)
+        } else {
+            return Result.failure(ErrorResult.parser(string: "Unable to parse flickr results"))
+        }
+    }
+
+}

@@ -24,6 +24,7 @@ class DetailRowViewCell: UITableViewCell {
         }
     }
     
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -83,8 +84,7 @@ extension DetailRowViewCell {
             if let k = data?.values.first as? String {
                 descriptionLabel.text = k.diameterString
             }
-        case .films, .residents:
-            descriptionLabel.text = data?.values.description
+        case .films, .residents: break
         default: descriptionLabel.text = data?.values.first as? String
         }
     }
@@ -95,7 +95,7 @@ extension DetailRowViewCell {
             return
         }
         let lbl = UILabel()
-        lbl.text = "  \(text.capitalized))  "
+        lbl.text = "  \(text.capitalized)  "
         lbl.backgroundColor = .systemBlue
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.clipsToBounds = true

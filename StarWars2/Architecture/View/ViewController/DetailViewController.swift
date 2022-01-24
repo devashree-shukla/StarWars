@@ -22,7 +22,7 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateDataSource()
-        title = viewModel.item?.name
+        title = viewModel.item?.planets.name
     }
 
 }
@@ -35,6 +35,11 @@ extension DetailViewController {
                                          items: viewModel.items!,
                                          configureCell: { (cell, data, index) in
             cell.data = data
+            if cell.titleLabel.text == "Films" {
+                cell.descriptionLabel.text = self.viewModel.item?.films?.description
+            } else if cell.titleLabel.text == "Residents" {
+                cell.descriptionLabel.text = self.viewModel.item?.residents?.description
+            }
         })
         
         delegate = TableCellDelegate(cellIdentifier: StoryboardIds.detailRowViewCell)

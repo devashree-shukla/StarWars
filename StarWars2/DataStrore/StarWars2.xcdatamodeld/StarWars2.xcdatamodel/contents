@@ -5,7 +5,7 @@
         <attribute name="created" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="director" optional="YES" attributeType="String"/>
         <attribute name="edited" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="episodeId" optional="YES" attributeType="String"/>
+        <attribute name="episodeid" optional="YES" attributeType="String"/>
         <attribute name="openingCrawl" optional="YES" attributeType="String"/>
         <attribute name="planets" optional="YES" attributeType="Transformable"/>
         <attribute name="producer" optional="YES" attributeType="String"/>

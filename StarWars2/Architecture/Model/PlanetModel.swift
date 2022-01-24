@@ -33,4 +33,3 @@ struct PlanetModel: Codable, Equatable {
         return dict
     }
 }
-

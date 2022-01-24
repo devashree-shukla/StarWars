@@ -35,6 +35,7 @@
 		9180039F279E38D300F0FEDD /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9180039E279E38D300F0FEDD /* UIViewController.swift */; };
 		918003A3279E4F9700F0FEDD /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918003A2279E4F9700F0FEDD /* DetailViewModel.swift */; };
 		91CB9686279EE4D500CFCADD /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CB9685279EE4D500CFCADD /* UIStackView.swift */; };
+		91CBCEFC279F21F600557A53 /* ListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CBCEFB279F21F600557A53 /* ListModel.swift */; };
 		91D64077279CC2C6003D9C21 /* StarWars2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D64076279CC2C6003D9C21 /* StarWars2Tests.swift */; };
 		91D64081279CC2C6003D9C21 /* StarWars2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D64080279CC2C6003D9C21 /* StarWars2UITests.swift */; };
 		91D64083279CC2C6003D9C21 /* StarWars2UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D64082279CC2C6003D9C21 /* StarWars2UITestsLaunchTests.swift */; };
@@ -103,6 +104,7 @@
 		9180039E279E38D300F0FEDD /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		918003A2279E4F9700F0FEDD /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		91CB9685279EE4D500CFCADD /* UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
+		91CBCEFB279F21F600557A53 /* ListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListModel.swift; sourceTree = "<group>"; };
 		91D64059279CC2C4003D9C21 /* StarWars2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarWars2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91D64072279CC2C6003D9C21 /* StarWars2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StarWars2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		91D64076279CC2C6003D9C21 /* StarWars2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWars2Tests.swift; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 				91800367279DF95800F0FEDD /* BaseModel.swift */,
 				91800371279DFBA100F0FEDD /* Gender.swift */,
 				91800373279DFC2E00F0FEDD /* StarWars.swift */,
+				91CBCEFB279F21F600557A53 /* ListModel.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -584,6 +587,7 @@
 				91CB9686279EE4D500CFCADD /* UIStackView.swift in Sources */,
 				9180037A279E01CC00F0FEDD /* FilmModel.swift in Sources */,
 				91D640D0279CC6CD003D9C21 /* Double.swift in Sources */,
+				91CBCEFC279F21F600557A53 /* ListModel.swift in Sources */,
 				9180038B279E049900F0FEDD /* PeopleRouterProtocol.swift in Sources */,
 				9180039B279E08A100F0FEDD /* ListViewModel.swift in Sources */,
 			);
