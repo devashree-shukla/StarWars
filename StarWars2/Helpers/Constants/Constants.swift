@@ -13,23 +13,8 @@ struct StarWarsConstants {
         static let appName = Bundle.main.infoDictionary![kCFBundleNameKey as String] as! String
         static let search = "Search"
         static let sort = "Sort"
-        
-        //Planet
-        static let planets = "Planets"
-        static let planet = "Planet"
-        
         static let errorMessage = "Something went wrong, Try Again!"
         static let noInternet = "No intenet available, Please check."
-    }
-    
-    
-    struct Colors {
-        static let sepratorColor = Color.gray
-        static let appThemeColor = Color.accentColor
-        static let lightBackgroundColor = Color.gray.opacity(StarWarsConstants.backgroundOpacity)
-        static let darkBackgroundColor = Color.black
-        static let appBackgroundColor = Color.accentColor.opacity(StarWarsConstants.backgroundOpacity)
-        
     }
     
     static let backgroundOpacity = 0.2

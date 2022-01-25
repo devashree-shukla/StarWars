@@ -37,6 +37,13 @@ extension HomeViewController {
                                          items: viewModel.starWarsItems,
                                          configureCell: { (cell, data, index) in
             (cell as? HomeViewCell)?.data = data
+            if index != 0 {
+                (cell as? HomeViewCell)?.itemLabel.alpha = 0.5
+                (cell as? HomeViewCell)?.isUserInteractionEnabled = false
+            } else {
+                (cell as? HomeViewCell)?.itemLabel.alpha = 1
+                (cell as? HomeViewCell)?.isUserInteractionEnabled = true
+            }
         })
         
         delegate = TableCellDelegate(cellIdentifier: StoryboardIds.homeViewCell)
@@ -62,7 +69,8 @@ extension HomeViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == StoryboardIds.showListSegue {
             if let vc = segue.destination as? ListViewController {
-                vc.viewModel.starWarsItem = viewModel.selectedItem(index: homeTableView.indexPathForSelectedRow?.row ?? 0)
+                vc.viewModel.starWarsItem = viewModel.selectedItem(
+                    index: homeTableView.indexPathForSelectedRow?.row ?? 0)
             }
         }
     }

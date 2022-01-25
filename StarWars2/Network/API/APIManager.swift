@@ -58,16 +58,5 @@ struct APIManager {
         return finalURL
     }
     
-    
-    static func starWarsAPI(type: StarWars) -> URL {
-        switch type {
-        case .planets: return allPlanetsURL
-        case .people: return allPeopleURL
-        case .films: return allFilmsURL
-        case .starships: return allStarshipsURL
-        case .spices: return allSpeciesURL
-        case .vehicles: return allVehiclesURL
-        }
-    }
 }
 

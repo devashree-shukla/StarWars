@@ -41,7 +41,7 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
-                                                <view opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SoJ-kU-1Ol">
+                                                <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SoJ-kU-1Ol">
                                                     <rect key="frame" x="20" y="20" width="334" height="90"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yyy-Mi-ho8">
@@ -119,7 +119,7 @@
             </objects>
             <point key="canvasLocation" x="376.81159420289856" y="-33.482142857142854"/>
         </scene>
-        <!--Planets-->
+        <!--List View Controller-->
         <scene sceneID="ofp-Y9-ezP">
             <objects>
                 <viewController storyboardIdentifier="ListViewController" id="DsZ-5y-bf2" customClass="ListViewController" customModule="StarWars2" customModuleProvider="target" sceneMemberID="viewController">
@@ -235,7 +235,7 @@
                             <constraint firstItem="tzL-tX-Lnx" firstAttribute="top" secondItem="ld1-sF-k8H" secondAttribute="bottom" constant="20" id="xND-sh-JYs"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Planets" id="knx-iq-V9Z"/>
+                    <navigationItem key="navigationItem" id="knx-iq-V9Z"/>
                     <connections>
                         <outlet property="listTableView" destination="tzL-tX-Lnx" id="BLM-dG-bzh"/>
                     </connections>
@@ -244,7 +244,7 @@
             </objects>
             <point key="canvasLocation" x="1160.8695652173915" y="-28.125"/>
         </scene>
-        <!--Planets-->
+        <!--Detail View Controller-->
         <scene sceneID="voE-eb-16S">
             <objects>
                 <viewController storyboardIdentifier="DetailViewController" id="f72-bP-OT4" customClass="DetailViewController" customModule="StarWars2" customModuleProvider="target" sceneMemberID="viewController">
@@ -266,14 +266,14 @@
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailRowViewCell" id="BO8-Pe-HJi" customClass="DetailRowViewCell" customModule="StarWars2" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="374" height="190"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="374" height="192"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BO8-Pe-HJi" id="G34-hC-1IN">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="190"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="192"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="eJN-FM-mvb">
-                                                    <rect key="frame" x="0.0" y="20" width="374" height="150"/>
+                                                    <rect key="frame" x="0.0" y="20" width="374" height="152"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="85i-G2-IRR">
                                                             <rect key="frame" x="20" y="8" width="24.5" height="21"/>
@@ -295,7 +295,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="D1T-qW-mc5">
-                                                            <rect key="frame" x="20" y="69.5" width="334" height="72.5"/>
+                                                            <rect key="frame" x="20" y="69.5" width="334" height="74.5"/>
                                                         </stackView>
                                                     </subviews>
                                                     <color key="backgroundColor" name="DarkBg"/>
@@ -353,7 +353,7 @@
                             <constraint firstItem="JBS-zN-in4" firstAttribute="top" secondItem="liu-Ku-8Dd" secondAttribute="bottom" constant="10" id="w37-DB-Ym9"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Planets" id="xyA-qe-krw"/>
+                    <navigationItem key="navigationItem" id="xyA-qe-krw"/>
                     <connections>
                         <outlet property="detailTableView" destination="liu-Ku-8Dd" id="yd4-Ym-e2C"/>
                     </connections>

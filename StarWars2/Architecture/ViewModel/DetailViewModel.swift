@@ -39,17 +39,24 @@ enum DetailDisplayFields: String {
 }
 
 protocol DetailViewModelProtocol {
-    var item: PlanetListModel? { get set }
+    var item: PlanetModel? { get set }
     var items: [[String: Any]]? { get }
+    var starWarsItem: StarWars { get set }
 }
 
 
 class DetailViewModel: DetailViewModelProtocol {
-    var item: PlanetListModel?
+
+    // MARK: - Input
+    
+    var starWarsItem: StarWars = .planets
+    var item: PlanetModel?
+    
+    //MARK: Output
     
     var items: [[String: Any]]? {
         var i: [[String: Any]] = []
-        item?.planets.asDictionary.forEach {
+        item?.asDictionary.forEach {
             i.append([$0.key: $0.value])
         }
         return i

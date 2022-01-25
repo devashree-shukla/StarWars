@@ -43,7 +43,6 @@ extension ListViewCell {
     
     private func configureCell() {
         nameLabel.text = data?.name
-        titleLabel.text = data?.name
         descriptionLabel.text = data?.planetDescription
     }
     

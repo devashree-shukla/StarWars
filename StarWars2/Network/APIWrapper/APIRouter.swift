@@ -1,5 +1,5 @@
 //
-//  PlanetRouter.swift
+//  APIRouter.swift
 //  StarWars2
 //
 //  Created by Devashree KS on 24/01/22.
@@ -8,7 +8,7 @@
 import Foundation
 
 
-final class PlanetRouter: NetworkHandler, RouterProtocol {
+final class APIRouter: NetworkHandler, RouterProtocol {
 
     private let endpoint: URL?
     var task: URLSessionTask?
@@ -16,7 +16,7 @@ final class PlanetRouter: NetworkHandler, RouterProtocol {
 
     init(withNetworking networking: NetworkingDataSource = NetworkService(), type: StarWars) {
         self.networking = networking
-        self.endpoint = APIManager.starWarsAPI(type: type)
+        self.endpoint = type.starWarsAPI
     }
     
     
@@ -28,32 +28,11 @@ final class PlanetRouter: NetworkHandler, RouterProtocol {
     
     func fetchConverter(_ completion: @escaping ((Result<BaseModel, ErrorResult>) -> Void)) {
         self.cancelFetchService()
-        print(endpoint?.absoluteString)
         guard let endpoint = endpoint else {
             return
         }
         task = self.networking.loadData(url: endpoint, completion: self.networkResult(completion: completion))
     }
-    
-    
-    func fetchPeople(_ completion: @escaping ((Result<[PeopleModel], ErrorResult>) -> Void)) {
-        self.cancelFetchService()
-        print(endpoint?.absoluteString)
-        guard let endpoint = endpoint else {
-            return
-        }
-        task = self.networking.loadData(url: endpoint, completion: self.networkResult(completion: completion))
-    }
-    
-    func fetchFilms(_ completion: @escaping ((Result<[FilmModel], ErrorResult>) -> Void)) {
-        self.cancelFetchService()
-        print(endpoint?.absoluteString)
-        guard let endpoint = endpoint else {
-            return
-        }
-        task = self.networking.loadData(url: endpoint, completion: self.networkResult(completion: completion))
-    }
-    
 
     func cancelFetchService() {
         if let task = task {
@@ -63,3 +42,23 @@ final class PlanetRouter: NetworkHandler, RouterProtocol {
     }
 }
 
+
+extension APIRouter {
+    
+    func fetchPeople(_ completion: @escaping ((Result<PeopleModel, ErrorResult>) -> Void)) {
+        guard let endpoint = endpoint else {
+            return
+        }
+        task = self.networking.loadData(url: endpoint, completion: self.networkResult(completion: completion))
+    }
+    
+    
+    func fetchFilm(_ completion: @escaping ((Result<FilmModel, ErrorResult>) -> Void)) {
+        guard let endpoint = endpoint else {
+            return
+        }
+        task = self.networking.loadData(url: endpoint, completion: self.networkResult(completion: completion))
+    }
+    
+    
+}

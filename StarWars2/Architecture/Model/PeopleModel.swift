@@ -6,19 +6,24 @@
 //
 
 import Foundation
+import CoreData
 
-struct PeopleModel: Codable, Equatable {
+struct PeopleModel: Codable {
     let name, height, mass, hairColor: String
     let skinColor, eyeColor, birthYear: String
-    let gender: Gender
+    let gender: String
     let homeworld: String
     let films, species, vehicles, starships: [String]
     let created, edited: String
+    var filmArray: [FilmModel]?
+    var speciesArray: [SpicesModel]?
+    var vehiclesArray: [VehicleModel]?
+    var starshipsArray: [StarshipModel]?
 }
 
 
 extension PeopleModel: Parceable {
-    
+
     static func parseObject(data: Data) -> Result<PeopleModel, ErrorResult> {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase

@@ -24,7 +24,6 @@ extension UIViewController {
 
     
     func showAlert(title : String? = StarWarsConstants.Texts.appName, msg : String) {
-        
         var rootViewController = UIApplication.shared.keyWindow?.rootViewController
         let ac = UIAlertController.init(title: title,
                                         message: msg, preferredStyle: .alert)
@@ -39,7 +38,6 @@ extension UIViewController {
         DispatchQueue.main.async {
             rootViewController?.present(ac, animated: true, completion: nil)
         }
-        
     }
     
 }

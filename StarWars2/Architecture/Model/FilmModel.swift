@@ -6,13 +6,24 @@
 //
 
 import Foundation
+import CoreData
 
-struct FilmModel: Codable, Equatable {
+
+struct FilmModel: Codable {
+    
     let director, producer: String
 //    let episodeid: String //TODO: Fix it later as it is crashing in API call
+    let opening_crawl: String
+    let releaseDate: Date
     let title: String
     let characters, species, vehicles, starships, planets: [String]
     let created, edited: String
+    
+    var planetsArray: [PlanetModel]?
+    var charactersArray: [PeopleModel]?
+    var speciesArray: [SpicesModel]?
+    var vehiclesArray: [VehicleModel]?
+    var starshipsArray: [StarshipModel]?
 }
 
 extension FilmModel: Parceable {

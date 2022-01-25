@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ListViewController: UIViewController {
 
@@ -15,7 +16,7 @@ class ListViewController: UIViewController {
         let viewModel = ListViewModel()
         return viewModel
     }()
-    private var dataSource : TableCellDataSource<UITableViewCell, PlanetListModel?>!
+    private var dataSource : TableCellDataSource<UITableViewCell, PlanetModel>!
     private var delegate : TableCellDelegate<UITableViewCell>!
     
     
@@ -27,6 +28,7 @@ class ListViewController: UIViewController {
             self?.showAlert(msg: StarWarsConstants.Texts.errorMessage)
         }
         viewModel.fetchData { [weak self] _ in
+            self?.viewModel.saveInCoreData()
             self?.view.hideDefaultActivityIndicator()
             DispatchQueue.main.async {
                 self?.updateDataSource()
@@ -47,9 +49,9 @@ extension ListViewController {
     private func updateDataSource() {
         
         dataSource = TableCellDataSource(cellIdentifier: StoryboardIds.listViewCell,
-                                         items: viewModel.planetArray,
+                                         items: viewModel.data,
                                          configureCell: { (cell, data, index) in
-            (cell as? ListViewCell)?.data = data?.planets
+            (cell as? ListViewCell)?.data = data
             (cell as? ListViewCell)?.titleLabel.text = "\(index + 1)".planetString
         })
 
@@ -75,7 +77,7 @@ extension ListViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == StoryboardIds.showDetailSegue {
             if let vc = segue.destination as? DetailViewController, let index = listTableView.indexPathForSelectedRow?.row {
-                vc.viewModel.item = viewModel.planetArray[index]
+                vc.viewModel.item = viewModel.data[index]
             }
         }
     }

@@ -16,12 +16,12 @@ protocol HomeViewModelProtocol {
 
 class HomeViewModel: HomeViewModelProtocol {
     
-    //MARK: - Output
-    var starWarsItems = StarWars.allCases
-    
-    
+    //MARK: Input
     func selectedItem(index: Int) -> StarWars {
         StarWars.allCases[index]
     }
+    
+    //MARK: - Output
+    var starWarsItems = StarWars.allCases
     
 }
