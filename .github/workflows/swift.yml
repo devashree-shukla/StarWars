@@ -1,19 +1,27 @@
-name: Swift
+name: StarWars_Swift
 
 on:
   push:
-    branches: [ main ]
-  pull_request:
     branches: [ main ]
 
 jobs:
   build:
 
     runs-on: macos-latest
+    strategy:
+        matrix:
+          destination: ['platform=iOS Simulator,OS=13.2.2,name=iPhone 11 Pro Max']
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Build
-      run: swift build -v
-    - name: Run tests
-      run: swift test -v
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Build
+        run: |
+          xcodebuild clean build -project StarWars2.xcodeproj -scheme StarWars2 -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
+        env: 
+         destination: ${{ matrix.destination }}
+      - name: Test
+        run: |
+          xcodebuild clean test -project StarWars2.xcodeproj -scheme StarWars2Tests -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
+        env: 
+         destination: ${{ matrix.destination }}
