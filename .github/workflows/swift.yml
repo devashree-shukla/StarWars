@@ -16,7 +16,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Force Xcode 11
-        run: sudo xcode-select -switch /Applications/Xcode_11.3.app
+        run: sudo xcode-select -switch /Applications/Xcode.app
       - name: Build
         run: |
           xcodebuild clean build -project StarWars2.xcodeproj -scheme StarWars2 -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
