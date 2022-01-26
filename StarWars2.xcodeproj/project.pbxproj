@@ -911,7 +911,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 2FXG4UVN94;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = StarWars2/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Star Wars";
@@ -942,7 +942,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 2FXG4UVN94;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = StarWars2/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Star Wars";
