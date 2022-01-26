@@ -18,9 +18,6 @@ jobs:
       - name: Force Xcode 11
         run: sudo xcode-select -switch /Applications/Xcode.app
       
-      - name: Test
-        run: |
-          xcodebuild clean test -project StarWars2.xcodeproj -scheme StarWars2Tests -destination "${destination}" CODE_SIGN_IDENTITY="Apple Development" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO -allowProvisioningUpdates
       - name: Build App
         run: xcodebuild -project "StarWars2.xcodeproj" -scheme "StarWars2" -destination "generic/platform=iOS" -configuration Release build CODE_SIGNING_ALLOWED=NO
         env: 
