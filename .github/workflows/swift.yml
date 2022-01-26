@@ -26,6 +26,6 @@ jobs:
         run: |
           xcodebuild clean test -project StarWars2.xcodeproj -scheme StarWars2Tests -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
       - name: Build App
-        run: xcodebuild -project "MyApp.xcodeproj" -scheme "MyApp" -destination "generic/platform=iOS" -configuration Release build CODE_SIGNING_ALLOWED=NO
+        run: xcodebuild -project "StarWars2.xcodeproj" -scheme "StarWars2" -destination "generic/platform=iOS" -configuration Release build CODE_SIGNING_ALLOWED=NO
         env: 
          destination: ${{ matrix.destination }}
