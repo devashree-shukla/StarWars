@@ -24,7 +24,7 @@ jobs:
      
       - name: Test
         run: |
-          xcodebuild clean test -project StarWars2.xcodeproj -scheme StarWars2 -destination 'platform=iOS Simulator,name=iPhone 12' test
+          xcodebuild clean test -project StarWars2.xcodeproj -scheme StarWars2 -destination 'platform=iOS Simulator,name=iPhone 15.2' test
       - name: Check Tests Passed 
         if: steps.xcodebuild.outputs.result != 0 
         run: exit 1
