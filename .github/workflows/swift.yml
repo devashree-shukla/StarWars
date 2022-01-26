@@ -18,14 +18,26 @@ jobs:
       - name: Force Xcode 11
         run: sudo xcode-select -switch /Applications/Xcode.app
       - name: Build App
-        run: xcodebuild -project "StarWars2.xcodeproj" -scheme "StarWars2" -destination "generic/platform=iOS" -configuration Debug build CODE_SIGNING_ALLOWED=NO
+        run: xcodebuild 
+        -project "StarWars2.xcodeproj" 
+        -scheme "StarWars2" 
+        -destination "generic/platform=iOS" 
+        -configuration Debug build CODE_SIGNING_ALLOWED=NO
         env: 
          destination: ${{ matrix.destination }}
      
       - name: Test
         run: |
-          xcodebuild clean test -project StarWars2.xcodeproj -scheme StarWars2Tests -destination "[ 'platform:iOS Simulator, id:C991738B-6DC9-48F4-AF63-AC697D8F76D7, OS:15.0, name:iPhone 13' ]" -configuration Debug build CODE_SIGNING_ALLOWED=NO
-      
+          xcodebuild clean test 
+          -project StarWars2.xcodeproj 
+          -scheme StarWars2Tests 
+          -destination 'platform=iOS Simulator,name=iPhone 13'
+          -configuration Debug build CODE_SIGNING_ALLOWED=NO
+     
+     - name: Check Tests Passed
+        if: steps.xcodebuild.outputs.result != 0
+        run: exit 1
+        
       - name: Build App
         run: xcodebuild -project "StarWars2.xcodeproj" -scheme "StarWars2" -destination "generic/platform=iOS" -configuration Release build CODE_SIGNING_ALLOWED=NO
         env: 
