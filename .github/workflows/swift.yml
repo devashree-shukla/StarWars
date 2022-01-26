@@ -24,7 +24,7 @@ jobs:
      
       - name: Test
         run: |
-          xcodebuild clean test -project StarWars2.xcodeproj -scheme StarWars2Tests -destination "generic/platform=iOS" -configuration Debug build CODE_SIGNING_ALLOWED=NO
+          xcodebuild clean test -project StarWars2.xcodeproj -scheme StarWars2Tests -destination "platform=iOS iOS=13.3 iPhone 13" -configuration Debug build CODE_SIGNING_ALLOWED=NO
       
       - name: Build App
         run: xcodebuild -project "StarWars2.xcodeproj" -scheme "StarWars2" -destination "generic/platform=iOS" -configuration Release build CODE_SIGNING_ALLOWED=NO
