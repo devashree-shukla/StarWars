@@ -17,7 +17,7 @@ public class Spices: NSManagedObject {
 extension Spices {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Spices> {
-        return NSFetchRequest<Spices>(entityName: "Spices")
+        return NSFetchRequest<Spices>(entityName: StarWars.spices.entityName)
     }
 
     @NSManaged public var averageHeight: String?
@@ -27,12 +27,12 @@ extension Spices {
     @NSManaged public var designation: String?
     @NSManaged public var edited: Date?
     @NSManaged public var eyeColors: String?
-    @NSManaged public var films: [Films]?
+    @NSManaged public var films: SpicesNSSecureCoding?
     @NSManaged public var hairColors: String?
     @NSManaged public var homeworld: String?
     @NSManaged public var language: String?
     @NSManaged public var name: String?
-    @NSManaged public var people: [Residents]?
+    @NSManaged public var people: SpicesNSSecureCoding?
     @NSManaged public var skinColors: String?
     @NSManaged public var relatedFilms: NSSet?
     @NSManaged public var relatedPeople: NSSet?

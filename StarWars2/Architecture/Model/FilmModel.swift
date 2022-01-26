@@ -12,9 +12,9 @@ import CoreData
 struct FilmModel: Codable {
     
     let director, producer: String
-//    let episodeid: String //TODO: Fix it later as it is crashing in API call
-    let opening_crawl: String
-    let releaseDate: Date
+    let episodeId: Int
+    let openingCrawl: String
+    let releaseDate: String
     let title: String
     let characters, species, vehicles, starships, planets: [String]
     let created, edited: String

@@ -17,7 +17,7 @@ public class Planets: NSManagedObject {
 extension Planets {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Planets> {
-        return NSFetchRequest<Planets>(entityName: "Planets")
+        return NSFetchRequest<Planets>(entityName: StarWars.planets.entityName)
     }
 
     @NSManaged public var climate: String?
@@ -73,6 +73,5 @@ extension Planets {
 }
 
 extension Planets : Identifiable {
-
+    
 }
-

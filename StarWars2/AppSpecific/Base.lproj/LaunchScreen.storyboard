@@ -18,18 +18,7 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchImage" translatesAutoresizingMaskIntoConstraints="NO" id="6wr-Tn-mut">
-                                <rect key="frame" x="20" y="44" width="374" height="818"/>
-                            </imageView>
-                        </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="6wr-Tn-mut" secondAttribute="trailing" constant="20" id="Dq0-dl-n91"/>
-                            <constraint firstItem="6wr-Tn-mut" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="20" id="EAY-L0-pCO"/>
-                            <constraint firstItem="6wr-Tn-mut" firstAttribute="top" secondItem="cAD-16-OGF" secondAttribute="bottom" id="Gca-jw-Gxh"/>
-                            <constraint firstItem="fLI-p0-7PC" firstAttribute="top" secondItem="6wr-Tn-mut" secondAttribute="bottom" id="nbm-FE-RUe"/>
-                        </constraints>
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
                 </viewController>
@@ -38,7 +27,4 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="launchImage" width="128" height="128"/>
-    </resources>
 </document>

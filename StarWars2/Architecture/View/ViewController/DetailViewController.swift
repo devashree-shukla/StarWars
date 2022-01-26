@@ -15,7 +15,7 @@ class DetailViewController: UIViewController {
         let viewModel = DetailViewModel()
         return viewModel
     }()
-    private var dataSource : TableCellDataSource<DetailRowViewCell, [String: Any]>!
+    private var dataSource : TableCellDataSource<DetailRowViewCell, (DetailDisplayFields, Any?)>!
     private var delegate : TableCellDelegate<UITableViewCell>!
     
     
@@ -32,9 +32,9 @@ extension DetailViewController {
     
     private func updateDataSource() {
         dataSource = TableCellDataSource(cellIdentifier: StoryboardIds.detailRowViewCell,
-                                         items: viewModel.items!,
+                                         items: viewModel.fields,
                                          configureCell: { (cell, data, index) in
-            cell.data = data
+            cell.field = data
         })
         
         delegate = TableCellDelegate(cellIdentifier: StoryboardIds.detailRowViewCell)

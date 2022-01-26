@@ -17,7 +17,7 @@ public class Residents: NSManagedObject {
 extension Residents {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Residents> {
-        return NSFetchRequest<Residents>(entityName: "Residents")
+        return NSFetchRequest<Residents>(entityName: StarWars.people.entityName)
     }
 
     @NSManaged public var birthYear: String?

@@ -17,7 +17,7 @@ class ListViewCell: UITableViewCell {
     
     // MARK: - Variables
     
-    var data: PlanetModel? {
+    var data: Planets? {
         
         didSet {
             configureCell()
@@ -43,7 +43,8 @@ extension ListViewCell {
     
     private func configureCell() {
         nameLabel.text = data?.name
-        descriptionLabel.text = data?.planetDescription
+        descriptionLabel.text = "Having"
+        //\(String(describing: data.)) residents and appeared in \(String(describing: data?.films?.count)) films. Also, having \(String(describing: data?.climate)) and \(String(describing: data?.surfaceWater)) % water sources "
     }
     
 }

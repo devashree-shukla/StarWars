@@ -11,7 +11,16 @@ import CoreData
 
 class CoreDataHelper {
     
-    class func createPlanetEntityFrom(_ model: PlanetModel, context: NSManagedObjectContext) -> NSManagedObject? {
+    private static let currentContext = CoreDataConnection.sharedInstance.persistentContainer.viewContext
+    
+    class func saveObjectsInEntity(objects: [PlanetModel], _ completion: (_ result: Bool) -> Void) {
+        let obj = objects.map { createPlanet($0, context: currentContext) }
+        print(obj)
+        CoreDataConnection.sharedInstance.saveDatabase(completion: completion)
+    }
+    
+    
+    class func createPlanet(_ model: PlanetModel, context: NSManagedObjectContext) -> NSManagedObject? {
         if let entity = NSEntityDescription.insertNewObject(forEntityName: "Planets",
                                                                   into: context) as? Planets {
             entity.name = model.name
@@ -26,39 +35,48 @@ class CoreDataHelper {
             entity.created = model.created.toDate()
             entity.climate = model.climate
             
-            entity.films = model.filmArray?.map { createFilmEntityFrom($0, context: context) } as? [Films]
-            entity.residents = model.residentArray?.map { createPeopleEntityFrom($0, context: context) } as? [Residents]
-
+            if let residents = model.residentArray?.map({ createPeople($0, context: context) }) as? [Residents] {
+                entity.residents = residents
+            }
+//            if let items = model.filmArray?.map({ createFilm($0, context: context) }) as? [Films] {
+//                entity.films = PlanetsNSSecureCoding(films: entit)
+//            }
             return entity
         }
         return nil
     }
     
     
-    class func saveFilmsEntityIn(_ field: String, _ model: [PeopleModel], context: NSManagedObjectContext) {
-        let fetchRequest: NSFetchRequest<Planets>
-        fetchRequest = Planets.fetchRequest()
-
-        fetchRequest.predicate = NSPredicate(
-            format: "name MATCHES", field
-        )
-
-        // Perform the fetch request to get the objects
-        // matching the predicate
-        if let object = try? context.fetch(fetchRequest).first {
-            object.residents = model.map { createPeopleEntityFrom($0, context: context) } as? [Residents]
-        }
-        
-        do {
-            try? context.save()
-        } catch let error {
-            print(error)
-        }
+    class func getSelectedItem(name: String) -> Planets? {
+        let fetchRequest: NSFetchRequest<Planets> = Planets.fetchRequest()
+        let search = NSPredicate(format: "name == %@", name)
+        print("search: \(search)")
+//        fetchRequest.predicate = search
+        fetchRequest.returnsObjectsAsFaults = false
+        fetchRequest.resultType = .managedObjectResultType
+//        fetchRequest.propertiesToFetch = ["name"]
+        print("request predicate: \(String(describing: fetchRequest.predicate))")
+            let items = try? currentContext.fetch(fetchRequest)
+            return items?.first
     }
+    
+    
+    class func getAllPlanets() -> [Planets] {
+        let planets: [Planets] = Planets.findAll(in: currentContext)
+        return planets
+    }
+    
+    
+    class func numberOfPlanets() -> Int? {
+        Planets.getCount(in: currentContext)
+    }
+    
+}
 
+
+extension CoreDataHelper {
     
-    
-    class func createPeopleEntityFrom(_ model: PeopleModel, context: NSManagedObjectContext) -> NSManagedObject? {
+    class func createPeople(_ model: PeopleModel, context: NSManagedObjectContext) -> NSManagedObject? {
         if let entity = NSEntityDescription.insertNewObject(forEntityName: "Residents",
                                                                   into: context) as? Residents {
             entity.birthYear = model.birthYear
@@ -73,41 +91,48 @@ class CoreDataHelper {
             entity.created = model.created.toDate()
             entity.skinColor = model.skinColor
             
-            entity.films = model.filmArray?.map { createFilmEntityFrom($0, context: context) } as? [Films]
-            entity.starships = model.starshipsArray?.map { createStarshipsEntityFrom($0, context: context) } as? [Starships]
-            entity.species = model.speciesArray?.map { createSpicesEntityFrom($0, context: context) } as? [Spices]
-            entity.vehicles = model.vehiclesArray?.map { createVehiclesEntityFrom($0, context: context) } as? [Vehicles]
+//            entity.films = model.filmArray?.map { createFilm($0, context: context) } as? [Films]
+//            entity.starships = model.starshipsArray?.map { createStarships($0, context: context) } as? [Starships]
+//            entity.species = model.speciesArray?.map { createSpices($0, context: context) } as? [Spices]
+//            entity.vehicles = model.vehiclesArray?.map { createVehicles($0, context: context) } as? [Vehicles]
             
             return entity
         }
         return nil
     }
     
+}
+
+
+extension CoreDataHelper {
     
-    class func createFilmEntityFrom(_ model: FilmModel, context: NSManagedObjectContext) -> NSManagedObject? {
-        if let entity = NSEntityDescription.insertNewObject(forEntityName: "Film",
-                                                                  into: context) as? Films {
-//            entity.episodeid = model.birthYear
+    class func createFilm(_ model: FilmModel, context: NSManagedObjectContext) -> NSManagedObject? {
+        if let entity = NSEntityDescription.insertNewObject(forEntityName: "Films", into: context) as? Films {
+            entity.episodeid = model.episodeId.description
             entity.producer = model.producer
-//            entity.openingCrawl = model.opening_crawl
-//            entity.releaseDate = model.releaseDate
+            entity.openingCrawl = model.openingCrawl
+            entity.releaseDate = model.releaseDate
             entity.title = model.title
             entity.edited = model.edited.toDate()
             entity.created = model.created.toDate()
             entity.director = model.director
             
-            entity.planets = model.planetsArray?.map { createPlanetEntityFrom($0, context: context) } as? [Planets]
-            entity.characters = model.charactersArray?.map { createPeopleEntityFrom($0, context: context) } as? [Residents]
-            entity.starships = model.starshipsArray?.map { createStarshipsEntityFrom($0, context: context) } as? [Starships]
-            entity.species = model.speciesArray?.map { createSpicesEntityFrom($0, context: context) } as? [Spices]
-            entity.vehicles = model.vehiclesArray?.map { createVehiclesEntityFrom($0, context: context) } as? [Vehicles]
+//            entity.planets = model.planetsArray?.map { createPlanet($0, context: context) } as? [Planets]
+//            entity.characters = model.charactersArray?.map { createPeople($0, context: context) } as? [Residents]
+//            entity.starships = model.starshipsArray?.map { createStarships($0, context: context) } as? [Starships]
+//            entity.species = model.speciesArray?.map { createSpices($0, context: context) } as? [Spices]
+//            entity.vehicles = model.vehiclesArray?.map { createVehicles($0, context: context) } as? [Vehicles]
             return entity
         }
         return nil
     }
     
+}
+
+
+extension CoreDataHelper {
     
-    class func createStarshipsEntityFrom(_ model: StarshipModel, context: NSManagedObjectContext) -> NSManagedObject? {
+    class func createStarship(_ model: StarshipModel, context: NSManagedObjectContext) -> NSManagedObject? {
         if let entity = NSEntityDescription.insertNewObject(forEntityName: "Starships",
                                                                   into: context) as? Starships {
             return entity
@@ -115,8 +140,12 @@ class CoreDataHelper {
         return nil
     }
     
+}
+
+
+extension CoreDataHelper {
     
-    class func createSpicesEntityFrom(_ model: SpicesModel, context: NSManagedObjectContext) -> NSManagedObject? {
+    class func createSpice(_ model: SpicesModel, context: NSManagedObjectContext) -> NSManagedObject? {
         if let entity = NSEntityDescription.insertNewObject(forEntityName: "Spices",
                                                                   into: context) as? Spices {
             return entity
@@ -124,8 +153,13 @@ class CoreDataHelper {
         return nil
     }
     
+}
+
+
+extension CoreDataHelper {
     
-    class func createVehiclesEntityFrom(_ model: VehicleModel, context: NSManagedObjectContext) -> NSManagedObject? {
+    
+    class func createVehicle(_ model: VehicleModel, context: NSManagedObjectContext) -> NSManagedObject? {
         if let entity = NSEntityDescription.insertNewObject(forEntityName: "Vehicles",
                                                                   into: context) as? Vehicles {
             return entity

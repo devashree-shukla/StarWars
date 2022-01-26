@@ -1,20 +1,23 @@
 //
-//  Vehicles+CoreDataProperties.swift
-//  
+//  Vehicles.swift
+//  StarWars2
 //
 //  Created by Devashree KS on 25/01/22.
-//
-//  This file was automatically generated and should not be edited.
 //
 
 import Foundation
 import CoreData
 
+@objc(Vehicles)
+public class Vehicles: NSManagedObject {
+
+}
+
 
 extension Vehicles {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Vehicles> {
-        return NSFetchRequest<Vehicles>(entityName: "Vehicles")
+        return NSFetchRequest<Vehicles>(entityName: StarWars.vehicles.entityName)
     }
 
     @NSManaged public var cargoCapacity: String?
@@ -23,14 +26,14 @@ extension Vehicles {
     @NSManaged public var created: Date?
     @NSManaged public var crew: String?
     @NSManaged public var edited: Date?
-    @NSManaged public var films: NSObject?
+    @NSManaged public var films: VehiclesNSSecureCoding?
     @NSManaged public var length: String?
     @NSManaged public var manufacturer: String?
     @NSManaged public var maxAtmospheringSpeed: String?
     @NSManaged public var model: String?
     @NSManaged public var name: String?
     @NSManaged public var passengers: String?
-    @NSManaged public var pilots: NSObject?
+    @NSManaged public var pilots: VehiclesNSSecureCoding?
     @NSManaged public var vehicleClass: String?
     @NSManaged public var relatedFilms: NSSet?
     @NSManaged public var relatedPilots: NSSet?
@@ -74,3 +77,4 @@ extension Vehicles {
 extension Vehicles : Identifiable {
 
 }
+

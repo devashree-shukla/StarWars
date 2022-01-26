@@ -17,7 +17,7 @@ public class Starships: NSManagedObject {
 extension Starships {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Starships> {
-        return NSFetchRequest<Starships>(entityName: "Starships")
+        return NSFetchRequest<Starships>(entityName: StarWars.starships.entityName)
     }
 
     @NSManaged public var cargoCapacity: String?
@@ -26,7 +26,7 @@ extension Starships {
     @NSManaged public var created: Date?
     @NSManaged public var crew: String?
     @NSManaged public var edited: Date?
-    @NSManaged public var films: [Films]?
+    @NSManaged public var films: StarshipsNSSecureCoding?
     @NSManaged public var hyperdriveRating: String?
     @NSManaged public var length: String?
     @NSManaged public var manufacturer: String?
@@ -35,7 +35,7 @@ extension Starships {
     @NSManaged public var model: String?
     @NSManaged public var name: String?
     @NSManaged public var passengers: String?
-    @NSManaged public var pilots: [Residents]?
+    @NSManaged public var pilots: StarshipsNSSecureCoding?
     @NSManaged public var starshipClass: String?
     @NSManaged public var relatedFilms: NSSet?
     @NSManaged public var relatedPilots: NSSet?

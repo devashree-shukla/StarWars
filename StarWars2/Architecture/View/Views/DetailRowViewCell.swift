@@ -17,9 +17,10 @@ class DetailRowViewCell: UITableViewCell {
     
     // MARK: - Variables
     
-    var data: [String: Any]? {
+    var field: (DetailDisplayFields, Any?)? {
         didSet {
-            setupView()
+            setupViewForCellType()
+            setTitle()
             configureCell()
         }
     }
@@ -38,8 +39,8 @@ class DetailRowViewCell: UITableViewCell {
 
 extension DetailRowViewCell {
     
-    func setupView() {
-        switch DetailDisplayFields.displayFieldType(data?.keys.first! ?? "").0 {
+    private func setupViewForCellType() {
+        switch field?.0 {
         case .terrain, .climate:
             descriptionLabel.isHidden = true
             stackView.isHidden = false
@@ -53,39 +54,35 @@ extension DetailRowViewCell {
     }
     
     
+    private func setTitle() {
+        titleLabel.text = field?.0.rawValue.capitalized
+    }
+    
+    
     func configureCell() {
-        titleLabel.text = DetailDisplayFields.displayFieldType(data?.keys.first ?? "").1
         stackView.removeAllSubviews()
-        switch DetailDisplayFields.displayFieldType(data?.keys.first ?? "").0 {
-        case .created, .edited :
-            descriptionLabel.text = (data?.values.first as? String)?.toDate()?.description
-        case .terrain, .climate:
-            (data?.values.first as? String)?.split(separator: ",").forEach {
-                self.createLabel(String($0))
+        descriptionLabel.text = ""
+        if let value = (field?.1 as? String) {
+            switch field?.0 {
+            case .terrain, .climate:
+                value.split(separator: ",").forEach {
+                    self.createLabel(String($0))
+                }
+            case .surfaceWater:
+                descriptionLabel.text = value.percetageString
+            case .rotationPeriod:
+                descriptionLabel.text = value.hoursString
+            case .orbitalPeriod:
+                descriptionLabel.text = value.daysString
+            case .gravity:
+                descriptionLabel.text = value.gravityString
+            case .diameter:
+                descriptionLabel.text = value.diameterString
+            case .films, .residents: break
+            default: descriptionLabel.text = value
             }
-            print(stackView.subviews.count)
-        case .surfaceWater:
-            if let k = data?.values.first as? String {
-                descriptionLabel.text = k.percetageString
-            }
-        case .rotationPeriod:
-            if let k = data?.values.first as? String {
-                descriptionLabel.text = k.hoursString
-            }
-        case .orbitalPeriod:
-            if let k = data?.values.first as? String {
-                descriptionLabel.text = k.daysString
-            }
-        case .gravity:
-            if let k = data?.values.first as? String {
-                descriptionLabel.text = k.gravityString
-            }
-        case .diameter:
-            if let k = data?.values.first as? String {
-                descriptionLabel.text = k.diameterString
-            }
-        case .films, .residents: break
-        default: descriptionLabel.text = data?.values.first as? String
+        } else if let value = (field?.1 as? Date) {
+            descriptionLabel.text = value.description
         }
     }
     

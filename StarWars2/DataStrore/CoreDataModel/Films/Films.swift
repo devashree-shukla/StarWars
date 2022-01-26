@@ -1,35 +1,38 @@
 //
-//  Films+CoreDataProperties.swift
-//  
+//  Films.swift
+//  StarWars2
 //
 //  Created by Devashree KS on 25/01/22.
-//
-//  This file was automatically generated and should not be edited.
 //
 
 import Foundation
 import CoreData
 
 
+public class Films: NSManagedObject {
+
+}
+
+
 extension Films {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Films> {
-        return NSFetchRequest<Films>(entityName: "Films")
+        return NSFetchRequest<Films>(entityName: StarWars.films.entityName)
     }
 
-    @NSManaged public var characters: NSObject?
+    @NSManaged public var characters: [Residents]?
     @NSManaged public var created: Date?
     @NSManaged public var director: String?
     @NSManaged public var edited: Date?
     @NSManaged public var episodeid: String?
     @NSManaged public var openingCrawl: String?
-    @NSManaged public var planets: NSObject?
+    @NSManaged public var planets: [Planets]?
     @NSManaged public var producer: String?
     @NSManaged public var releaseDate: String?
-    @NSManaged public var species: NSObject?
-    @NSManaged public var starships: NSObject?
+    @NSManaged public var species: [Spices]?
+    @NSManaged public var starships: [Starships]?
     @NSManaged public var title: String?
-    @NSManaged public var vehicles: NSObject?
+    @NSManaged public var vehicles: [Vehicles]?
     @NSManaged public var relatedCharacters: NSSet?
     @NSManaged public var relatedPlanets: NSSet?
     @NSManaged public var relatedSpices: NSSet?

@@ -16,7 +16,7 @@ class ListViewController: UIViewController {
         let viewModel = ListViewModel()
         return viewModel
     }()
-    private var dataSource : TableCellDataSource<UITableViewCell, PlanetModel>!
+    private var dataSource : TableCellDataSource<UITableViewCell, Planets>!
     private var delegate : TableCellDelegate<UITableViewCell>!
     
     
@@ -27,17 +27,9 @@ class ListViewController: UIViewController {
             self?.view.hideDefaultActivityIndicator()
             self?.showAlert(msg: StarWarsConstants.Texts.errorMessage)
         }
-        viewModel.fetchData { [weak self] _ in
-            self?.viewModel.saveInCoreData()
-            self?.view.hideDefaultActivityIndicator()
-            DispatchQueue.main.async {
-                self?.updateDataSource()
-                self?.listTableView.dataSource = self?.dataSource
-                self?.listTableView.delegate = self?.delegate
-                self?.listTableView.reloadData()
-                self?.updatenavigationTitle()
-            }
-        }
+        
+        loadData()
+    
     }
 }
 
@@ -46,10 +38,24 @@ class ListViewController: UIViewController {
 
 extension ListViewController {
     
+    private func loadData() {
+        viewModel.fetchData { [weak self] _ in
+            DispatchQueue.main.async {
+                self?.view.hideDefaultActivityIndicator()
+                self?.updateDataSource()
+                self?.listTableView.dataSource = self?.dataSource
+                self?.listTableView.delegate = self?.delegate
+                self?.listTableView.reloadData()
+                self?.updatenavigationTitle()
+            }
+        }
+    }
+    
+    
     private func updateDataSource() {
         
         dataSource = TableCellDataSource(cellIdentifier: StoryboardIds.listViewCell,
-                                         items: viewModel.data,
+                                         items: viewModel.planetFromCoreData,
                                          configureCell: { (cell, data, index) in
             (cell as? ListViewCell)?.data = data
             (cell as? ListViewCell)?.titleLabel.text = "\(index + 1)".planetString
@@ -58,7 +64,13 @@ extension ListViewController {
         delegate = TableCellDelegate(cellIdentifier: StoryboardIds.listViewCell)
         
         delegate.didSelect = { i in
-            self.performSegue(withIdentifier: StoryboardIds.showDetailSegue, sender: self)
+            self.viewModel.selectItem(index: i) { [weak self] result in
+                if result == nil {
+                    self?.showAlert(msg: StarWarsConstants.Texts.errorMessage)
+                } else {
+                    self?.performSegue(withIdentifier: StoryboardIds.showDetailSegue, sender: self)
+                }
+            }
         }
         
     }
@@ -76,8 +88,8 @@ extension ListViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == StoryboardIds.showDetailSegue {
-            if let vc = segue.destination as? DetailViewController, let index = listTableView.indexPathForSelectedRow?.row {
-                vc.viewModel.item = viewModel.data[index]
+            if let vc = segue.destination as? DetailViewController {
+                vc.viewModel.item = viewModel.selectedItem
             }
         }
     }

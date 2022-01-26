@@ -11,11 +11,12 @@ import CoreData
 
 protocol ListViewModelProtocol {
     func fetchData(_ completion: ((Result<Bool, ErrorResult>) -> Void)?)
+    func selectItem(index: Int, _ completion: ((Planets?) -> Void)?)
     var onErrorHandling: ((ErrorResult?) -> Void)? { get set }
     var starWarsItem: StarWars { get set }
     var navigationTitle: String? { get }
-    var data: [PlanetModel] { get }
-    func saveInCoreData()
+    var planetFromCoreData: [Planets] { get }
+    var selectedItem: Planets? { get }
 }
 
 
@@ -24,17 +25,22 @@ class ListViewModel: ListViewModelProtocol {
     // MARK: - Input
     private var service: RouterProtocol?
     var starWarsItem: StarWars = .planets
-    var data: [PlanetModel] = []
-    private let currentContext = CoreDataConnection.sharedInstance.persistentContainer.viewContext
+    private var data: [PlanetModel] = []
     
     //MARK: - Output
     var onErrorHandling: ((ErrorResult?) -> Void)?
+    var selectedItem: Planets?
     var navigationTitle: String? {
         (starWarsItem.description) + "(\(data.count) records)"
     }
-    
+    var planetFromCoreData: [Planets] = []
+
     
     func fetchData(_ completion: ((Result<Bool, ErrorResult>) -> Void)? = nil) {
+        if let count = CoreDataHelper.numberOfPlanets(), count > 0 {
+            self.planetFromCoreData = CoreDataHelper.getAllPlanets()
+            completion?(Result.success(true))
+        } else {
         service = starWarsItem.serviceName
         guard let service = self.service else {
             onErrorHandling?(ErrorResult.custom(string: StarWarsConstants.Texts.errorMessage))
@@ -47,25 +53,77 @@ class ListViewModel: ListViewModelProtocol {
                 switch result {
                 case .success(let converter) :
                     self?.data = converter.results
-                    self?.saveInCoreData()
-                    completion?(Result.success(true))
-//                    self?.getData()
+                    self?.asyncCalls(completion)
                 case .failure(let error) :
                     self?.onErrorHandling?(ErrorResult.parser(string: StarWarsConstants.Texts.errorMessage))
                     completion?(Result.failure(error))
                 }
             }
         }
+        }
     }
     
     
-    func saveInCoreData() {
-        _ = data.map { CoreDataHelper.createPlanetEntityFrom($0, context: currentContext) }
-        do {
-            try currentContext.save()
-        } catch let error {
-            print(error)
-        }
+    func selectItem(index: Int, _ completion: ((Planets?) -> Void)?) {
+        selectedItem = CoreDataHelper.getSelectedItem(name: self.data[index].name)
+        completion?(selectedItem)
+    }
+    
+    func asyncCalls(_ completion: ((Result<Bool, ErrorResult>) -> Void)? = nil) {
+        let queue = OperationQueue()
+        let planetsGroup = DispatchGroup()
+            for (ith, planet) in self.data.enumerated() {
+                print("\(ith)===\(planet.name)===\(planet.residents.count)")
+                let peopleOperation = BlockOperation {
+                    for (jth, residentUrl) in planet.residents.enumerated() {
+                        planetsGroup.enter()
+                        if !planet.residents.isEmpty , let url = URL(string: residentUrl) {
+                            let peopleService: RouterProtocol? = APIRouter(url: url)
+                            peopleService?.fetchPeople ({ [weak self] result in
+                                print("\(jth)===\(planet.name)")
+                                    switch result {
+                                    case .success(let people):
+                                        self?.inititializeResidentsIfNeeded(index: ith, resident: people)
+                                        
+                                    case .failure(_): break
+                                    }
+                                planetsGroup.leave()
+                            })
+                        }
+                    }
+                }
+                queue.addOperation(peopleOperation)
+                
+                let filmOperation = BlockOperation {
+                    for (jth, filmsUrl) in planet.films.enumerated() {
+                        planetsGroup.enter()
+                        if !planet.films.isEmpty , let url = URL(string: filmsUrl) {
+                            let peopleService: RouterProtocol? = APIRouter(url: url)
+                            peopleService?.fetchFilm ({ [weak self] result in
+                                print("\(jth)===\(planet.name)")
+                                    switch result {
+                                    case .success(let film):
+                                        self?.inititializeFilmsIfNeeded(index: ith, film: film)
+                                        
+                                    case .failure(_): break
+                                    }
+                                planetsGroup.leave()
+                            })
+                        }
+                    }
+                }
+                queue.addOperation(filmOperation)
+                
+            
+            }
+        planetsGroup.notify(queue: .main) { [unowned self] in
+             print("PLANET GROUP SHOULD BE DONE")
+            CoreDataHelper.saveObjectsInEntity(objects: self.data) { result in
+                self.planetFromCoreData = CoreDataHelper.getAllPlanets()
+                 completion?(Result.success(true))
+             }
+         }
+        
     }
     
 }
@@ -78,8 +136,6 @@ class ListViewModel: ListViewModelProtocol {
             self.data[index].residentArray = []
         }
         self.data[index].residentArray?.append(resident)
-        
-        CoreDataHelper.saveFilmsEntityIn(self.data[index].name, [resident], context: currentContext)
     }
     
     
@@ -89,84 +145,5 @@ class ListViewModel: ListViewModelProtocol {
         }
         self.data[index].filmArray?.append(film)
     }
-    
-     
-     private func getData(_ completion: ((Result<Bool, ErrorResult>) -> Void)? = nil) {
-         let queue = OperationQueue()
 
-         let updateA = BlockOperation {
-             let group = DispatchGroup()
-             group.enter()
-             DispatchQueue.global().asyncAfter(deadline: .now() + 2.0, execute: {
-
-                 for (i, element) in self.data.enumerated() {
-                     for (_, element2) in element.residents.enumerated() {
-                         if let url = URL(string: element2) {
-                             let peopleService: RouterProtocol? = APIRouter(url: url)
-                             
-                             peopleService?.fetchPeople({ [weak self] result in
-                                 DispatchQueue.main.async {
-                                     switch result {
-                                     case .success(let people):
-                                         self?.inititializeResidentsIfNeeded(index: i, resident: people)
-                                         group.leave()
-                                     case .failure(let error):
-                                         completion?(Result.failure(error))
-                                         group.leave()
-                                     }
-                                 }
-                             })
-                         }
-                     }
-                 }
-             })
-             group.wait()
-             print("updateB done")
-
-         }
-         queue.addOperation(updateA)
-
-//         let updateB = BlockOperation {
-//             let group = DispatchGroup()
-//             group.enter()
-//             DispatchQueue.global().asyncAfter(deadline: .now() + 2.0, execute: {
-//
-//                 for (j, element) in self.data.enumerated() {
-//                     for (_, element2) in element.films.enumerated() {
-//                         if let url = URL(string: element2) {
-//                             let filmService: RouterProtocol? = APIRouter(url: url)
-//                             filmService?.fetchFilm { [weak self] result in
-//                                 DispatchQueue.main.async {
-//                                     switch result {
-//                                     case .success(let film):
-//                                         self?.inititializeFilmsIfNeeded(index: j, film: film)
-//                                         group.leave()
-//                                     case .failure(let error):
-//                                         completion?(Result.failure(error))
-//                                         group.leave()
-//                                     }
-//                                 }
-//                             }
-//                         }
-//                         group.leave()
-//                     }
-//                 }
-//                 group.leave()
-//             })
-//             group.wait()
-//             print("updateB done")
-//         }
-//         queue.addOperation(updateB)
-         let doSomethingWithAandB = BlockOperation {
-             print("doSomethingWithAandB")
-//             completion?(Result.success(true))
-             
-         }
-         doSomethingWithAandB.addDependency(updateA)
-//         doSomethingWithAandB.addDependency(updateB)
-         queue.addOperation(doSomethingWithAandB)
-         
-         queue.waitUntilAllOperationsAreFinished()
-         completion?(Result.success(true))
-     }
-}
+ }
