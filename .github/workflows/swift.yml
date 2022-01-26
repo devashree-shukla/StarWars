@@ -10,11 +10,13 @@ jobs:
     runs-on: macos-latest
     strategy:
         matrix:
-          destination: [ platform=iOS Simulator, OS=15.0, name=iPhone 13 ]
+          destination: [ 'generic/platform=iOS' ]
 
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Force Xcode 11
+        run: sudo xcode-select -switch /Applications/Xcode_11.3.app
       - name: Build
         run: |
           xcodebuild clean build -project StarWars2.xcodeproj -scheme StarWars2 -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
@@ -23,5 +25,7 @@ jobs:
       - name: Test
         run: |
           xcodebuild clean test -project StarWars2.xcodeproj -scheme StarWars2Tests -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
+      - name: Build App
+        run: xcodebuild -project "MyApp.xcodeproj" -scheme "MyApp" -destination "generic/platform=iOS" -configuration Release build CODE_SIGNING_ALLOWED=NO
         env: 
          destination: ${{ matrix.destination }}
