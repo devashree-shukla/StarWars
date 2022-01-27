@@ -129,6 +129,21 @@ An iOS application about Star Wars that allows users to see all reelated informa
 
 ## Testing Approach 
 
+
+## CI/CD
+
+## Swift Lint 
+
+- Issues are fixed using Swift lint tool. Removed all warnings to keep the code clean.
+
+- Added below script in Build Phases. (Can be removed and add on need basis)
+
+- Enabled auto correct as below commands in terminal :
+    cd /Users/devashreeks/Desktop/(PROJECT_DIRECTORY)
+    swiftlint autocorrect
+    
+Above steps to bee followed before any push request to succeed CI/CD pipelines
+
 ## Other Wireframes for future improvements and new features 
 
 
