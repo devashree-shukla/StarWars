@@ -17,9 +17,6 @@ jobs:
     steps:
       - name: Checkout    # Check out step
       - uses: actions/checkout@v2
-      #- uses: fwal/setup-swift@2040b795e5c453c3a05fcb8316496afc8a74f192
-       # with:
-        #  swift-version: "5.3.3"
       
       - name: Force Xcode 11    # Load xcode
         run: sudo xcode-select -switch /Applications/Xcode.app
@@ -29,9 +26,9 @@ jobs:
         env: 
          destination: ${{ matrix.destination }}
      
-      - name: Test    # Run tests
-        run: |    # | for multipline command
-          swift test
+      #- name: Test    # Run tests
+       # run: |    # | for multipline command
+        #  swift test
           # xcodebuild clean test -project StarWars2.xcodeproj -scheme StarWars2 -destination 'platform=iOS Simulator,id=E90AC0C5-6DA1-4BD7-83DB-12A526D8F068,OS=15.0,name=iPhone 13 Pro Max' test
      
       - name: Check Tests Passed    # Verify test status
