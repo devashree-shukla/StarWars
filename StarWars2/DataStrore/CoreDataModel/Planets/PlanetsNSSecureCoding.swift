@@ -12,22 +12,18 @@ public class PlanetsNSSecureCoding: NSObject, NSSecureCoding {
 
     public static var supportsSecureCoding: Bool = true
 
-    var peopleList: [Residents]?
-//    var filmList: [Films]?
+    var planetsList: [Planets]?
 
-    required init(questions: [Residents]?, films: [Films]?) {
-        self.peopleList = questions
-//        self.filmList = films
+    required init(planetsList: [Planets]?) {
+        self.planetsList = planetsList
     }
 
     public func encode(with coder: NSCoder) {
-        coder.encode(peopleList, forKey: "residents")
-//        coder.encode(filmList, forKey: "films")
-
+        coder.encode(planetsList, forKey: "planets")
     }
 
     required public init?(coder: NSCoder) {
-        peopleList = coder.decodeObject(of: NSArray.self, forKey: "residents") as? [Residents] ?? []
-//        filmList = coder.decodeObject(of: NSArray.self, forKey: "films") as? Array<Films> ?? []
+        planetsList = coder.decodeObject(of: NSArray.self, forKey: "planets") as? [Planets] ?? []
     }
+
 }

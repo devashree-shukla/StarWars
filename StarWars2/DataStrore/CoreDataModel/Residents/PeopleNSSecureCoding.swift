@@ -20,13 +20,13 @@ public class PeopleNSSecureCoding: NSObject, NSSecureCoding {
     }
 
     public func encode(with coder: NSCoder) {
-        coder.encode(peopleList, forKey: "residents")
+        coder.encode(peopleList, forKey: "people")
 
     }
 
     required public init?(coder: NSCoder) {
 
-        peopleList = coder.decodeObject(of: NSArray.self, forKey: "residents") as? [Residents] ?? []
+        peopleList = coder.decodeObject(of: NSArray.self, forKey: "people") as? [Residents] ?? []
 
     }
 }

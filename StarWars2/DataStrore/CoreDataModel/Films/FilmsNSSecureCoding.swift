@@ -12,37 +12,52 @@ public class FilmsNSSecureCoding: NSObject, NSSecureCoding {
 
     public static var supportsSecureCoding: Bool = true
 
-    var charactersList: [Residents]?
-    var planetsList: [Planets]?
-    var spicesList: [Spices]?
-    var starshipsList: [Starships]?
-    var vehiclesList: [Vehicles]?
+    var filmList: [Films]?
 
-    required init(charactersList: [Residents]?, planetsList: [Planets]?, spicesList: [Spices]?,
-                  starshipsList: [Starships]?, vehiclesList: [Vehicles]?) {
-        self.charactersList = charactersList
-        self.planetsList = planetsList
-        self.spicesList = spicesList
-        self.starshipsList = starshipsList
-        self.vehiclesList = vehiclesList
+    required init(filmsList: [Films]?) {
+        self.filmList = filmsList
     }
 
     public func encode(with coder: NSCoder) {
-        coder.encode(charactersList, forKey: "characters")
-        coder.encode(planetsList, forKey: "planets")
-//        coder.encode(spicesList, forKey: "spices")
-//        coder.encode(starshipsList, forKey: "starships")
-//        coder.encode(vehiclesList, forKey: "vehicles")
+        coder.encode(filmList, forKey: "films")
     }
 
     required public init?(coder: NSCoder) {
-
-        charactersList = coder.decodeObject(of: NSArray.self, forKey: "characters") as? [Residents] ?? []
-        planetsList = coder.decodeObject(of: NSArray.self, forKey: "planets") as? [Planets] ?? []
+        filmList = coder.decodeObject(of: NSArray.self, forKey: "films") as? [Films] ?? []
+    }
+//    public static var supportsSecureCoding: Bool = true
+//
+//    var charactersList: [Residents]?
+//    var planetsList: [Planets]?
+//    var spicesList: [Spices]?
+//    var starshipsList: [Starships]?
+//    var vehiclesList: [Vehicles]?
+//
+//    required init(charactersList: [Residents]?, planetsList: [Planets]?, spicesList: [Spices]?,
+//                  starshipsList: [Starships]?, vehiclesList: [Vehicles]?) {
+//        self.charactersList = charactersList
+//        self.planetsList = planetsList
+//        self.spicesList = spicesList
+//        self.starshipsList = starshipsList
+//        self.vehiclesList = vehiclesList
+//    }
+//
+//    public func encode(with coder: NSCoder) {
+//        coder.encode(charactersList, forKey: "characters")
+//        coder.encode(planetsList, forKey: "planets")
+//        coder.encode(spicesList, forKey: "spices")
+//        coder.encode(starshipsList, forKey: "starships")
+//        coder.encode(vehiclesList, forKey: "vehicles")
+//    }
+//
+//    required public init?(coder: NSCoder) {
+//
+//        charactersList = coder.decodeObject(of: NSArray.self, forKey: "characters") as? [Residents] ?? []
+//        planetsList = coder.decodeObject(of: NSArray.self, forKey: "planets") as? [Planets] ?? []
 //        spicesList = coder.decodeObject(of: NSArray.self, forKey: "spices") as? Array<Spices> ?? []
 //        starshipsList = coder.decodeObject(of: NSArray.self, forKey: "starships") as? Array<Starships> ?? []
 //        vehiclesList = coder.decodeObject(of: NSArray.self, forKey: "vehicles") as? Array<Vehicles> ?? []
-
-    }
+//
+//    }
 
 }

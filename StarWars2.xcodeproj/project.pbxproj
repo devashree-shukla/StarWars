@@ -11,24 +11,12 @@
 		911B52E1279D037B001A8169 /* TableCellDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911B52E0279D037B001A8169 /* TableCellDataSource.swift */; };
 		911B52E5279D0986001A8169 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911B52E4279D0986001A8169 /* HomeViewModel.swift */; };
 		917F377627A1243E006BA221 /* DetailDisplayFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917F377527A1243E006BA221 /* DetailDisplayFields.swift */; };
-		917F37A427A1360B006BA221 /* Films.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917F379827A1360B006BA221 /* Films.swift */; };
 		917F37A627A1360B006BA221 /* Residents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917F379C27A1360B006BA221 /* Residents.swift */; };
 		917F37A727A1360B006BA221 /* Planets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917F379F27A1360B006BA221 /* Planets.swift */; };
 		917F37AB27A1362A006BA221 /* PlanetsAttributeTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917F37AA27A1362A006BA221 /* PlanetsAttributeTransformer.swift */; };
 		917F37AD27A1365F006BA221 /* PlanetsNSSecureCoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917F37AC27A1365F006BA221 /* PlanetsNSSecureCoding.swift */; };
 		917F37AF27A13681006BA221 /* PeopleAttributeTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917F37AE27A13681006BA221 /* PeopleAttributeTransformer.swift */; };
 		917F37B127A13687006BA221 /* PeopleNSSecureCoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917F37B027A13687006BA221 /* PeopleNSSecureCoding.swift */; };
-		917F37B527A136E2006BA221 /* FilmsNSSecureCoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917F37B427A136E2006BA221 /* FilmsNSSecureCoding.swift */; };
-		917F37B727A1373A006BA221 /* FilmsAttributeTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917F37B627A1373A006BA221 /* FilmsAttributeTransformer.swift */; };
-		917F37DB27A174CB006BA221 /* Starships.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917F37D027A174CB006BA221 /* Starships.swift */; };
-		917F37DE27A174CB006BA221 /* Spices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917F37D427A174CB006BA221 /* Spices.swift */; };
-		917F37E027A174CB006BA221 /* Vehicles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917F37D727A174CB006BA221 /* Vehicles.swift */; };
-		917F37E227A1822B006BA221 /* StarshipsAttributeTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917F37CE27A174CB006BA221 /* StarshipsAttributeTransformer.swift */; };
-		917F37E327A1822B006BA221 /* VehiclesAttributeTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917F37D627A174CB006BA221 /* VehiclesAttributeTransformer.swift */; };
-		917F37E427A1822B006BA221 /* SpicesAttributeTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917F37D327A174CB006BA221 /* SpicesAttributeTransformer.swift */; };
-		917F37E527A1822B006BA221 /* StarshipsNSSecureCoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917F37CF27A174CB006BA221 /* StarshipsNSSecureCoding.swift */; };
-		917F37E627A1822B006BA221 /* VehiclesNSSecureCoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917F37D827A174CB006BA221 /* VehiclesNSSecureCoding.swift */; };
-		917F37E727A1822B006BA221 /* SpicesNSSecureCoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917F37D227A174CB006BA221 /* SpicesNSSecureCoding.swift */; };
 		917F37E927A19AEA006BA221 /* Planets+Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917F37E827A19AEA006BA221 /* Planets+Operations.swift */; };
 		9180036B279DFA5C00F0FEDD /* ParserHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9180036A279DFA5C00F0FEDD /* ParserHelper.swift */; };
 		9180036E279DFA8E00F0FEDD /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9180036D279DFA8E00F0FEDD /* Result.swift */; };
@@ -46,6 +34,18 @@
 		9180039B279E08A100F0FEDD /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9180039A279E08A100F0FEDD /* ListViewModel.swift */; };
 		9180039F279E38D300F0FEDD /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9180039E279E38D300F0FEDD /* UIViewController.swift */; };
 		918003A3279E4F9700F0FEDD /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918003A2279E4F9700F0FEDD /* DetailViewModel.swift */; };
+		91BCC50627A3593900D01392 /* Films.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917F379827A1360B006BA221 /* Films.swift */; };
+		91BCC50727A3599600D01392 /* FilmsNSSecureCoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917F37B427A136E2006BA221 /* FilmsNSSecureCoding.swift */; };
+		91BCC50827A3599600D01392 /* FilmsAttributeTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917F37B627A1373A006BA221 /* FilmsAttributeTransformer.swift */; };
+		91BCC50927A3599D00D01392 /* VehiclesAttributeTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917F37D627A174CB006BA221 /* VehiclesAttributeTransformer.swift */; };
+		91BCC50A27A3599D00D01392 /* Vehicles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917F37D727A174CB006BA221 /* Vehicles.swift */; };
+		91BCC50B27A3599D00D01392 /* VehiclesNSSecureCoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917F37D827A174CB006BA221 /* VehiclesNSSecureCoding.swift */; };
+		91BCC50C27A3599D00D01392 /* SpicesNSSecureCoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917F37D227A174CB006BA221 /* SpicesNSSecureCoding.swift */; };
+		91BCC50D27A3599D00D01392 /* SpicesAttributeTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917F37D327A174CB006BA221 /* SpicesAttributeTransformer.swift */; };
+		91BCC50E27A3599D00D01392 /* StarshipsNSSecureCoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917F37CF27A174CB006BA221 /* StarshipsNSSecureCoding.swift */; };
+		91BCC50F27A3599D00D01392 /* Starships.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917F37D027A174CB006BA221 /* Starships.swift */; };
+		91BCC51027A3599D00D01392 /* Spices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917F37D427A174CB006BA221 /* Spices.swift */; };
+		91BCC51127A3599D00D01392 /* StarshipsAttributeTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917F37CE27A174CB006BA221 /* StarshipsAttributeTransformer.swift */; };
 		91C167D5279FA3EB007244D3 /* StarWars2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 91C167D3279FA3EB007244D3 /* StarWars2.xcdatamodeld */; };
 		91C16840279FBE20007244D3 /* FilmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CBCF02279F647A00557A53 /* FilmModel.swift */; };
 		91C16841279FBE23007244D3 /* PeopleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CBCF06279F647A00557A53 /* PeopleModel.swift */; };
@@ -542,7 +542,6 @@
 				91D64055279CC2C4003D9C21 /* Sources */,
 				91D64056279CC2C4003D9C21 /* Frameworks */,
 				91D64057279CC2C4003D9C21 /* Resources */,
-				91241C1F27A252C3002F49EC /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -660,46 +659,29 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		91241C1F27A252C3002F49EC /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then  \nswiftlint\nelse  \necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		91D64055279CC2C4003D9C21 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				917F37AB27A1362A006BA221 /* PlanetsAttributeTransformer.swift in Sources */,
-				917F37E527A1822B006BA221 /* StarshipsNSSecureCoding.swift in Sources */,
+				91BCC50827A3599600D01392 /* FilmsAttributeTransformer.swift in Sources */,
 				91C743AF27A03C5800F32814 /* VehicleModel.swift in Sources */,
 				911B52E5279D0986001A8169 /* HomeViewModel.swift in Sources */,
 				91800388279E046300F0FEDD /* Parceable.swift in Sources */,
 				91C167D5279FA3EB007244D3 /* StarWars2.xcdatamodeld in Sources */,
 				918003A3279E4F9700F0FEDD /* DetailViewModel.swift in Sources */,
+				91BCC51027A3599D00D01392 /* Spices.swift in Sources */,
+				91BCC51127A3599D00D01392 /* StarshipsAttributeTransformer.swift in Sources */,
 				91CBCF0A279F647A00557A53 /* StarWars.swift in Sources */,
 				91800380279E036800F0FEDD /* ReachabilityError.swift in Sources */,
 				91D640E1279CD5F3003D9C21 /* DetailViewController.swift in Sources */,
 				917F37AD27A1365F006BA221 /* PlanetsNSSecureCoding.swift in Sources */,
 				9180039F279E38D300F0FEDD /* UIViewController.swift in Sources */,
+				91BCC50727A3599600D01392 /* FilmsNSSecureCoding.swift in Sources */,
 				91C16841279FBE23007244D3 /* PeopleModel.swift in Sources */,
-				917F37B727A1373A006BA221 /* FilmsAttributeTransformer.swift in Sources */,
 				91D640DD279CD5D5003D9C21 /* ListViewCell.swift in Sources */,
+				91BCC50627A3593900D01392 /* Films.swift in Sources */,
 				91800394279E051400F0FEDD /* NetworkMethod.swift in Sources */,
 				91D640E3279CD60E003D9C21 /* DetailRowViewCell.swift in Sources */,
 				911B52E1279D037B001A8169 /* TableCellDataSource.swift in Sources */,
@@ -707,45 +689,42 @@
 				917F37AF27A13681006BA221 /* PeopleAttributeTransformer.swift in Sources */,
 				91D640CF279CC6CD003D9C21 /* String.swift in Sources */,
 				91D640DF279CD5E9003D9C21 /* ListViewController.swift in Sources */,
+				91BCC50E27A3599D00D01392 /* StarshipsNSSecureCoding.swift in Sources */,
 				917F37B127A13687006BA221 /* PeopleNSSecureCoding.swift in Sources */,
 				91800392279E051400F0FEDD /* NetworkService.swift in Sources */,
 				911B52DF279D035B001A8169 /* TableCellDelegate.swift in Sources */,
 				91C743AD27A03C4700F32814 /* SpicesModel.swift in Sources */,
-				917F37DB27A174CB006BA221 /* Starships.swift in Sources */,
 				91D640CE279CC6CD003D9C21 /* Constants.swift in Sources */,
-				917F37E427A1822B006BA221 /* SpicesAttributeTransformer.swift in Sources */,
 				91D640CA279CC6CD003D9C21 /* AppDelegate.swift in Sources */,
+				91BCC50C27A3599D00D01392 /* SpicesNSSecureCoding.swift in Sources */,
 				917F37A627A1360B006BA221 /* Residents.swift in Sources */,
 				91C743AB27A03C3900F32814 /* StarshipModel.swift in Sources */,
 				917F377627A1243E006BA221 /* DetailDisplayFields.swift in Sources */,
-				917F37E327A1822B006BA221 /* VehiclesAttributeTransformer.swift in Sources */,
 				91CBCF07279F647A00557A53 /* Gender.swift in Sources */,
 				91800393279E051400F0FEDD /* NetworkHandler.swift in Sources */,
-				917F37DE27A174CB006BA221 /* Spices.swift in Sources */,
 				91CBCF09279F647A00557A53 /* BaseModel.swift in Sources */,
-				917F37E027A174CB006BA221 /* Vehicles.swift in Sources */,
 				91800383279E041100F0FEDD /* APIRouter.swift in Sources */,
-				917F37B527A136E2006BA221 /* FilmsNSSecureCoding.swift in Sources */,
 				91800381279E036800F0FEDD /* Reachability.swift in Sources */,
-				917F37E627A1822B006BA221 /* VehiclesNSSecureCoding.swift in Sources */,
-				917F37E727A1822B006BA221 /* SpicesNSSecureCoding.swift in Sources */,
 				91800396279E058800F0FEDD /* NetworkingDataSource.swift in Sources */,
-				917F37A427A1360B006BA221 /* Films.swift in Sources */,
 				9180036E279DFA8E00F0FEDD /* Result.swift in Sources */,
 				91C16840279FBE20007244D3 /* FilmModel.swift in Sources */,
-				917F37E227A1822B006BA221 /* StarshipsAttributeTransformer.swift in Sources */,
 				9180036B279DFA5C00F0FEDD /* ParserHelper.swift in Sources */,
 				91D640CC279CC6CD003D9C21 /* SceneDelegate.swift in Sources */,
 				91CBCEFF279F467900557A53 /* CoreDataHelper.swift in Sources */,
 				91D640DB279CD023003D9C21 /* HomeViewCell.swift in Sources */,
 				91D640D8279CCFAA003D9C21 /* HomeViewController.swift in Sources */,
+				91BCC50F27A3599D00D01392 /* Starships.swift in Sources */,
 				91800398279E065900F0FEDD /* APIManager.swift in Sources */,
 				917F37E927A19AEA006BA221 /* Planets+Operations.swift in Sources */,
+				91BCC50D27A3599D00D01392 /* SpicesAttributeTransformer.swift in Sources */,
 				91D640D5279CCDBC003D9C21 /* UIView.swift in Sources */,
 				91800370279DFAB100F0FEDD /* ErrorResult.swift in Sources */,
+				91BCC50927A3599D00D01392 /* VehiclesAttributeTransformer.swift in Sources */,
 				91CB9686279EE4D500CFCADD /* UIStackView.swift in Sources */,
 				9180038B279E049900F0FEDD /* RouterProtocol.swift in Sources */,
 				9180039B279E08A100F0FEDD /* ListViewModel.swift in Sources */,
+				91BCC50A27A3599D00D01392 /* Vehicles.swift in Sources */,
+				91BCC50B27A3599D00D01392 /* VehiclesNSSecureCoding.swift in Sources */,
 				917F37A727A1360B006BA221 /* Planets.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -928,7 +907,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 2FXG4UVN94;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = StarWars2/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Star Wars";
@@ -962,7 +941,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 2FXG4UVN94;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = StarWars2/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Star Wars";

@@ -58,12 +58,13 @@ class CoreDataHelper: NSObject {
 
     func setup() {
         applicationDocumentsDirectory()
+        ValueTransformer.setValueTransformer(PlanetsAttributeTransformer(), forName: .colorToDataTransformer)
         PeopleAttributeTransformer.register()
-        FilmsAttributeTransformer.register()
-        PlanetsAttributeTransformer.register()
-        SpicesAttributeTransformer.register()
-        StarshipsAttributeTransformer.register()
-        VehiclesAttributeTransformer.register()
+//        FilmsAttributeTransformer.register()
+//        PlanetsAttributeTransformer.register()
+//        SpicesAttributeTransformer.register()
+//        StarshipsAttributeTransformer.register()
+//        VehiclesAttributeTransformer.register()
     }
 }
 
@@ -139,12 +140,12 @@ extension CoreDataHelper {
             entity.created = model.created.toDate()
             entity.climate = model.climate
 
-//            if let residents = model.residentArray?.map({ createPeople($0, context: context) }) as? [Residents] {
-//                entity.residents = residents
-//            }
-//            if let items = model.filmArray?.map({ createFilm($0, context: context) }) as? [Films] {
-//                entity.films = PlanetsNSSecureCoding(films: entit)
-//            }
+            if let residents = model.residentArray?.map({ createPeople($0, context: context) }) as? [Residents] {
+                entity.people = PeopleNSSecureCoding(people: residents)
+            }
+            if let items = model.filmArray?.map({ createFilm($0, context: context) }) as? [Films] {
+                entity.films = FilmsNSSecureCoding(filmsList: items)
+            }
             return entity
         }
         return nil

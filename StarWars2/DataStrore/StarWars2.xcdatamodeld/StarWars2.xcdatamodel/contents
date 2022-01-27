@@ -14,8 +14,8 @@
         <attribute name="starships" optional="YES" attributeType="Transformable" valueTransformerName="FilmsAttributeTransformer" customClassName=".FilmsNSSecureCoding"/>
         <attribute name="title" optional="YES" attributeType="String"/>
         <attribute name="vehicles" optional="YES" attributeType="Transformable" valueTransformerName="FilmsAttributeTransformer" customClassName=".FilmsNSSecureCoding"/>
-        <relationship name="relatedCharacters" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Residents" inverseName="relatedFilms" inverseEntity="Residents"/>
-        <relationship name="relatedPlanets" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Planets" inverseName="relatedFilms" inverseEntity="Planets"/>
+        <relationship name="relatedCharacters" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Residents"/>
+        <relationship name="relatedPlanets" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Planets"/>
         <relationship name="relatedSpices" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Spices" inverseName="relatedFilms" inverseEntity="Spices"/>
         <relationship name="relatedStarships" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Starships" inverseName="relatedFilms" inverseEntity="Starships"/>
         <relationship name="relatedVehicles" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Vehicles" inverseName="relatedFilms" inverseEntity="Vehicles"/>
@@ -25,16 +25,15 @@
         <attribute name="created" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="diameter" optional="YES" attributeType="String"/>
         <attribute name="edited" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="films" optional="YES" attributeType="Transformable" valueTransformerName="PlanetAttributeTransformer" customClassName=".PlanetsNSSecureCoding"/>
+        <attribute name="films" optional="YES" attributeType="Transformable" valueTransformerName="FilmsAttributeTransformer" customClassName=".FilmsNSSecureCoding"/>
         <attribute name="gravity" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="orbitalPeriod" optional="YES" attributeType="String"/>
+        <attribute name="people" optional="YES" attributeType="Transformable" valueTransformerName="PeopleAttributeTransformer" customClassName=".PeopleNSSecureCoding"/>
         <attribute name="population" optional="YES" attributeType="String"/>
-        <attribute name="residents" optional="YES" attributeType="Transformable" valueTransformerName="PlanetAttributeTransformer" customClassName=".ResidentsNSSecureCoding"/>
         <attribute name="rotationPeriod" optional="YES" attributeType="String"/>
         <attribute name="surfaceWater" optional="YES" attributeType="String"/>
         <attribute name="terrain" optional="YES" attributeType="String"/>
-        <relationship name="relatedFilms" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Films" inverseName="relatedPlanets" inverseEntity="Films"/>
         <relationship name="relatedResidents" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Residents"/>
     </entity>
     <entity name="Residents" representedClassName=".Residents" syncable="YES">
@@ -42,7 +41,6 @@
         <attribute name="created" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="edited" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="eyeColor" optional="YES" attributeType="String"/>
-        <attribute name="films" optional="YES" attributeType="Transformable" valueTransformerName="PeopleAttributeTransformer" customClassName=".PeopleNSSecureCoding"/>
         <attribute name="gender" optional="YES" attributeType="String"/>
         <attribute name="hairColor" optional="YES" attributeType="String"/>
         <attribute name="height" optional="YES" attributeType="String"/>
@@ -50,13 +48,6 @@
         <attribute name="mass" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="skinColor" optional="YES" attributeType="String"/>
-        <attribute name="species" optional="YES" attributeType="Transformable" valueTransformerName="PeopleAttributeTransformer" customClassName=".PeopleNSSecureCoding"/>
-        <attribute name="starships" optional="YES" attributeType="Transformable" valueTransformerName="PeopleAttributeTransformer" customClassName=".PeopleNSSecureCoding"/>
-        <attribute name="vehicles" optional="YES" attributeType="Transformable" valueTransformerName="PeopleAttributeTransformer" customClassName=".PeopleNSSecureCoding"/>
-        <relationship name="relatedFilms" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Films" inverseName="relatedCharacters" inverseEntity="Films"/>
-        <relationship name="relatedSpices" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Spices" inverseName="relatedPeople" inverseEntity="Spices"/>
-        <relationship name="relatedStarships" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Starships" inverseName="relatedPilots" inverseEntity="Starships"/>
-        <relationship name="relatedVehicles" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Vehicles" inverseName="relatedPilots" inverseEntity="Vehicles"/>
     </entity>
     <entity name="Spices" representedClassName=".Spices" syncable="YES">
         <attribute name="averageHeight" optional="YES" attributeType="String"/>
@@ -74,7 +65,7 @@
         <attribute name="people" optional="YES" attributeType="Transformable" valueTransformerName="SpicesAttributeTransformer" customClassName="SpicesNSSecureCoding"/>
         <attribute name="skinColors" optional="YES" attributeType="String"/>
         <relationship name="relatedFilms" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Films" inverseName="relatedSpices" inverseEntity="Films"/>
-        <relationship name="relatedPeople" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Residents" inverseName="relatedSpices" inverseEntity="Residents"/>
+        <relationship name="relatedPeople" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Residents"/>
     </entity>
     <entity name="Starships" representedClassName=".Starships" syncable="YES">
         <attribute name="cargoCapacity" optional="YES" attributeType="String"/>
@@ -95,7 +86,7 @@
         <attribute name="pilots" optional="YES" attributeType="Transformable" valueTransformerName="StarshipsAttributeTransformer" customClassName="StarshipsNSSecureCoding"/>
         <attribute name="starshipClass" optional="YES" attributeType="String"/>
         <relationship name="relatedFilms" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Films" inverseName="relatedStarships" inverseEntity="Films"/>
-        <relationship name="relatedPilots" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Residents" inverseName="relatedStarships" inverseEntity="Residents"/>
+        <relationship name="relatedPilots" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Residents"/>
     </entity>
     <entity name="StarWarsItems" representedClassName=".StarWarsItems" syncable="YES">
         <attribute name="itemName" optional="YES" attributeType="String"/>
@@ -118,12 +109,12 @@
         <attribute name="pilots" optional="YES" attributeType="Transformable" valueTransformerName="VehiclesAttributeTransformer" customClassName="VehiclesNSSecureCoding"/>
         <attribute name="vehicleClass" optional="YES" attributeType="String"/>
         <relationship name="relatedFilms" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Films" inverseName="relatedVehicles" inverseEntity="Films"/>
-        <relationship name="relatedPilots" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Residents" inverseName="relatedVehicles" inverseEntity="Residents"/>
+        <relationship name="relatedPilots" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Residents"/>
     </entity>
     <elements>
         <element name="Films" positionX="-821.0027160644531" positionY="-116.6943969726563" width="128" height="299"/>
-        <element name="Planets" positionX="-744.6051025390625" positionY="-508.7118225097656" width="128" height="254"/>
-        <element name="Residents" positionX="-525.7838134765625" positionY="-227.5497894287109" width="128" height="314"/>
+        <element name="Planets" positionX="-744.6051025390625" positionY="-508.7118225097656" width="128" height="239"/>
+        <element name="Residents" positionX="-525.7838134765625" positionY="-227.5497894287109" width="128" height="194"/>
         <element name="Spices" positionX="-30.029052734375" positionY="-564.5822143554688" width="128" height="269"/>
         <element name="Starships" positionX="139.0560913085937" positionY="-471.0981292724609" width="128" height="314"/>
         <element name="StarWarsItems" positionX="-267.2369384765625" positionY="-511.4563446044922" width="128" height="59"/>

@@ -33,6 +33,9 @@ extension DetailViewController {
                                          items: viewModel.fields,
                                          configureCell: { (cell, data, _) in
             cell.field = data
+            cell.onButtonSelected = {
+                self.showAlert(msg: $0.debugDescription)
+            }
         })
 
         delegate = TableCellDelegate(cellIdentifier: StoryboardIds.detailRowViewCell)

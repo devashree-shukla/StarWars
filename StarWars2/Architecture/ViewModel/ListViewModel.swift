@@ -83,12 +83,14 @@ class ListViewModel: ListViewModelProtocol {
                             let peopleService: RouterProtocol? = APIRouter(url: url)
                             peopleService?.fetchPeople({ [weak self] result in
                                 print("\(jth)===\(planet.name)")
+//                                DispatchQueue.main.async {
                                     switch result {
                                     case .success(let people):
                                         self?.inititializeResidentsIfNeeded(index: ith, resident: people)
 
                                     case .failure(_): break
                                     }
+//                                }
                                 planetsGroup.leave()
                             })
                         }
@@ -103,12 +105,13 @@ class ListViewModel: ListViewModelProtocol {
                             let peopleService: RouterProtocol? = APIRouter(url: url)
                             peopleService?.fetchFilm({ [weak self] result in
                                 print("\(jth)===\(planet.name)")
+//                                DispatchQueue.main.async {
                                     switch result {
                                     case .success(let film):
                                         self?.inititializeFilmsIfNeeded(index: ith, film: film)
-
                                     case .failure(_): break
                                     }
+//                                }
                                 planetsGroup.leave()
                             })
                         }

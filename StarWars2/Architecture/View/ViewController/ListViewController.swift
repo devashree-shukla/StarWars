@@ -8,7 +8,7 @@
 import UIKit
 import CoreData
 
-class ListViewController: UIViewController {
+class ListViewController: UIViewController, NSFetchedResultsControllerDelegate {
 
     @IBOutlet weak var listTableView: UITableView!
 
@@ -18,6 +18,24 @@ class ListViewController: UIViewController {
     }()
     private var dataSource: TableCellDataSource<UITableViewCell, Planets>!
     private var delegate: TableCellDelegate<UITableViewCell>?
+
+    private lazy var fetchedResultsController: NSFetchedResultsController<Planets> = {
+        let fetchRequest: NSFetchRequest<Planets> = Planets.fetchRequest()
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
+
+        let controller = NSFetchedResultsController(
+            fetchRequest: fetchRequest,
+            managedObjectContext: CoreDataHelper.sharedInstance.persistentContainer.viewContext,
+            sectionNameKeyPath: "name", cacheName: nil)
+        controller.delegate = self
+
+        do {
+            try controller.performFetch()
+        } catch {
+            fatalError("###\(#function): Failed to performFetch: \(error)")
+        }
+        return controller
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,5 +107,14 @@ extension ListViewController {
                 detailVC.viewModel.item = viewModel.selectedItem
             }
         }
+    }
+}
+
+// MARK: - NSFetchedResultsControllerDelegate
+//
+extension ListViewController {
+
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        listTableView.reloadData()
     }
 }

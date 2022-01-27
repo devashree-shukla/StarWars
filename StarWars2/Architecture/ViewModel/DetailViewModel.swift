@@ -64,9 +64,12 @@ class DetailViewModel: DetailViewModelProtocol {
         case .terrain:
             return item?.terrain
         case .films:
-            return item?.films
+
+            return ""
+//            return item?.films
         case .residents:
-            return item?.residents
+//            print(PlanetsNSSecureCoding(coder: item?.people))
+            return item
         case .created:
             return item?.created
         case .edited:

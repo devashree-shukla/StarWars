@@ -7,19 +7,54 @@
 
 import Foundation
 
-@objc(PlanetsAttributeTransformer)
+//@objc(PlanetsAttributeTransformer)
+//class PlanetsAttributeTransformer: NSSecureUnarchiveFromDataTransformer {
+//
+//    override static var allowedTopLevelClasses: [AnyClass] {
+//        [Residents.self, Films.self, Planets.self]
+//    }
+//
+//    static func register() {
+//        let className = String(describing: PlanetsAttributeTransformer.self)
+//        let name = NSValueTransformerName(className)
+//
+//        let transformer = PlanetsAttributeTransformer()
+//        ValueTransformer.setValueTransformer(transformer, forName: name)
+//    }
+//
+//}
+
+import UIKit
+
 class PlanetsAttributeTransformer: NSSecureUnarchiveFromDataTransformer {
 
-    override static var allowedTopLevelClasses: [AnyClass] {
-        [Residents.self, Films.self, Planets.self]
+    override class func allowsReverseTransformation() -> Bool {
+        return true
     }
 
-    static func register() {
-        let className = String(describing: PlanetsAttributeTransformer.self)
-        let name = NSValueTransformerName(className)
-
-        let transformer = PlanetsAttributeTransformer()
-        ValueTransformer.setValueTransformer(transformer, forName: name)
+    override class func transformedValueClass() -> AnyClass {
+        return NSArray.self
     }
 
+    override class var allowedTopLevelClasses: [AnyClass] {
+        return [Residents.self, NSArray.self, Planets.self, Films.self]
+    }
+
+    override func transformedValue(_ value: Any?) -> Any? {
+        guard let data = value as? Data else {
+            return nil
+        }
+        return super.transformedValue(data)
+    }
+
+    override func reverseTransformedValue(_ value: Any?) -> Any? {
+        guard let color = value as? [Planets] else {
+            return nil 
+        }
+        return super.reverseTransformedValue(color)
+    }
+}
+
+extension NSValueTransformerName {
+    static let colorToDataTransformer = NSValueTransformerName(rawValue: "PlanetsAttributeTransformer")
 }
