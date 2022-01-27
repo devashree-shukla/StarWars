@@ -19,13 +19,12 @@ class DetailViewModel: DetailViewModelProtocol {
 
     // MARK: - Input
     var starWarsItem: StarWars = .planets
-    var item: Planets?
-
-    // MARK: Output
     var items: [DetailDisplayFields] {
         DetailDisplayFields.getDisplayFields(type: starWarsItem)
     }
 
+    // MARK: Output
+    var item: Planets?
     var fields: [(DetailDisplayFields, Any?)] {
         items.map { ($0, getValue(key: $0)) }
     }
