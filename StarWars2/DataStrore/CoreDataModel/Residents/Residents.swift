@@ -1,5 +1,5 @@
 //
-//  People.swift
+//  Residents.swift
 //  StarWars2
 //
 //  Created by Devashree KS on 25/01/22.

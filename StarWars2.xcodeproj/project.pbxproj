@@ -49,12 +49,11 @@
 		91C167D5279FA3EB007244D3 /* StarWars2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 91C167D3279FA3EB007244D3 /* StarWars2.xcdatamodeld */; };
 		91C16840279FBE20007244D3 /* FilmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CBCF02279F647A00557A53 /* FilmModel.swift */; };
 		91C16841279FBE23007244D3 /* PeopleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CBCF06279F647A00557A53 /* PeopleModel.swift */; };
-		91C16843279FCC70007244D3 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C16842279FCC70007244D3 /* CoreDataHelper.swift */; };
 		91C743AB27A03C3900F32814 /* StarshipModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C743AA27A03C3900F32814 /* StarshipModel.swift */; };
 		91C743AD27A03C4700F32814 /* SpicesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C743AC27A03C4700F32814 /* SpicesModel.swift */; };
 		91C743AF27A03C5800F32814 /* VehicleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C743AE27A03C5800F32814 /* VehicleModel.swift */; };
 		91CB9686279EE4D500CFCADD /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CB9685279EE4D500CFCADD /* UIStackView.swift */; };
-		91CBCEFF279F467900557A53 /* CoreDataConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CBCEFE279F467900557A53 /* CoreDataConnection.swift */; };
+		91CBCEFF279F467900557A53 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CBCEFE279F467900557A53 /* CoreDataHelper.swift */; };
 		91CBCF07279F647A00557A53 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CBCF01279F647A00557A53 /* Gender.swift */; };
 		91CBCF09279F647A00557A53 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CBCF03279F647A00557A53 /* BaseModel.swift */; };
 		91CBCF0A279F647A00557A53 /* StarWars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CBCF04279F647A00557A53 /* StarWars.swift */; };
@@ -137,12 +136,11 @@
 		9180039E279E38D300F0FEDD /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		918003A2279E4F9700F0FEDD /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		91C167D4279FA3EB007244D3 /* StarWars2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StarWars2.xcdatamodel; sourceTree = "<group>"; };
-		91C16842279FCC70007244D3 /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		91C743AA27A03C3900F32814 /* StarshipModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarshipModel.swift; sourceTree = "<group>"; };
 		91C743AC27A03C4700F32814 /* SpicesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpicesModel.swift; sourceTree = "<group>"; };
 		91C743AE27A03C5800F32814 /* VehicleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleModel.swift; sourceTree = "<group>"; };
 		91CB9685279EE4D500CFCADD /* UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
-		91CBCEFE279F467900557A53 /* CoreDataConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataConnection.swift; sourceTree = "<group>"; };
+		91CBCEFE279F467900557A53 /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		91CBCF01279F647A00557A53 /* Gender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		91CBCF02279F647A00557A53 /* FilmModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilmModel.swift; sourceTree = "<group>"; };
 		91CBCF03279F647A00557A53 /* BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
@@ -351,8 +349,7 @@
 		91CBCEFD279F466D00557A53 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				91CBCEFE279F467900557A53 /* CoreDataConnection.swift */,
-				91C16842279FCC70007244D3 /* CoreDataHelper.swift */,
+				91CBCEFE279F467900557A53 /* CoreDataHelper.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -702,7 +699,6 @@
 				917F377627A1243E006BA221 /* DetailDisplayFields.swift in Sources */,
 				917F37E327A1822B006BA221 /* VehiclesAttributeTransformer.swift in Sources */,
 				91CBCF07279F647A00557A53 /* Gender.swift in Sources */,
-				91C16843279FCC70007244D3 /* CoreDataHelper.swift in Sources */,
 				91800393279E051400F0FEDD /* NetworkHandler.swift in Sources */,
 				917F37DE27A174CB006BA221 /* Spices.swift in Sources */,
 				91CBCF09279F647A00557A53 /* BaseModel.swift in Sources */,
@@ -719,7 +715,7 @@
 				917F37E227A1822B006BA221 /* StarshipsAttributeTransformer.swift in Sources */,
 				9180036B279DFA5C00F0FEDD /* ParserHelper.swift in Sources */,
 				91D640CC279CC6CD003D9C21 /* SceneDelegate.swift in Sources */,
-				91CBCEFF279F467900557A53 /* CoreDataConnection.swift in Sources */,
+				91CBCEFF279F467900557A53 /* CoreDataHelper.swift in Sources */,
 				91D640DB279CD023003D9C21 /* HomeViewCell.swift in Sources */,
 				91D640D8279CCFAA003D9C21 /* HomeViewController.swift in Sources */,
 				91800398279E065900F0FEDD /* APIManager.swift in Sources */,
