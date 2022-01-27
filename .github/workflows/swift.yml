@@ -32,11 +32,6 @@ jobs:
       - name: Test    # Run tests
         run: |    # | for multipline command
           xcodebuild clean test -project StarWars2.xcodeproj -scheme StarWars2 -destination 'platform=iOS Simulator,name=iPhone 12' test
-          
-      - name: UI Test    # Run tests
-        run: |    # | for multipline command
-          xcodebuild clean test -project StarWars2.xcodeproj -scheme StarWars2UITest -destination 'platform=iOS Simulator,name=iPhone 12' test
-
       - name: Release Build App
         run: xcodebuild -project "StarWars2.xcodeproj" -scheme "StarWars2" -destination "generic/platform=iOS" -configuration Release build CODE_SIGNING_ALLOWED=NO
         env: 
