@@ -12,6 +12,7 @@ jobs:
     strategy:     # Creates build matrixx for jobs
         matrix:     
           destination: [ 'generic/platform=iOS', 'platform=iOS Simulator,OS=13.1,name=iPhone 8', 'platform=iOS Simulator,OS=13.1,name=iPhone 9' ]     # different configurations of the virtual environment
+          scheme: ['StarWars2']
 
     steps:
       - name: Checkout    # Check out step
