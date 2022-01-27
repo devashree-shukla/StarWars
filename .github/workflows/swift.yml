@@ -20,8 +20,8 @@ jobs:
           swift-version: ${{ matrix.swift }}
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Force Xcode 11
-        run: sudo xcode-select -switch /Applications/Xcode.app
+      - name: Force Xcode 13.2
+        run: sudo xcode-select -switch /Applications/Xcode_13.2.app
         
       - name: Build App   # Build app
         run: xcodebuild -project "StarWars2.xcodeproj" -scheme "StarWars2" -destination "generic/platform=iOS" -configuration Debug build CODE_SIGNING_ALLOWED=NO
