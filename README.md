@@ -138,6 +138,8 @@ An iOS application about Star Wars that allows users to see all reelated informa
 
 - Added below script in Build Phases. (Can be removed and add on need basis)
 
+<img width="909" alt="Screenshot 2022-01-27 at 10 20 19 AM" src="https://user-images.githubusercontent.com/38584944/151294259-cfd3ed93-4abb-4a64-aa39-01c7a2adfcc9.png">
+
 - Enabled auto correct as below commands in terminal :
     cd /Users/devashreeks/Desktop/(PROJECT_DIRECTORY)
     swiftlint autocorrect
