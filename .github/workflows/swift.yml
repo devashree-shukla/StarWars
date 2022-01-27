@@ -27,8 +27,8 @@ jobs:
          destination: ${{ matrix.destination }}
      
       - name: Test    # Run tests
-        run: |
-          xcodebuild clean test -project StarWars2.xcodeproj -scheme StarWars2 -destination 'platform=iOS Simulator,id=E90AC0C5-6DA1-4BD7-83DB-12A526D8F068,OS=15.0,name=iPhone 13 Pro Max' test
+        run: |    # | for multipline command
+          xcodebuild clean test -project StarWars2.xcodeproj -scheme StarWars2 -destination 'platform=iOS Simulator,id=E90AC0C5-6DA1-4BD7-83DB-12A526D8F068,OS=15.0,name=iPhone 13 Pro Max' test IDEPackageSupportUseBuiltinSCM = YES
      
       - name: Check Tests Passed    # Verify test status
         if: steps.xcodebuild.outputs.result != 0 
