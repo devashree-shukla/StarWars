@@ -10,13 +10,13 @@ import UIKit
 class DetailRowViewCell: UITableViewCell {
 
     // MARK: - IBOutlets
-    
+
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var stackView: UIStackView!
-    
+
     // MARK: - Variables
-    
+
     var field: (DetailDisplayFields, Any?)? {
         didSet {
             setupViewForCellType()
@@ -24,21 +24,18 @@ class DetailRowViewCell: UITableViewCell {
             configureCell()
         }
     }
-    
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-    
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
 }
 
-
 extension DetailRowViewCell {
-    
+
     private func setupViewForCellType() {
         switch field?.0 {
         case .terrain, .climate:
@@ -52,13 +49,11 @@ extension DetailRowViewCell {
             stackView.isHidden = true
         }
     }
-    
-    
+
     private func setTitle() {
         titleLabel.text = field?.0.rawValue.capitalized
     }
-    
-    
+
     func configureCell() {
         stackView.removeAllSubviews()
         descriptionLabel.text = ""
@@ -85,8 +80,7 @@ extension DetailRowViewCell {
             descriptionLabel.text = value.description
         }
     }
-    
-    
+
     private func createLabel(_ text: String?) {
         guard let text = text else {
             return

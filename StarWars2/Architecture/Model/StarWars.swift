@@ -14,8 +14,7 @@ enum StarWars: CustomStringConvertible, CaseIterable {
     case starships
     case spices
     case vehicles
-    
-    
+
     var description: String {
         switch self {
         case .planets: return "Planets"
@@ -26,8 +25,7 @@ enum StarWars: CustomStringConvertible, CaseIterable {
         case .vehicles: return "Vehicles"
         }
     }
-    
-    
+
     var serviceName: RouterProtocol? {
         switch self {
         case .planets: return APIRouter(type: .planets)
@@ -38,8 +36,7 @@ enum StarWars: CustomStringConvertible, CaseIterable {
         case .vehicles: return APIRouter(type: .vehicles)
         }
     }
-    
-    
+
     var starWarsAPI: URL? {
         switch self {
         case .planets: return APIManager.allPlanetsURL

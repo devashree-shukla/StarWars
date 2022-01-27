@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 final class APIRouter: NetworkHandler, RouterProtocol {
 
     private let endpoint: URL?
@@ -18,14 +17,12 @@ final class APIRouter: NetworkHandler, RouterProtocol {
         self.networking = networking
         self.endpoint = type.starWarsAPI
     }
-    
-    
+
     init(withNetworking networking: NetworkingDataSource = NetworkService(), url: URL) {
         self.networking = networking
         self.endpoint = url
     }
 
-    
     func fetchConverter(_ completion: @escaping ((Result<BaseModel, ErrorResult>) -> Void)) {
         self.cancelFetchService()
         guard let endpoint = endpoint else {
@@ -42,23 +39,20 @@ final class APIRouter: NetworkHandler, RouterProtocol {
     }
 }
 
-
 extension APIRouter {
-    
+
     func fetchPeople(_ completion: @escaping ((Result<PeopleModel, ErrorResult>) -> Void)) {
         guard let endpoint = endpoint else {
             return
         }
         task = self.networking.loadData(url: endpoint, completion: self.networkResult(completion: completion))
     }
-    
-    
+
     func fetchFilm(_ completion: @escaping ((Result<FilmModel, ErrorResult>) -> Void)) {
         guard let endpoint = endpoint else {
             return
         }
         task = self.networking.loadData(url: endpoint, completion: self.networkResult(completion: completion))
     }
-    
-    
+
 }

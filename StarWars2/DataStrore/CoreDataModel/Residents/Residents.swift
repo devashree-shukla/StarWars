@@ -8,11 +8,9 @@
 import Foundation
 import CoreData
 
-
 public class Residents: NSManagedObject {
 
 }
-
 
 extension Residents {
 
@@ -110,6 +108,6 @@ extension Residents {
 
 }
 
-extension Residents : Identifiable {
+extension Residents: Identifiable {
 
 }

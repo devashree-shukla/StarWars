@@ -19,20 +19,15 @@ struct PlanetModel: Codable {
     let terrain: String
     var filmArray: [FilmModel]?
     var residentArray: [PeopleModel]?
-    
-    var planetDescription: String {
-        "Having \(residents.count) residents and appeared in \(films.count) films. Also, having \(climate) and \(surfaceWater) % water sources "
-    }
-    
-    
-    var asDictionary : [String: Any] {
+
+    var asDictionary: [String: Any] {
         let mirror = Mirror(reflecting: self)
-        let dict = Dictionary(uniqueKeysWithValues: mirror.children.lazy.map({
-            (label:String?, value:Any) -> (String, Any)? in
+        let dict = Dictionary(uniqueKeysWithValues:
+                                mirror.children.lazy.map({(label: String?, value: Any) -> (String, Any)? in
             guard let label = label else { return nil }
           return (label, value)
         }).compactMap { $0 })
         return dict
     }
-    
+
 }

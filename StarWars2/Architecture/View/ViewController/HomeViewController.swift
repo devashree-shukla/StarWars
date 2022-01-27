@@ -7,32 +7,31 @@
 
 import UIKit
 
-
 class HomeViewController: UIViewController {
 
     @IBOutlet weak var homeTableView: UITableView!
-    
+
     lazy var viewModel: HomeViewModelProtocol = {
         let viewModel = HomeViewModel()
         return viewModel
     }()
-    
-    private var dataSource : TableCellDataSource<UITableViewCell, StarWars>!
-    private var delegate : TableCellDelegate<UITableViewCell>!
-    
+
+    private var dataSource: TableCellDataSource<UITableViewCell, StarWars>!
+    private weak var delegate: TableCellDelegate<UITableViewCell>?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         updateDataSource()
     }
-    
+
 }
 
-//MARK: - Custom methods
+// MARK: - Custom methods
 
 extension HomeViewController {
-    
+
     private func updateDataSource() {
-        
+
         dataSource = TableCellDataSource(cellIdentifier: StoryboardIds.homeViewCell,
                                          items: viewModel.starWarsItems,
                                          configureCell: { (cell, data, index) in
@@ -45,31 +44,31 @@ extension HomeViewController {
                 (cell as? HomeViewCell)?.isUserInteractionEnabled = true
             }
         })
-        
-        delegate = TableCellDelegate(cellIdentifier: StoryboardIds.homeViewCell)
-        
-        delegate.didSelect = { i in
+
+        self.delegate = TableCellDelegate(cellIdentifier: StoryboardIds.homeViewCell) as? TableCellDelegate
+
+        delegate?.didSelect = { _ in
             self.performSegue(withIdentifier: StoryboardIds.showListSegue, sender: self)
         }
-        
+
         DispatchQueue.main.async {
             self.homeTableView.dataSource = self.dataSource
             self.homeTableView.delegate = self.delegate
             self.homeTableView.reloadData()
         }
-        
+
     }
 
 }
 
-//MARK: - Navigation
+// MARK: - Navigation
 
 extension HomeViewController {
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == StoryboardIds.showListSegue {
-            if let vc = segue.destination as? ListViewController {
-                vc.viewModel.starWarsItem = viewModel.selectedItem(
+            if let listVC = segue.destination as? ListViewController {
+                listVC.viewModel.starWarsItem = viewModel.selectedItem(
                     index: homeTableView.indexPathForSelectedRow?.row ?? 0)
             }
         }

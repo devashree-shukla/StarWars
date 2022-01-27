@@ -13,7 +13,6 @@ public class Vehicles: NSManagedObject {
 
 }
 
-
 extension Vehicles {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Vehicles> {
@@ -74,7 +73,6 @@ extension Vehicles {
 
 }
 
-extension Vehicles : Identifiable {
+extension Vehicles: Identifiable {
 
 }
-

@@ -7,9 +7,8 @@
 
 import UIKit
 
-
 extension UIView {
-    
+
     @IBInspectable var cornerRadius: CGFloat {
         get {
             return layer.cornerRadius
@@ -18,8 +17,7 @@ extension UIView {
             layer.cornerRadius = newValue
         }
     }
-    
-    
+
     @IBInspectable var borderWidth: CGFloat {
         get {
             return layer.borderWidth
@@ -28,8 +26,7 @@ extension UIView {
             layer.borderWidth = newValue
         }
     }
-    
-    
+
     @IBInspectable var borderColor: UIColor? {
         get {
             guard let color = layer.borderColor else { return nil }
@@ -39,16 +36,15 @@ extension UIView {
             layer.borderColor = newValue?.cgColor
         }
     }
-    
+
 }
 
-
-//MARK: - Activity inidicator
+// MARK: - Activity inidicator
 
 extension UIView {
-    
+
     func showDefaultActivityIndicator(shouldDisableUserInteraction: Bool = false) {
-      
+
         self.removeAnyOldActivityIndicators()
         let activityIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.large)
         activityIndicator.center = CGPoint(x: self.bounds.midX, y: self.bounds.midY)
@@ -58,9 +54,8 @@ extension UIView {
         self.bringSubviewToFront(activityIndicator)
         self.isUserInteractionEnabled = !shouldDisableUserInteraction
         activityIndicator.startAnimating()
-   
+
     }
-    
 
     func hideDefaultActivityIndicator() {
 
@@ -70,18 +65,17 @@ extension UIView {
             }
         }
         self.isUserInteractionEnabled = true
-   
+
     }
-    
-    
+
     fileprivate func removeAnyOldActivityIndicators() {
-     
+
         for subview in self.subviews {
             if let indicator = subview as? UIActivityIndicatorView {
                 indicator.stopAnimating()
             }
         }
-        
+
     }
-    
+
 }

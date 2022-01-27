@@ -8,9 +8,8 @@
 import Foundation
 import CoreData
 
-
 extension Planets {
-   
+
     class func findAll(in managedObjectContext: NSManagedObjectContext) -> [Planets] {
         let fetchRequest: NSFetchRequest<Planets> = Planets.fetchRequest()
         fetchRequest.returnsObjectsAsFaults = true
@@ -20,16 +19,14 @@ extension Planets {
         } catch {
             let nserror = error as NSError
             fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-            return []
         }
-        
+
     }
-    
-    
+
     class func getCount(in managedObjectContext: NSManagedObjectContext) -> Int? {
         let fetchRequest: NSFetchRequest<Planets> = Planets.fetchRequest()
         fetchRequest.propertiesToFetch = ["name"]
         return (try? managedObjectContext.fetch(fetchRequest).count) ?? 0
     }
-    
+
 }

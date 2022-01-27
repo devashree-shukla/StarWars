@@ -7,21 +7,19 @@
 
 import Foundation
 
-
 protocol HomeViewModelProtocol {
     func selectedItem(index: Int) -> StarWars
     var starWarsItems: [StarWars] { get }
 }
 
-
 class HomeViewModel: HomeViewModelProtocol {
-    
-    //MARK: Input
+
+    // MARK: Input
     func selectedItem(index: Int) -> StarWars {
         StarWars.allCases[index]
     }
-    
-    //MARK: - Output
+
+    // MARK: - Output
     var starWarsItems = StarWars.allCases
-    
+
 }

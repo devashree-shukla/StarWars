@@ -16,7 +16,6 @@ enum Method: String {
     case allVehicles = "vehicles/"
 }
 
-
 struct APIManager {
     private static let baseURLString = "https://swapi.dev/api/"
 
@@ -24,39 +23,32 @@ struct APIManager {
         return starWarsAPIURL(method: .allFilms)
     }
 
-    
     static var allPeopleURL: URL {
         return starWarsAPIURL(method: .allPeople)
     }
 
-    
     static var allPlanetsURL: URL {
         return starWarsAPIURL(method: .allPlanets)
-    
+
     }
 
     static var allSpeciesURL: URL {
         return starWarsAPIURL(method: .allSpecies)
     }
 
-    
     static var allStarshipsURL: URL {
         return starWarsAPIURL(method: .allStarships)
     }
 
-    
     static var allVehiclesURL: URL {
         return starWarsAPIURL(method: .allVehicles)
     }
 
-    
     // MARK: - General Methods
-    
+
     private static func starWarsAPIURL(method: Method) -> URL {
         let baseURL = URL(string: baseURLString)!
         let finalURL = URL(string: method.rawValue, relativeTo: baseURL)!
         return finalURL
     }
-    
 }
-

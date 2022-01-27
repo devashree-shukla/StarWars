@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 protocol NetworkingDataSource: AnyObject {
     func loadData(url: URL, completion: @escaping (Result<Data, ErrorResult>) -> Void) -> URLSessionTask?
 }

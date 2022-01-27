@@ -8,11 +8,9 @@
 import Foundation
 import CoreData
 
-
 public class Planets: NSManagedObject {
 
 }
-
 
 extension Planets {
 
@@ -72,6 +70,6 @@ extension Planets {
 
 }
 
-extension Planets : Identifiable {
-    
+extension Planets: Identifiable {
+
 }

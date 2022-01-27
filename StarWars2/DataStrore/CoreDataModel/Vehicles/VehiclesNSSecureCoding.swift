@@ -7,32 +7,27 @@
 
 import Foundation
 
-
 @objc(VehiclesNSSecureCoding)
 public class VehiclesNSSecureCoding: NSObject, NSSecureCoding {
-    
+
     public static var supportsSecureCoding: Bool = true
-    
+
     var charactersList: [Residents]?
     var filmsList: [Films]?
 
-    
     required init(charactersList: [Residents]?, filmsList: [Films]?) {
         self.charactersList = charactersList
         self.filmsList = filmsList
     }
-    
-    
+
     public func encode(with coder: NSCoder) {
         coder.encode(charactersList, forKey: "pilots")
         coder.encode(filmsList, forKey: "films")
     }
-    
-    
-    required public init?(coder: NSCoder) {
-        charactersList = coder.decodeObject(of: NSArray.self, forKey: "pilots") as? Array<Residents> ?? []
-        filmsList = coder.decodeObject(of: NSArray.self, forKey: "films") as? Array<Films> ?? []
-    }
-    
-}
 
+    required public init?(coder: NSCoder) {
+        charactersList = coder.decodeObject(of: NSArray.self, forKey: "pilots") as? [Residents] ?? []
+        filmsList = coder.decodeObject(of: NSArray.self, forKey: "films") as? [Films] ?? []
+    }
+
+}

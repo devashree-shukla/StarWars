@@ -7,17 +7,15 @@
 
 import Foundation
 
-//MARK: - Base model
-
+// MARK: - Base model
 
 struct BaseModel: Codable {
-    
+
     let count: Int
     let next: String
     let previous: String?
-    let results: [PlanetModel] //TODO
-    
-    
+    let results: [PlanetModel]
+
     init(count: Int, next: String, previous: String?, results: [PlanetModel]) {
         self.count = count
         self.next = next
@@ -28,7 +26,7 @@ struct BaseModel: Codable {
 }
 
 extension BaseModel: Parceable {
-    
+
     static func parseObject(data: Data) -> Result<BaseModel, ErrorResult> {
             let decoder = JSONDecoder()
             decoder.keyDecodingStrategy = .convertFromSnakeCase
@@ -38,5 +36,5 @@ extension BaseModel: Parceable {
                 return Result.failure(ErrorResult.parser(string: "Unable to parse flickr results"))
             }
         }
-    
+
 }

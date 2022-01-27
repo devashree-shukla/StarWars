@@ -11,15 +11,14 @@ import CoreData
 class ListViewController: UIViewController {
 
     @IBOutlet weak var listTableView: UITableView!
-    
+
     lazy var viewModel: ListViewModelProtocol = {
         let viewModel = ListViewModel()
         return viewModel
     }()
-    private var dataSource : TableCellDataSource<UITableViewCell, Planets>!
-    private var delegate : TableCellDelegate<UITableViewCell>!
-    
-    
+    private var dataSource: TableCellDataSource<UITableViewCell, Planets>!
+    private weak var delegate: TableCellDelegate<UITableViewCell>!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.showDefaultActivityIndicator()
@@ -27,17 +26,16 @@ class ListViewController: UIViewController {
             self?.view.hideDefaultActivityIndicator()
             self?.showAlert(msg: StarWarsConstants.Texts.errorMessage)
         }
-        
+
         loadData()
-    
+
     }
 }
 
-
-//MARK: - Custom methods
+// MARK: - Custom methods
 
 extension ListViewController {
-    
+
     private func loadData() {
         viewModel.fetchData { [weak self] _ in
             DispatchQueue.main.async {
@@ -50,10 +48,9 @@ extension ListViewController {
             }
         }
     }
-    
-    
+
     private func updateDataSource() {
-        
+
         dataSource = TableCellDataSource(cellIdentifier: StoryboardIds.listViewCell,
                                          items: viewModel.planetFromCoreData,
                                          configureCell: { (cell, data, index) in
@@ -61,10 +58,10 @@ extension ListViewController {
             (cell as? ListViewCell)?.titleLabel.text = "\(index + 1)".planetString
         })
 
-        delegate = TableCellDelegate(cellIdentifier: StoryboardIds.listViewCell)
-        
-        delegate.didSelect = { i in
-            self.viewModel.selectItem(index: i) { [weak self] result in
+        self.delegate = TableCellDelegate(cellIdentifier: StoryboardIds.listViewCell) as? TableCellDelegate
+
+        delegate?.didSelect = { selectedIndex in
+            self.viewModel.selectItem(index: selectedIndex) { [weak self] result in
                 if result == nil {
                     self?.showAlert(msg: StarWarsConstants.Texts.errorMessage)
                 } else {
@@ -72,26 +69,24 @@ extension ListViewController {
                 }
             }
         }
-        
+
     }
-    
-    
+
     func updatenavigationTitle() {
         title = viewModel.navigationTitle
     }
 
 }
 
-//MARK: - Navigation
+// MARK: - Navigation
 
 extension ListViewController {
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == StoryboardIds.showDetailSegue {
-            if let vc = segue.destination as? DetailViewController {
-                vc.viewModel.item = viewModel.selectedItem
+            if let detailVC = segue.destination as? DetailViewController {
+                detailVC.viewModel.item = viewModel.selectedItem
             }
         }
     }
 }
-

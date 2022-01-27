@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 protocol Parceable {
     static func parseObject(data: Data) -> Result<Self, ErrorResult>
 }

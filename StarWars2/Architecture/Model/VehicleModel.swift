@@ -9,6 +9,5 @@ import Foundation
 import CoreData
 
 struct VehicleModel: Codable {
-    
-}
 
+}

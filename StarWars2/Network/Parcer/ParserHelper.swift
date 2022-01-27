@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 final class ParserHelper {
 
     static func parse<T: Parceable>(data: Data, completion: (Result<[T], ErrorResult>) -> Void) {
@@ -19,7 +18,6 @@ final class ParserHelper {
         }
     }
 
-    
     static func parse<T: Parceable>(data: Data, completion: (Result<T, ErrorResult>) -> Void) {
         switch T.parseObject(data: data) {
         case .failure(let error):
@@ -29,4 +27,3 @@ final class ParserHelper {
         }
     }
 }
-

@@ -8,7 +8,6 @@
 import Foundation
 import CoreData
 
-
 protocol ListViewModelProtocol {
     func fetchData(_ completion: ((Result<Bool, ErrorResult>) -> Void)?)
     func selectItem(index: Int, _ completion: ((Planets?) -> Void)?)
@@ -19,15 +18,14 @@ protocol ListViewModelProtocol {
     var selectedItem: Planets? { get }
 }
 
-
 class ListViewModel: ListViewModelProtocol {
-    
+
     // MARK: - Input
     private var service: RouterProtocol?
     var starWarsItem: StarWars = .planets
     private var data: [PlanetModel] = []
-    
-    //MARK: - Output
+
+    // MARK: - Output
     var onErrorHandling: ((ErrorResult?) -> Void)?
     var selectedItem: Planets?
     var navigationTitle: String? {
@@ -35,7 +33,6 @@ class ListViewModel: ListViewModelProtocol {
     }
     var planetFromCoreData: [Planets] = []
 
-    
     func fetchData(_ completion: ((Result<Bool, ErrorResult>) -> Void)? = nil) {
         if let count = CoreDataHelper.numberOfPlanets(), count > 0 {
             self.planetFromCoreData = CoreDataHelper.getAllPlanets()
@@ -47,7 +44,7 @@ class ListViewModel: ListViewModelProtocol {
             completion?(Result.failure(ErrorResult.parser(string: StarWarsConstants.Texts.errorMessage)))
             return
         }
-        
+
         service.fetchConverter { [weak self] result in
             DispatchQueue.main.async {
                 switch result {
@@ -62,13 +59,12 @@ class ListViewModel: ListViewModelProtocol {
         }
         }
     }
-    
-    
+
     func selectItem(index: Int, _ completion: ((Planets?) -> Void)?) {
         selectedItem = CoreDataHelper.getSelectedItem(name: self.data[index].name)
         completion?(selectedItem)
     }
-    
+
     func asyncCalls(_ completion: ((Result<Bool, ErrorResult>) -> Void)? = nil) {
         let queue = OperationQueue()
         let planetsGroup = DispatchGroup()
@@ -77,14 +73,14 @@ class ListViewModel: ListViewModelProtocol {
                 let peopleOperation = BlockOperation {
                     for (jth, residentUrl) in planet.residents.enumerated() {
                         planetsGroup.enter()
-                        if !planet.residents.isEmpty , let url = URL(string: residentUrl) {
+                        if !planet.residents.isEmpty, let url = URL(string: residentUrl) {
                             let peopleService: RouterProtocol? = APIRouter(url: url)
-                            peopleService?.fetchPeople ({ [weak self] result in
+                            peopleService?.fetchPeople({ [weak self] result in
                                 print("\(jth)===\(planet.name)")
                                     switch result {
                                     case .success(let people):
                                         self?.inititializeResidentsIfNeeded(index: ith, resident: people)
-                                        
+
                                     case .failure(_): break
                                     }
                                 planetsGroup.leave()
@@ -93,18 +89,18 @@ class ListViewModel: ListViewModelProtocol {
                     }
                 }
                 queue.addOperation(peopleOperation)
-                
+
                 let filmOperation = BlockOperation {
                     for (jth, filmsUrl) in planet.films.enumerated() {
                         planetsGroup.enter()
-                        if !planet.films.isEmpty , let url = URL(string: filmsUrl) {
+                        if !planet.films.isEmpty, let url = URL(string: filmsUrl) {
                             let peopleService: RouterProtocol? = APIRouter(url: url)
-                            peopleService?.fetchFilm ({ [weak self] result in
+                            peopleService?.fetchFilm({ [weak self] result in
                                 print("\(jth)===\(planet.name)")
                                     switch result {
                                     case .success(let film):
                                         self?.inititializeFilmsIfNeeded(index: ith, film: film)
-                                        
+
                                     case .failure(_): break
                                     }
                                 planetsGroup.leave()
@@ -113,32 +109,29 @@ class ListViewModel: ListViewModelProtocol {
                     }
                 }
                 queue.addOperation(filmOperation)
-                
-            
+
             }
         planetsGroup.notify(queue: .main) { [unowned self] in
              print("PLANET GROUP SHOULD BE DONE")
-            CoreDataHelper.saveObjectsInEntity(objects: self.data) { result in
+            CoreDataHelper.saveObjectsInEntity(objects: self.data) { _ in
                 self.planetFromCoreData = CoreDataHelper.getAllPlanets()
                  completion?(Result.success(true))
              }
          }
-        
+
     }
-    
+
 }
 
-
  private extension ListViewModel {
-    
+
     private func inititializeResidentsIfNeeded(index: Int, resident: PeopleModel) {
         if self.data[index].residentArray == nil {
             self.data[index].residentArray = []
         }
         self.data[index].residentArray?.append(resident)
     }
-    
-    
+
     private func inititializeFilmsIfNeeded(index: Int, film: FilmModel) {
         if self.data[index].filmArray == nil {
             self.data[index].filmArray = []

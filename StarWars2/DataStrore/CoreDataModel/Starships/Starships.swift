@@ -8,11 +8,9 @@
 import Foundation
 import CoreData
 
-
 public class Starships: NSManagedObject {
 
 }
-
 
 extension Starships {
 
@@ -76,7 +74,6 @@ extension Starships {
 
 }
 
-extension Starships : Identifiable {
+extension Starships: Identifiable {
 
 }
-

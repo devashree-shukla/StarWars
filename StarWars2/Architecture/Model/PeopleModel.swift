@@ -21,7 +21,6 @@ struct PeopleModel: Codable {
     var starshipsArray: [StarshipModel]?
 }
 
-
 extension PeopleModel: Parceable {
 
     static func parseObject(data: Data) -> Result<PeopleModel, ErrorResult> {

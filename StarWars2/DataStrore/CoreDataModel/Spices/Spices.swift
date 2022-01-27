@@ -13,7 +13,6 @@ public class Spices: NSManagedObject {
 
 }
 
-
 extension Spices {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Spices> {
@@ -73,7 +72,6 @@ extension Spices {
 
 }
 
-extension Spices : Identifiable {
+extension Spices: Identifiable {
 
 }
-

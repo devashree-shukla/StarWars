@@ -8,9 +8,8 @@
 import Foundation
 import CoreData
 
-
 struct FilmModel: Codable {
-    
+
     let director, producer: String
     let episodeId: Int
     let openingCrawl: String
@@ -18,7 +17,7 @@ struct FilmModel: Codable {
     let title: String
     let characters, species, vehicles, starships, planets: [String]
     let created, edited: String
-    
+
     var planetsArray: [PlanetModel]?
     var charactersArray: [PeopleModel]?
     var speciesArray: [SpicesModel]?
@@ -27,7 +26,7 @@ struct FilmModel: Codable {
 }
 
 extension FilmModel: Parceable {
-    
+
     static func parseObject(data: Data) -> Result<FilmModel, ErrorResult> {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase

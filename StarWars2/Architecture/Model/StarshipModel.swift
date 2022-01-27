@@ -9,5 +9,5 @@ import Foundation
 import CoreData
 
 struct StarshipModel: Codable {
-    
+
 }

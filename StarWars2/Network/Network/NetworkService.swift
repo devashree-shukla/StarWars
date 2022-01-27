@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 final class NetworkService: NetworkingDataSource {
     private var session: URLSession!
 
@@ -18,7 +17,6 @@ final class NetworkService: NetworkingDataSource {
         self.session = URLSession(configuration: sessionConfig)
     }
 
-    
     func loadData(url: URL, completion: @escaping (Result<Data, ErrorResult>) -> Void) -> URLSessionTask? {
         var request = NetworkMethod.request(method: .GET, url: url)
         if let reachability =  try? Reachability(),
@@ -38,4 +36,3 @@ final class NetworkService: NetworkingDataSource {
         return task
     }
 }
-

@@ -8,11 +8,9 @@
 import Foundation
 import CoreData
 
-
 public class Films: NSManagedObject {
 
 }
-
 
 extension Films {
 
@@ -126,6 +124,6 @@ extension Films {
 
 }
 
-extension Films : Identifiable {
+extension Films: Identifiable {
 
 }
