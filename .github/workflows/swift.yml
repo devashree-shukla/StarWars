@@ -11,13 +11,15 @@ jobs:
     
     strategy:     # Creates build matrixx for jobs
         matrix:     
-          destination: [ 'generic/platform=iOS', 'platform=iOS Simulator,OS=15.0,name=iPhone 13', 'platform=iOS Simulator,OS=15.0,name=iPhone 12 Pro Max' ]     # different configurations of the virtual environment
+          destination: [ 'platform=iOS Simulator,OS=15.0,name=iPhone 13', 'platform=iOS Simulator,OS=15.0,name=iPhone 12 Pro Max' ]     # different configurations of the virtual environment
           scheme: ['StarWars2']
 
     steps:
       - name: Checkout    # Check out step
-        uses: actions/checkout@v2
-        
+      - uses: actions/checkout@v2
+      - uses: fwal/setup-swift@2040b795e5c453c3a05fcb8316496afc8a74f192
+        with:
+          swift-version: "5.3.3"
       - name: Force Xcode 11    # Load xcode
         run: sudo xcode-select -switch /Applications/Xcode.app
         
