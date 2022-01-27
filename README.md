@@ -132,6 +132,11 @@ An iOS application about Star Wars that allows users to see all reelated informa
 
 ## CI/CD
 
+- Basic workflow added for Swift project 
+### (Can be modified later)
+
+https://medium.com/@rohanbhale/hazards-of-using-mutable-types-as-transformable-attributes-in-core-data-2c95cdc27088
+
 ## Swift Lint 
 
 - Issues are fixed using Swift lint tool. Removed all warnings to keep the code clean.
