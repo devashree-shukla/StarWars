@@ -6,27 +6,34 @@ on:
 
 jobs:
   build:
-
-    runs-on: macos-latest
+    name: Swift ${{ matrix.swift }} on ${{ matrix.os }}
     strategy:
-        matrix:
-          destination: [ 'generic/platform=iOS' ]
+      matrix:
+        os: [macos-latest]
+        destination: [ 'generic/platform=iOS' ]
+        swift: ["5.2", "5.3"]
+    runs-on: ${{ matrix.os }}
 
     steps:
+      - uses: fwal/setup-swift@2040b795e5c453c3a05fcb8316496afc8a74f192
+        with:
+          swift-version: ${{ matrix.swift }}
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Force Xcode 11
-        run: sudo xcode-select -switch /Applications/Xcode.app
-      - name: Build App
+      #- name: Lint code using SwiftLint
+       # run: swiftlint lint --reporter github-actions-logging
+      - name: Force Xcode 13.2
+        run: sudo xcode-select -switch /Applications/Xcode_13.2.app
+        
+      - name: Build App   # Build app
         run: xcodebuild -project "StarWars2.xcodeproj" -scheme "StarWars2" -destination "generic/platform=iOS" -configuration Debug build CODE_SIGNING_ALLOWED=NO
         env: 
          destination: ${{ matrix.destination }}
-     
-      - name: Test
-        run: |
-          xcodebuild clean test -project StarWars2.xcodeproj -scheme StarWars2Tests -destination "generic/platform=iOS" -configuration Debug build CODE_SIGNING_ALLOWED=NO
-      
-      - name: Build App
+      - name: Test    # Run tests
+        run: |    # | for multipline command
+          xcodebuild clean test -project StarWars2.xcodeproj -scheme StarWars2 -destination 'platform=iOS Simulator,name=iPhone 12' test
+
+      - name: Release Build App
         run: xcodebuild -project "StarWars2.xcodeproj" -scheme "StarWars2" -destination "generic/platform=iOS" -configuration Release build CODE_SIGNING_ALLOWED=NO
         env: 
          destination: ${{ matrix.destination }}
