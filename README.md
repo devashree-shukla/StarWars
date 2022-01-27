@@ -2,6 +2,8 @@
 
 An iOS application about Star Wars that allows users to see all reelated information like Planets, Characters, Films, Vehicles, Starrships, Spices etc. The app is fully implemented in Swift & native frameworks using MVVM architecture. Also demonstrates several features like Listing, API calls, Offline storage, Sorting, Searching, Coding standards, Test cases etc.
 
+![example workflow](https://github.com/ShuklaDevashree963/StarWars/actions/workflows/swift.yml/badge.svg?branch=feature-1)
+
 ## Requirements
 
 - Xcode 13+
@@ -132,11 +134,17 @@ An iOS application about Star Wars that allows users to see all reelated informa
 
 ## CI/CD
 
+- Basic workflow added for Swift project  (Can be modified later)
+
+https://github.com/ShuklaDevashree963/StarWars/blob/main/.github/workflows/swift.yml
+
 ## Swift Lint 
 
 - Issues are fixed using Swift lint tool. Removed all warnings to keep the code clean.
 
 - Added below script in Build Phases. (Can be removed and add on need basis)
+
+<img width="909" alt="Screenshot 2022-01-27 at 10 20 19 AM" src="https://user-images.githubusercontent.com/38584944/151294259-cfd3ed93-4abb-4a64-aa39-01c7a2adfcc9.png">
 
 - Enabled auto correct as below commands in terminal :
     cd /Users/devashreeks/Desktop/(PROJECT_DIRECTORY)
