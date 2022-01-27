@@ -27,8 +27,8 @@ jobs:
         run: xcodebuild -project "StarWars2.xcodeproj" -scheme "StarWars2" -destination "generic/platform=iOS" -configuration Debug build CODE_SIGNING_ALLOWED=NO
         env: 
          destination: ${{ matrix.destination }}
-
-      
+      - name: Run tests
+        run: swift test
       - name: Release Build App
         run: xcodebuild -project "StarWars2.xcodeproj" -scheme "StarWars2" -destination "generic/platform=iOS" -configuration Release build CODE_SIGNING_ALLOWED=NO
         env: 
