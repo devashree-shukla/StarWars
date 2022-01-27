@@ -11,8 +11,7 @@ jobs:
     
     strategy:     # Creates build matrixx for jobs
         matrix:     
-          destination: [ 'generic/platform=iOS' ] # 'platform=iOS Simulator,OS=15.0,name=iPhone 13', 'platform=iOS Simulator,OS=15.0,name=iPhone 12 Pro Max' ]     # different configurations of the virtual environment
-
+          destination: [ 'generic/platform=iOS', 'platform=iOS Simulator,OS=15.0,name=iPhone 13', 'platform=iOS Simulator,OS=15.0,name=iPhone 12 Pro Max' ]     # different configurations of the virtual environment
     steps:
       - name: Checkout    # Check out step
       - uses: actions/checkout@v2
