@@ -1,34 +1,39 @@
-name: StarWars_Swift
+name: StarWars_Swift  # Workflow name
 
 on:
-  push:
-    branches: [ main ]
+  push:   # Workflow runs on this action
+    branches: [ main ]    # workflow runs on this branch
 
-jobs:
-  build:
-
-    runs-on: macos-latest
+jobs:   
+  build:    # Job name is build
+  
+    runs-on: macos-latest   # Job name is test
+    
     strategy:
         matrix:
           destination: [ 'generic/platform=iOS' ]
 
     steps:
-      - name: Checkout
+      - name: Checkout    # Check out step
         uses: actions/checkout@v2
-      - name: Force Xcode 11
+        
+      - name: Force Xcode 11    # Load xcode
         run: sudo xcode-select -switch /Applications/Xcode.app
-      - name: Build App
+        
+      - name: Build App   # BUil app
         run: xcodebuild -project "StarWars2.xcodeproj" -scheme "StarWars2" -destination "generic/platform=iOS" -configuration Debug build CODE_SIGNING_ALLOWED=NO
         env: 
          destination: ${{ matrix.destination }}
      
-      - name: Test
+      - name: Test    # Run tests
         run: |
           xcodebuild clean test -project StarWars2.xcodeproj -scheme StarWars2 -destination 'platform=iOS Simulator,id=E90AC0C5-6DA1-4BD7-83DB-12A526D8F068,OS=15.0,name=iPhone 13 Pro Max' test
-      - name: Check Tests Passed 
+     
+      - name: Check Tests Passed    # Verify test status
         if: steps.xcodebuild.outputs.result != 0 
         run: exit 1
-      - name: Build App
+     
+      - name: Release Build App     # Build release buils
         run: xcodebuild -project "StarWars2.xcodeproj" -scheme "StarWars2" -destination "generic/platform=iOS" -configuration Release build CODE_SIGNING_ALLOWED=NO
         env: 
          destination: ${{ matrix.destination }}
