@@ -135,7 +135,7 @@ An iOS application about Star Wars that allows users to see all reelated informa
 - Basic workflow added for Swift project 
 ### (Can be modified later)
 
-https://medium.com/@rohanbhale/hazards-of-using-mutable-types-as-transformable-attributes-in-core-data-2c95cdc27088
+https://github.com/ShuklaDevashree963/StarWars/blob/main/.github/workflows/swift.yml
 
 ## Swift Lint 
 
