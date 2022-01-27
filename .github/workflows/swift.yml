@@ -13,6 +13,9 @@ jobs:
           destination: [ 'generic/platform=iOS' ]
 
     steps:
+      - uses: fwal/setup-swift@2040b795e5c453c3a05fcb8316496afc8a74f192
+        with:
+          swift-version: ${{ matrix.swift }}
       - name: Checkout
         uses: actions/checkout@v2
       - name: Force Xcode 11
