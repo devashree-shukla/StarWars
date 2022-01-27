@@ -9,9 +9,9 @@ jobs:
   
     runs-on: macos-latest   # Job name is test
     
-    strategy:
-        matrix:
-          destination: [ 'generic/platform=iOS' ]
+    strategy:     # Creates build matrixx for jobs
+        matrix:     
+          destination: [ 'generic/platform=iOS', 'platform=iOS Simulator,OS=13.1,name=iPhone 8', 'platform=iOS Simulator,OS=13.1,name=iPhone 9' ]     # different configurations of the virtual environment
 
     steps:
       - name: Checkout    # Check out step
