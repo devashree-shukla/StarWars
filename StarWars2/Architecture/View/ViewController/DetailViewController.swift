@@ -16,7 +16,7 @@ class DetailViewController: UIViewController {
         return viewModel
     }()
     private var dataSource: TableCellDataSource<DetailRowViewCell, (DetailDisplayFields, Any?)>!
-    private weak var delegate: TableCellDelegate<UITableViewCell>!
+    private var delegate: TableCellDelegate<UITableViewCell>?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +35,7 @@ extension DetailViewController {
             cell.field = data
         })
 
-        delegate = TableCellDelegate(cellIdentifier: StoryboardIds.detailRowViewCell) as? TableCellDelegate
+        delegate = TableCellDelegate(cellIdentifier: StoryboardIds.detailRowViewCell)
 
         DispatchQueue.main.async {
             self.detailTableView.dataSource = self.dataSource

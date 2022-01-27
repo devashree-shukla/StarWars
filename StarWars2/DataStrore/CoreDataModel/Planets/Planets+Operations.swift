@@ -13,6 +13,7 @@ extension Planets {
     class func findAll(in managedObjectContext: NSManagedObjectContext) -> [Planets] {
         let fetchRequest: NSFetchRequest<Planets> = Planets.fetchRequest()
         fetchRequest.returnsObjectsAsFaults = true
+        fetchRequest.propertiesToFetch = ["name"]
        // fetchRequest.resultType = .re
         do {
             return try managedObjectContext.fetch(fetchRequest)

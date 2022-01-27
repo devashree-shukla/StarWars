@@ -30,7 +30,7 @@
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="orbitalPeriod" optional="YES" attributeType="String"/>
         <attribute name="population" optional="YES" attributeType="String"/>
-        <attribute name="residents" optional="YES" attributeType="Transformable" valueTransformerName="PlanetAttributeTransformer" customClassName=".PlanetsNSSecureCoding"/>
+        <attribute name="residents" optional="YES" attributeType="Transformable" valueTransformerName="PlanetAttributeTransformer" customClassName=".ResidentsNSSecureCoding"/>
         <attribute name="rotationPeriod" optional="YES" attributeType="String"/>
         <attribute name="surfaceWater" optional="YES" attributeType="String"/>
         <attribute name="terrain" optional="YES" attributeType="String"/>

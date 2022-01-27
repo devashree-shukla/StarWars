@@ -17,7 +17,7 @@ class HomeViewController: UIViewController {
     }()
 
     private var dataSource: TableCellDataSource<UITableViewCell, StarWars>!
-    private weak var delegate: TableCellDelegate<UITableViewCell>?
+    private var delegate: TableCellDelegate<UITableViewCell>?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +45,7 @@ extension HomeViewController {
             }
         })
 
-        self.delegate = TableCellDelegate(cellIdentifier: StoryboardIds.homeViewCell) as? TableCellDelegate
+        delegate = TableCellDelegate(cellIdentifier: StoryboardIds.homeViewCell)
 
         delegate?.didSelect = { _ in
             self.performSegue(withIdentifier: StoryboardIds.showListSegue, sender: self)

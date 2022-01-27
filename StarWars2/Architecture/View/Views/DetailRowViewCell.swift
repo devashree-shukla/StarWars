@@ -73,11 +73,14 @@ extension DetailRowViewCell {
                 descriptionLabel.text = value.gravityString
             case .diameter:
                 descriptionLabel.text = value.diameterString
-            case .films, .residents: break
+            case .films, .residents:
+                print(value)
             default: descriptionLabel.text = value
             }
         } else if let value = (field?.1 as? Date) {
             descriptionLabel.text = value.description
+        } else {
+            descriptionLabel.text = "---"
         }
     }
 
@@ -90,8 +93,8 @@ extension DetailRowViewCell {
         lbl.backgroundColor = .systemBlue
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.clipsToBounds = true
+        lbl.numberOfLines = 1
         lbl.sizeToFit()
-        lbl.numberOfLines = 0
         stackView.addArrangedSubview(lbl)
         lbl.cornerRadius = lbl.frame.height / 2
     }

@@ -17,7 +17,7 @@ class ListViewController: UIViewController {
         return viewModel
     }()
     private var dataSource: TableCellDataSource<UITableViewCell, Planets>!
-    private weak var delegate: TableCellDelegate<UITableViewCell>!
+    private var delegate: TableCellDelegate<UITableViewCell>?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +28,7 @@ class ListViewController: UIViewController {
         }
 
         loadData()
+        updatenavigationTitle()
 
     }
 }
@@ -58,12 +59,12 @@ extension ListViewController {
             (cell as? ListViewCell)?.titleLabel.text = "\(index + 1)".planetString
         })
 
-        self.delegate = TableCellDelegate(cellIdentifier: StoryboardIds.listViewCell) as? TableCellDelegate
+        delegate = TableCellDelegate(cellIdentifier: StoryboardIds.listViewCell)
 
         delegate?.didSelect = { selectedIndex in
             self.viewModel.selectItem(index: selectedIndex) { [weak self] result in
                 if result == nil {
-                    self?.showAlert(msg: StarWarsConstants.Texts.errorMessage)
+                    self?.showAlert(msg: StarWarsConstants.Texts.noDsta)
                 } else {
                     self?.performSegue(withIdentifier: StoryboardIds.showDetailSegue, sender: self)
                 }

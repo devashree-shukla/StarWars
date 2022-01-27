@@ -139,9 +139,9 @@ extension CoreDataHelper {
             entity.created = model.created.toDate()
             entity.climate = model.climate
 
-            if let residents = model.residentArray?.map({ createPeople($0, context: context) }) as? [Residents] {
-                entity.residents = residents
-            }
+//            if let residents = model.residentArray?.map({ createPeople($0, context: context) }) as? [Residents] {
+//                entity.residents = residents
+//            }
 //            if let items = model.filmArray?.map({ createFilm($0, context: context) }) as? [Films] {
 //                entity.films = PlanetsNSSecureCoding(films: entit)
 //            }
@@ -154,10 +154,10 @@ extension CoreDataHelper {
         let fetchRequest: NSFetchRequest<Planets> = Planets.fetchRequest()
         let search = NSPredicate(format: "name == %@", name)
         print("search: \(search)")
-//        fetchRequest.predicate = search
+        fetchRequest.predicate = search
         fetchRequest.returnsObjectsAsFaults = false
         fetchRequest.resultType = .managedObjectResultType
-//        fetchRequest.propertiesToFetch = ["name"]
+        fetchRequest.propertiesToFetch = ["name"]
         print("request predicate: \(String(describing: fetchRequest.predicate))")
             let items = try? currentContext.fetch(fetchRequest)
             return items?.first
