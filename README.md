@@ -132,8 +132,7 @@ An iOS application about Star Wars that allows users to see all reelated informa
 
 ## CI/CD
 
-- Basic workflow added for Swift project 
-### (Can be modified later)
+- Basic workflow added for Swift project  (Can be modified later)
 
 https://github.com/ShuklaDevashree963/StarWars/blob/main/.github/workflows/swift.yml
 
