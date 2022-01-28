@@ -22,22 +22,37 @@ An iOS application about Star Wars that allows users to see all reelated informa
 
 ### iPad
 
-## Application work flow
+## Application and work flow
+
+- Have done API analysis, Requirement/Feature understanding, UI plan, Coding, Testcases for Planets API
+- Have shown listing of all 6 types possible data in [StarWars API](https://swapi.dev/documentation) 
+- Have implemented Planets API to show first page's 10 records(In Listing screen) along with it's related films & residents records(In detail screen)
+- Have taken care of Scalability, Reusability, Maintainability, Modularity while implementations - 
+- Used MVVM app architecture, protocol based approach, Generics based classes to be done for all 6 types
+- Have followed coding standard, naming convensions and used SwiftLint tool for clean and warnings less code
+- Have implemented UI tests and Unit test cases for API, ViewModels, Network, Mocked responses etc
+- Have tried to manage CI/CD pipelines through [Git Hub actions](https://github.com/ShuklaDevashree963/StarWars/actions/runs/1761776083/workflow) and shown status badge above
+- Have useed Async concurrent tasks to fetch nested records (films/residents) : Yet to make it generics to support any 6 types
+- Supported offline storage using core data : Yet to fix an issue in saving transformable objects(for nested objects)
+- Project implemented fully in [Swift](https://www.swift.org/documentation/) and No third parties used
+
 
 ## Modules
 
-1. Planets
-2. People/Residents/Characters/Pilots
-3. Films
-4. Starships
-5. Spices
-6. Vehicles
+1. [Planets](https://swapi.dev/documentation#planets)
+2. [People/Residents/Characters/Pilots](https://swapi.dev/documentation#people)
+3. [Films](https://swapi.dev/documentation#films)
+4. [Starships](https://swapi.dev/documentation#starships)
+5. [Spices](https://swapi.dev/documentation#species)
+6. [Vehicles](https://swapi.dev/documentation#vehicles)
 
 ## Main Features
 
 [Features](https://github.com/ShuklaDevashree963/StarWars/blob/main/Features.md)
 
 ## Architecture
+
+
     
 ## Folder structure
 
@@ -71,9 +86,8 @@ An iOS application about Star Wars that allows users to see all reelated informa
 
 ## CI/CD
 
-- Basic workflow added for Swift project
+- [Simple workflow added for Swift project](https://github.com/ShuklaDevashree963/StarWars/blob/main/.github/workflows/swift.yml)
 
-https://github.com/ShuklaDevashree963/StarWars/blob/main/.github/workflows/swift.yml
 
 ## Swift Lint 
 
