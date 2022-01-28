@@ -1,47 +1,36 @@
 //
-//  DetailViewModel.swift
-//  StarWars2
+//  MockDetailViewModelProtocol.swift
+//  StarWars2Tests
 //
-//  Created by Devashree KS on 24/01/22.
+//  Created by Devashree KS on 28/01/22.
 //
 
 import Foundation
-import UIKit
+@testable import StarWars2
+import XCTest
 
-protocol DetailViewModelProtocol {
-    var item: Planets? { get set }
-    var fields: [(DetailDisplayFields, Any?)] { get }
-    var items: [DetailDisplayFields] { get }
-    var starWarsItem: StarWars { get }
-}
-
-class DetailViewModel: DetailViewModelProtocol {
-
-    // MARK: - Input
-    var starWarsItem: StarWars = .planets
-    var items: [DetailDisplayFields] {
-        DetailDisplayFields.getDisplayFields(type: starWarsItem)
-    }
-
-    // MARK: Output
-    var item: Planets?
+class MockDetailViewModelProtocol: DetailViewModelProtocol {
+    var item: Planets? = nil
+    
     var fields: [(DetailDisplayFields, Any?)] {
         items.map { ($0, getValue(key: $0)) }
     }
-
-     private func getValue(key: DetailDisplayFields) -> Any? {
+    
+    var items: [DetailDisplayFields] {
+        DetailDisplayFields.getDisplayFields(type: starWarsItem)
+    }
+    
+    var starWarsItem: StarWars = .planets
+    
+    func getValue(key: DetailDisplayFields) -> Any? {
         switch starWarsItem {
         case .planets:
             return getValuesForPlanets(key: key)
-        case .people:
-            return nil
-        case .films:
-            return nil
-        case .starships, .spices, .vehicles:
+       default:
             return nil
         }
     }
-
+    
     // swiftlint:disable:next cyclomatic_complexity
     private func getValuesForPlanets(key: DetailDisplayFields) -> Any? {
         switch key {
@@ -76,5 +65,5 @@ class DetailViewModel: DetailViewModelProtocol {
             return item?.edited
         }
     }
-
 }
+

@@ -21,3 +21,15 @@ extension UIViewController {
     }
 
 }
+
+extension Bundle {
+    func getContent(name: String) -> URL? {
+        if let filePath = Bundle(for: type(of: self)).path(forResource: name,
+                                                           ofType: "json") {
+            if FileManager.default.fileExists(atPath: filePath) {
+                return URL(fileURLWithPath: filePath)
+            }
+        }
+        return nil 
+    }
+}

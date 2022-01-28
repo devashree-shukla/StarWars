@@ -31,7 +31,7 @@ class ListViewModel: ListViewModelProtocol {
     var navigationTitle: String? {
         if planetFromCoreData.count > 0 {
             return (starWarsItem.description) + "(\(planetFromCoreData.count) records)"
-        } else if planetFromCoreData.count > 0 {
+        } else if data.count > 0 {
             return (starWarsItem.description) + "(\(data.count) records)"
         } else {
             return "Loading..."
@@ -40,7 +40,12 @@ class ListViewModel: ListViewModelProtocol {
     var planetFromCoreData: [Planets] = []
     
     func selectItem(index: Int, _ completion: ((Planets?) -> Void)?) {
-        selectedItem = CoreDataHelper.getSelectedItem(name: self.planetFromCoreData[index].name ?? "")
+        guard self.planetFromCoreData.count > 0,
+                let name = self.planetFromCoreData[index].name else {
+            completion?(nil)
+            return
+        }
+        selectedItem = CoreDataHelper.getSelectedItem(name: name)
         completion?(selectedItem)
     }
     

@@ -11,13 +11,19 @@ import XCTest
 
 class HomeViewModelTests: XCTestCase {
     var viewModel: HomeViewModel!
+    var viewModelProtocol: MockHomeViewModelProtocol!
 
     override func setUp() {
         viewModel = HomeViewModel()
+        viewModelProtocol = MockHomeViewModelProtocol()
     }
 
     func testHomeViewModelShouldNotBeNil() {
         XCTAssertNotNil(viewModel, "Home view model should not be nil")
+    }
+    
+    func testHomeViewModelProtocolShouldNotBeNil() {
+        XCTAssertNotNil(viewModelProtocol, "Home view model protocol should not be nil")
     }
     
     func testStarWarsItemsShouldNotBeNil() {
@@ -52,6 +58,22 @@ class HomeViewModelTests: XCTestCase {
         if viewModel.starWarsItems.count < index {
             XCTAssertNotNil(viewModel.selectedItem(index: index), "Should return not nill selected item")
         }
+    }
+    
+    func testHomeViewModelStarWarsItemShouldBeChangeable() {
+        XCTAssertTrue(viewModel.selectedItem(index: 0) == .planets, "ListViewModel have selected planets type")
+        XCTAssertTrue(viewModel.selectedItem(index: 1) == .people, "ListViewModel have selected people type")
+    }
+    
+    func testHomeViewModelProtocolShouldReturnStarWarsItem() {
+        XCTAssertTrue(viewModelProtocol.selectedItem(index: 0) == .planets, "ListViewModel have selected planets type")
+        XCTAssertTrue(viewModelProtocol.selectedItem(index: 1) == .people, "ListViewModel have selected people type")
+    }
+    
+    func testHomeViewModelProtocolShouldReturnForPlanet() {
+        XCTAssertNotNil(viewModelProtocol.selectedItem(index: 0).description == StarWars.planets.description,
+                        "Should return description for planets")
+        XCTAssertNotNil(viewModelProtocol.selectedItem(index: 0).description, "Description should not be nil")
     }
 
 }

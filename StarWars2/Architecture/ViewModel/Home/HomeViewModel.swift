@@ -13,7 +13,7 @@ protocol HomeViewModelProtocol {
 }
 
 class HomeViewModel: HomeViewModelProtocol {
-
+    
     // MARK: Input
     func selectedItem(index: Int) -> StarWars {
         StarWars.allCases[index]
