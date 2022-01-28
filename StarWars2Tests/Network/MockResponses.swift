@@ -4,6 +4,7 @@
 //
 //  Created by Devashree KS on 28/01/22.
 //
+//swiftlint:disable all
 
 import Foundation
 import UIKit
@@ -58,7 +59,6 @@ extension MockReesponse {
         return jsonString
     }
 
-    // swiftlint:disable: function_body_length
     private func firstPageResponse() -> String {
         let jsonString = """
         {
