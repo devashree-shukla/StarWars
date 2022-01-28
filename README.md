@@ -32,7 +32,7 @@ An iOS application about Star Wars that allows users to see all reelated informa
 - Have tried to manage CI/CD pipelines through [Git Hub actions](https://github.com/ShuklaDevashree963/StarWars/actions/runs/1761776083/workflow) and shown status badge above
 - Have useed Async concurrent tasks to fetch nested records (films/residents) : Yet to make it generics to support any 6 types
 - Supported offline storage using core data : Yet to fix an issue in saving transformable objects(for nested objects)
-- Project implemented fully in [Swift](https://www.swift.org/documentation/) and No third parties used
+- Project implemented fully in [Swift](https://www.swift.org/documentation/), [UIKit](https://developer.apple.com/documentation/uikit) and No third parties used
 - Used Github and Github desktop for code hosting and code management 
 
 
