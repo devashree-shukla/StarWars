@@ -33,6 +33,7 @@ An iOS application about Star Wars that allows users to see all reelated informa
 - Have useed Async concurrent tasks to fetch nested records (films/residents) : Yet to make it generics to support any 6 types
 - Supported offline storage using core data : Yet to fix an issue in saving transformable objects(for nested objects)
 - Project implemented fully in [Swift](https://www.swift.org/documentation/) and No third parties used
+- Used Github and Github desktop for code hosting and code management 
 
 
 ## Modules
