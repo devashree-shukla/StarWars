@@ -47,7 +47,7 @@ An iOS application about Star Wars that allows users to see all reelated informa
 
 ## Main Features
 
-[Features](https://github.com/ShuklaDevashree963/StarWars/blob/main/Features.md)
+- Features listing can be found here : [Features](https://github.com/ShuklaDevashree963/StarWars/blob/main/Features.md)
 
 ## Architecture
 
@@ -55,23 +55,6 @@ Have choosen MVVM over any other options as it's faster for developement for suc
 
 ![IMG_C723FAD3720B-1](https://user-images.githubusercontent.com/38584944/151563142-e54a5f8e-ade0-4f6d-a551-4029237e09fd.jpeg)
 
-
-
-    
-## Folder structure
-
-- Network : Contains all files required to make API calls
-- Resoures : Contains image/color/any other resources
-- Architecture : MVVM 
-    - Model : Contains all models for parsing request/response and some common models to handle 6 types of data
-    - ViewModel : Contains all view model, it's protocol and helper files for Home/List/Detail screen
-    - View : Contains all view controllers and table view cell files for Home/List/Detail screen
-- App Specific : Contains all unique app level files 
-- Data Store : Contains core database and it's models and helper method
-- Helpers : Contains helpers for coredata, network reachability, extensions, constants
-
-
-## Sequence diagram (For planet module)
 
 ## Entity relationship and core data
 
@@ -93,6 +76,22 @@ Have choosen MVVM over any other options as it's faster for developement for suc
 
 <img width="1628" alt="Screenshot 2022-01-24 at 2 17 07 AM" src="https://user-images.githubusercontent.com/38584944/150697420-9efbc571-5471-4a7c-b47d-1812db18bc60.png">
 
+
+    
+## Folder structure
+
+- Network : Contains all files required to make API calls
+- Resoures : Contains image/color/any other resources
+- Architecture : MVVM 
+    - Model : Contains all models for parsing request/response and some common models to handle 6 types of data
+    - ViewModel : Contains all view model, it's protocol and helper files for Home/List/Detail screen
+    - View : Contains all view controllers and table view cell files for Home/List/Detail screen
+- App Specific : Contains all unique app level files 
+- Data Store : Contains core database and it's models and helper method
+- Helpers : Contains helpers for coredata, network reachability, extensions, constants
+
+
+## Sequence diagram (For planet module)
 
 
 ## Testing Approach 
