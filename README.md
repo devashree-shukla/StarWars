@@ -32,7 +32,7 @@ An iOS application about Star Wars that allows users to see all reelated informa
 - Have tried to manage CI/CD pipelines through [Git Hub actions](https://github.com/ShuklaDevashree963/StarWars/actions/runs/1761776083/workflow) and shown status badge above
 - Have useed Async concurrent tasks to fetch nested records (films/residents) : Yet to make it generics to support any 6 types
 - Supported offline storage using core data : Yet to fix an issue in saving transformable objects(for nested objects)
-- Project implemented fully in [Swift](https://www.swift.org/documentation/) and No third parties used
+- Project implemented fully in [Swift](https://www.swift.org/documentation/), [UIKit](https://developer.apple.com/documentation/uikit) and No third parties used
 - Used Github and Github desktop for code hosting and code management 
 
 
@@ -47,7 +47,7 @@ An iOS application about Star Wars that allows users to see all reelated informa
 
 ## Main Features
 
-[Features](https://github.com/ShuklaDevashree963/StarWars/blob/main/Features.md)
+- Features listing can be found here : [Features](https://github.com/ShuklaDevashree963/StarWars/blob/main/Features.md)
 
 ## Architecture
 
@@ -55,23 +55,6 @@ Have choosen MVVM over any other options as it's faster for developement for suc
 
 ![IMG_C723FAD3720B-1](https://user-images.githubusercontent.com/38584944/151563142-e54a5f8e-ade0-4f6d-a551-4029237e09fd.jpeg)
 
-
-
-    
-## Folder structure
-
-- Network : Contains all files required to make API calls
-- Resoures : Contains image/color/any other resources
-- Architecture : MVVM 
-    - Model : Contains all models for parsing request/response and some common models to handle 6 types of data
-    - ViewModel : Contains all view model, it's protocol and helper files for Home/List/Detail screen
-    - View : Contains all view controllers and table view cell files for Home/List/Detail screen
-- App Specific : Contains all unique app level files 
-- Data Store : Contains core database and it's models and helper method
-- Helpers : Contains helpers for coredata, network reachability, extensions, constants
-
-
-## Sequence diagram (For planet module)
 
 ## Entity relationship and core data
 
@@ -94,6 +77,21 @@ Have choosen MVVM over any other options as it's faster for developement for suc
 <img width="1628" alt="Screenshot 2022-01-24 at 2 17 07 AM" src="https://user-images.githubusercontent.com/38584944/150697420-9efbc571-5471-4a7c-b47d-1812db18bc60.png">
 
 
+    
+## Folder structure
+
+- Network : Contains all files required to make API calls
+- Resoures : Contains image/color/any other resources
+- Architecture : MVVM 
+    - Model : Contains all models for parsing request/response and some common models to handle 6 types of data
+    - ViewModel : Contains all view model, it's protocol and helper files for Home/List/Detail screen
+    - View : Contains all view controllers and table view cell files for Home/List/Detail screen
+- App Specific : Contains all unique app level files 
+- Data Store : Contains core database and it's models and helper method
+- Helpers : Contains helpers for coredata, network reachability, extensions, constants
+
+
+## Sequence diagram (For planet module)
 
 
 ## Testing Approach 
@@ -103,7 +101,10 @@ Have choosen MVVM over any other options as it's faster for developement for suc
 
 It is very important how user is going to interact with your application. Writing test cases gives assurance that application is stable and safe for your user. It allows you to refactor code easily. It captures business requirements in form of test cases.
 
+<img width="452" alt="Screenshot 2022-01-28 at 8 46 43 PM" src="https://user-images.githubusercontent.com/38584944/151578256-06752551-5d34-4f3c-b07f-934d732b29a9.png">
 
+
+<img width="459" alt="Screenshot 2022-01-28 at 9 19 29 PM" src="https://user-images.githubusercontent.com/38584944/151578276-d385a49d-90b6-47f2-b268-60b45f2e854f.png">
 
 
 ## CI/CD
