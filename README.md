@@ -35,7 +35,7 @@ An iOS application about Star Wars that allows users to see all reelated informa
 
 ## Main Features
 
-
+https://github.com/ShuklaDevashree963/StarWars/blob/main/Features.md
 
 ## Architecture
     
