@@ -56,6 +56,17 @@ An iOS application about Star Wars that allows users to see all reelated informa
     
 ## Folder structure
 
+- Network : Contains all files required to make API calls
+- Resoures : Contains image/color/any other resources
+- Architecture : MVVM 
+    - Model : Contains all models for parsing request/response and some common models to handle 6 types of data
+    - ViewModel : Contains all view model, it's protocol and helper files for Home/List/Detail screen
+    - View : Contains all view controllers and table view cell files for Home/List/Detail screen
+- App Specific : Contains all unique app level files 
+- Data Store : Contains core database and it's models and helper method
+- Helpers : Contains helpers for coredata, network reachability, extensions, constants
+
+
 ## Sequence diagram (For planet module)
 
 ## Entity relationship and core data
