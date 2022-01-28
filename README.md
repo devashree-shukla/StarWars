@@ -95,7 +95,6 @@ Have choosen MVVM over any other options as it's faster for developement for suc
 
 
 
-
 ## Testing Approach 
 
 - For Unit tests focused for ViewModels, Network classes, Mocks responses
@@ -103,7 +102,10 @@ Have choosen MVVM over any other options as it's faster for developement for suc
 
 It is very important how user is going to interact with your application. Writing test cases gives assurance that application is stable and safe for your user. It allows you to refactor code easily. It captures business requirements in form of test cases.
 
+<img width="452" alt="Screenshot 2022-01-28 at 8 46 43 PM" src="https://user-images.githubusercontent.com/38584944/151578256-06752551-5d34-4f3c-b07f-934d732b29a9.png">
 
+
+<img width="459" alt="Screenshot 2022-01-28 at 9 19 29 PM" src="https://user-images.githubusercontent.com/38584944/151578276-d385a49d-90b6-47f2-b268-60b45f2e854f.png">
 
 
 ## CI/CD
