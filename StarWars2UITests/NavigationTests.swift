@@ -16,8 +16,7 @@ final class NavigationTests: StarWars2UITests {
         super.setUp()
         
         sut = SomeViewController()
-        navigationController
-            = UINavigationControllerMock(rootViewController: UIViewController())
+        navigationController = UINavigationControllerMock(rootViewController: UIViewController())
         navigationController.pushViewController(sut, animated: false)
         navigationController.pushViewControllerCalled = false
     }
@@ -40,29 +39,7 @@ final class NavigationTests: StarWars2UITests {
 final class SomeViewController: UIViewController {
     func pushMyVC() {
         navigationController?.pushViewController(
-            UIViewController(), animated: false
+            MockViewController(), animated: false
         )
-    }
-}
-
-final class UINavigationControllerMock: UINavigationController {
-    var pushViewControllerCalled = false
-    override func pushViewController(
-        _ viewController: UIViewController, animated: Bool
-    ) {
-        super.pushViewController(viewController, animated: animated)
-        pushViewControllerCalled = true
-    }
-    
-    var presentCalled = false
-    override func present(
-        _ viewControllerToPresent: UIViewController,
-        animated flag: Bool,
-        completion: (() -> Void)? = nil
-    ) {
-        super.present(
-            viewControllerToPresent, animated: flag, completion: completion
-        )
-        presentCalled = true
     }
 }

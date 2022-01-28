@@ -53,6 +53,14 @@
 		91BCC52D27A3AE4E00D01392 /* ListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BCC52C27A3AE4E00D01392 /* ListUITests.swift */; };
 		91BCC52F27A3AF4000D01392 /* NavigationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BCC52E27A3AF4000D01392 /* NavigationTests.swift */; };
 		91BCC53127A3B96000D01392 /* DetailUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BCC53027A3B96000D01392 /* DetailUITest.swift */; };
+		91BCC53327A3C3BE00D01392 /* MockHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BCC53227A3C3BE00D01392 /* MockHomeViewController.swift */; };
+		91BCC53527A3C40A00D01392 /* MockHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BCC53227A3C3BE00D01392 /* MockHomeViewController.swift */; };
+		91BCC53727A3C4F200D01392 /* UINavigationControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BCC53627A3C4F200D01392 /* UINavigationControllerMock.swift */; };
+		91BCC53827A3C4FD00D01392 /* UINavigationControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BCC53627A3C4F200D01392 /* UINavigationControllerMock.swift */; };
+		91BCC53A27A3C58D00D01392 /* PlanetsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BCC53927A3C58D00D01392 /* PlanetsTest.swift */; };
+		91BCC53E27A3C5BD00D01392 /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BCC53D27A3C5BD00D01392 /* HomeViewModelTests.swift */; };
+		91BCC54027A3C5D000D01392 /* ListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BCC53F27A3C5D000D01392 /* ListViewModelTests.swift */; };
+		91BCC54227A3C5DF00D01392 /* DetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BCC54127A3C5DF00D01392 /* DetailViewModelTests.swift */; };
 		91C167D5279FA3EB007244D3 /* StarWars2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 91C167D3279FA3EB007244D3 /* StarWars2.xcdatamodeld */; };
 		91C16840279FBE20007244D3 /* FilmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CBCF02279F647A00557A53 /* FilmModel.swift */; };
 		91C16841279FBE23007244D3 /* PeopleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CBCF06279F647A00557A53 /* PeopleModel.swift */; };
@@ -149,6 +157,12 @@
 		91BCC52C27A3AE4E00D01392 /* ListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUITests.swift; sourceTree = "<group>"; };
 		91BCC52E27A3AF4000D01392 /* NavigationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTests.swift; sourceTree = "<group>"; };
 		91BCC53027A3B96000D01392 /* DetailUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailUITest.swift; sourceTree = "<group>"; };
+		91BCC53227A3C3BE00D01392 /* MockHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHomeViewController.swift; sourceTree = "<group>"; };
+		91BCC53627A3C4F200D01392 /* UINavigationControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerMock.swift; sourceTree = "<group>"; };
+		91BCC53927A3C58D00D01392 /* PlanetsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsTest.swift; sourceTree = "<group>"; };
+		91BCC53D27A3C5BD00D01392 /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
+		91BCC53F27A3C5D000D01392 /* ListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModelTests.swift; sourceTree = "<group>"; };
+		91BCC54127A3C5DF00D01392 /* DetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModelTests.swift; sourceTree = "<group>"; };
 		91C167D4279FA3EB007244D3 /* StarWars2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StarWars2.xcdatamodel; sourceTree = "<group>"; };
 		91C743AA27A03C3900F32814 /* StarshipModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarshipModel.swift; sourceTree = "<group>"; };
 		91C743AC27A03C4700F32814 /* SpicesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpicesModel.swift; sourceTree = "<group>"; };
@@ -396,6 +410,33 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		91BCC53427A3C3C200D01392 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				91BCC53227A3C3BE00D01392 /* MockHomeViewController.swift */,
+				91BCC53627A3C4F200D01392 /* UINavigationControllerMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		91BCC53B27A3C59200D01392 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				91BCC53927A3C58D00D01392 /* PlanetsTest.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		91BCC53C27A3C59D00D01392 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				91BCC53D27A3C5BD00D01392 /* HomeViewModelTests.swift */,
+				91BCC53F27A3C5D000D01392 /* ListViewModelTests.swift */,
+				91BCC54127A3C5DF00D01392 /* DetailViewModelTests.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		91CBCEFD279F466D00557A53 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
@@ -444,6 +485,9 @@
 			isa = PBXGroup;
 			children = (
 				91D64076279CC2C6003D9C21 /* StarWars2Tests.swift */,
+				91BCC53C27A3C59D00D01392 /* ViewModel */,
+				91BCC53427A3C3C200D01392 /* Mocks */,
+				91BCC53B27A3C59200D01392 /* Model */,
 			);
 			path = StarWars2Tests;
 			sourceTree = "<group>";
@@ -788,7 +832,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91BCC53E27A3C5BD00D01392 /* HomeViewModelTests.swift in Sources */,
 				91D64077279CC2C6003D9C21 /* StarWars2Tests.swift in Sources */,
+				91BCC54027A3C5D000D01392 /* ListViewModelTests.swift in Sources */,
+				91BCC54227A3C5DF00D01392 /* DetailViewModelTests.swift in Sources */,
+				91BCC53327A3C3BE00D01392 /* MockHomeViewController.swift in Sources */,
+				91BCC53727A3C4F200D01392 /* UINavigationControllerMock.swift in Sources */,
+				91BCC53A27A3C58D00D01392 /* PlanetsTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -798,7 +848,9 @@
 			files = (
 				91BCC53127A3B96000D01392 /* DetailUITest.swift in Sources */,
 				91BCC52D27A3AE4E00D01392 /* ListUITests.swift in Sources */,
+				91BCC53827A3C4FD00D01392 /* UINavigationControllerMock.swift in Sources */,
 				91BCC52F27A3AF4000D01392 /* NavigationTests.swift in Sources */,
+				91BCC53527A3C40A00D01392 /* MockHomeViewController.swift in Sources */,
 				91BCC52927A39FC600D01392 /* XCUIElement.swift in Sources */,
 				91D64083279CC2C6003D9C21 /* StarWars2UITestsLaunchTests.swift in Sources */,
 				91BCC52B27A3A2B900D01392 /* HomeUITests.swift in Sources */,
