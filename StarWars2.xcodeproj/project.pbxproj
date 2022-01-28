@@ -179,6 +179,7 @@
 		91BCC55B27A3F9CF00D01392 /* PlanetsLastPageResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PlanetsLastPageResponse.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
 		91BCC56127A4107800D01392 /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
 		91BCC56327A4113500D01392 /* NetworkLayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLayerTests.swift; sourceTree = "<group>"; };
+		91BCC56827A41C9700D01392 /* Features.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Features.md; sourceTree = "<group>"; };
 		91C167D4279FA3EB007244D3 /* StarWars2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StarWars2.xcdatamodel; sourceTree = "<group>"; };
 		91C743AA27A03C3900F32814 /* StarshipModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarshipModel.swift; sourceTree = "<group>"; };
 		91C743AC27A03C4700F32814 /* SpicesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpicesModel.swift; sourceTree = "<group>"; };
@@ -519,6 +520,7 @@
 		91D64050279CC2C4003D9C21 = {
 			isa = PBXGroup;
 			children = (
+				91BCC56827A41C9700D01392 /* Features.md */,
 				91D640AA279CC6CD003D9C21 /* README.md */,
 				91D640AB279CC6CD003D9C21 /* StarWars2 */,
 				91D64075279CC2C6003D9C21 /* StarWars2Tests */,
