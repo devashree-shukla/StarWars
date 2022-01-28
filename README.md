@@ -39,12 +39,12 @@ An iOS application about Star Wars that allows users to see all reelated informa
 
 ## Modules
 
-1. Planets
-2. People/Residents/Characters/Pilots
-3. Films
-4. Starships
-5. Spices
-6. Vehicles
+1. [Planets](https://swapi.dev/documentation#planets)
+2. [People/Residents/Characters/Pilots](https://swapi.dev/documentation#people)
+3. [Films](https://swapi.dev/documentation#films)
+4. [Starships](https://swapi.dev/documentation#starships)
+5. [Spices](https://swapi.dev/documentation#species)
+6. [Vehicles](https://swapi.dev/documentation#vehicles)
 
 ## Main Features
 
@@ -86,9 +86,8 @@ An iOS application about Star Wars that allows users to see all reelated informa
 
 ## CI/CD
 
-- Basic workflow added for Swift project
+- [Simple workflow added for Swift project](https://github.com/ShuklaDevashree963/StarWars/blob/main/.github/workflows/swift.yml)
 
-https://github.com/ShuklaDevashree963/StarWars/blob/main/.github/workflows/swift.yml
 
 ## Swift Lint 
 
