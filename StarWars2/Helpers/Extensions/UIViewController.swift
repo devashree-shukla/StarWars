@@ -10,17 +10,6 @@ import UIKit
 
 extension UIViewController {
 
-    var hasSafeArea: Bool {
-
-        guard
-            #available(iOS 11.0, tvOS 11.0, *)
-            else {
-                return false
-            }
-        return UIApplication.shared.delegate?.window??.safeAreaInsets.top ?? 0 > 20
-
-    }
-
     func showAlert(title: String? = StarWarsConstants.Texts.appName, msg: String) {
         let alertView = UIAlertController.init(title: title,
                                                message: msg, preferredStyle: .alert)

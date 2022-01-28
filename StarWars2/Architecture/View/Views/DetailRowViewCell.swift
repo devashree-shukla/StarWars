@@ -70,24 +70,26 @@ extension DetailRowViewCell {
                 descriptionLabel.text = value.gravityString
             case .diameter:
                 descriptionLabel.text = value.diameterString
-            case .films, .residents: break
             default: descriptionLabel.text = value
             }
         } else if let value = (field?.1 as? Date) {
             descriptionLabel.text = value.description
-        } else if let value = (field?.1 as? Planets) {
-            if let peoplCount = value.people?.peopleList?.count {
-                descriptionLabel.text = "\(peoplCount)"
-                value.people?.peopleList?.forEach {
-                    self.createButton(String($0.name ?? "---"))
+        } else if let value = (field?.1 as? FilmsNSSecureCoding) {
+            if let peoplCount = value.filmList?.count {
+                descriptionLabel.text = "In \(peoplCount) films this planet was appeared."
+                descriptionLabel.font = .systemFont(ofSize: 14)
+                value.filmList?.forEach {
+                    self.createButton(String($0.title ?? "---"))
                 }
             } else {
                 descriptionLabel.text = "---"
             }
-            if let peoplCount = value.films?.filmList?.count {
-                descriptionLabel.text = "\(peoplCount)"
-                value.films?.filmList?.forEach {
-                    self.createButton(String($0.title ?? "---"))
+        } else if let value = (field?.1 as? PeopleNSSecureCoding) {
+            if let peoplCount = value.peopleList?.count {
+                descriptionLabel.text = "\(peoplCount) people leave on this planet."
+                descriptionLabel.font = .systemFont(ofSize: 14)
+                value.peopleList?.forEach {
+                    self.createButton(String($0.name ?? "---"))
                 }
             } else {
                 descriptionLabel.text = "---"
@@ -117,7 +119,7 @@ extension DetailRowViewCell {
             return
         }
         let button = UIButton(type: .system)
-        button.frame = CGRect(x: 0, y: 0, width: 100, height: 40)
+        button.frame = CGRect(x: 0, y: 0, width: 100, height: 50)
         button.setTitle("  \(text.capitalized)  ", for: .normal)
         button.borderColor = .orange
         button.borderWidth = 1

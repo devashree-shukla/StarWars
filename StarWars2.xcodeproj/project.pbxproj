@@ -46,6 +46,8 @@
 		91BCC50F27A3599D00D01392 /* Starships.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917F37D027A174CB006BA221 /* Starships.swift */; };
 		91BCC51027A3599D00D01392 /* Spices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917F37D427A174CB006BA221 /* Spices.swift */; };
 		91BCC51127A3599D00D01392 /* StarshipsAttributeTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917F37CE27A174CB006BA221 /* StarshipsAttributeTransformer.swift */; };
+		91BCC52127A399FC00D01392 /* CoreDataHelper+Entities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BCC52027A399FC00D01392 /* CoreDataHelper+Entities.swift */; };
+		91BCC52327A39B2D00D01392 /* ListViewModel+API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BCC52227A39B2D00D01392 /* ListViewModel+API.swift */; };
 		91C167D5279FA3EB007244D3 /* StarWars2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 91C167D3279FA3EB007244D3 /* StarWars2.xcdatamodeld */; };
 		91C16840279FBE20007244D3 /* FilmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CBCF02279F647A00557A53 /* FilmModel.swift */; };
 		91C16841279FBE23007244D3 /* PeopleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CBCF06279F647A00557A53 /* PeopleModel.swift */; };
@@ -135,6 +137,8 @@
 		9180039A279E08A100F0FEDD /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		9180039E279E38D300F0FEDD /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		918003A2279E4F9700F0FEDD /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		91BCC52027A399FC00D01392 /* CoreDataHelper+Entities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataHelper+Entities.swift"; sourceTree = "<group>"; };
+		91BCC52227A39B2D00D01392 /* ListViewModel+API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListViewModel+API.swift"; sourceTree = "<group>"; };
 		91C167D4279FA3EB007244D3 /* StarWars2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StarWars2.xcdatamodel; sourceTree = "<group>"; };
 		91C743AA27A03C3900F32814 /* StarshipModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarshipModel.swift; sourceTree = "<group>"; };
 		91C743AC27A03C4700F32814 /* SpicesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpicesModel.swift; sourceTree = "<group>"; };
@@ -346,10 +350,47 @@
 			path = API;
 			sourceTree = "<group>";
 		};
+		91BCC52427A39B6100D01392 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				9180039A279E08A100F0FEDD /* ListViewModel.swift */,
+				91BCC52227A39B2D00D01392 /* ListViewModel+API.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		91BCC52527A39B6900D01392 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				918003A2279E4F9700F0FEDD /* DetailViewModel.swift */,
+				917F377527A1243E006BA221 /* DetailDisplayFields.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		91BCC52627A39B7100D01392 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				911B52E4279D0986001A8169 /* HomeViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		91BCC52727A39D2C00D01392 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				91CBCF01279F647A00557A53 /* Gender.swift */,
+				91CBCF03279F647A00557A53 /* BaseModel.swift */,
+				91CBCF04279F647A00557A53 /* StarWars.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		91CBCEFD279F466D00557A53 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
 				91CBCEFE279F467900557A53 /* CoreDataHelper.swift */,
+				91BCC52027A399FC00D01392 /* CoreDataHelper+Entities.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -357,10 +398,8 @@
 		91CBCF00279F647A00557A53 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				91CBCF01279F647A00557A53 /* Gender.swift */,
+				91BCC52727A39D2C00D01392 /* Common */,
 				91CBCF02279F647A00557A53 /* FilmModel.swift */,
-				91CBCF03279F647A00557A53 /* BaseModel.swift */,
-				91CBCF04279F647A00557A53 /* StarWars.swift */,
 				91CBCF05279F647A00557A53 /* PlanetModel.swift */,
 				91CBCF06279F647A00557A53 /* PeopleModel.swift */,
 				91C743AA27A03C3900F32814 /* StarshipModel.swift */,
@@ -443,10 +482,9 @@
 		91D640AF279CC6CD003D9C21 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				911B52E4279D0986001A8169 /* HomeViewModel.swift */,
-				9180039A279E08A100F0FEDD /* ListViewModel.swift */,
-				918003A2279E4F9700F0FEDD /* DetailViewModel.swift */,
-				917F377527A1243E006BA221 /* DetailDisplayFields.swift */,
+				91BCC52627A39B7100D01392 /* Home */,
+				91BCC52427A39B6100D01392 /* List */,
+				91BCC52527A39B6900D01392 /* Detail */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -695,6 +733,7 @@
 				911B52DF279D035B001A8169 /* TableCellDelegate.swift in Sources */,
 				91C743AD27A03C4700F32814 /* SpicesModel.swift in Sources */,
 				91D640CE279CC6CD003D9C21 /* Constants.swift in Sources */,
+				91BCC52327A39B2D00D01392 /* ListViewModel+API.swift in Sources */,
 				91D640CA279CC6CD003D9C21 /* AppDelegate.swift in Sources */,
 				91BCC50C27A3599D00D01392 /* SpicesNSSecureCoding.swift in Sources */,
 				917F37A627A1360B006BA221 /* Residents.swift in Sources */,
@@ -715,6 +754,7 @@
 				91D640D8279CCFAA003D9C21 /* HomeViewController.swift in Sources */,
 				91BCC50F27A3599D00D01392 /* Starships.swift in Sources */,
 				91800398279E065900F0FEDD /* APIManager.swift in Sources */,
+				91BCC52127A399FC00D01392 /* CoreDataHelper+Entities.swift in Sources */,
 				917F37E927A19AEA006BA221 /* Planets+Operations.swift in Sources */,
 				91BCC50D27A3599D00D01392 /* SpicesAttributeTransformer.swift in Sources */,
 				91D640D5279CCDBC003D9C21 /* UIView.swift in Sources */,

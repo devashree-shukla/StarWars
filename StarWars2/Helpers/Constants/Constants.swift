@@ -11,8 +11,6 @@ struct StarWarsConstants {
 
     struct Texts {
         static let appName = Bundle.main.infoDictionary![kCFBundleNameKey as String] as? String
-        static let search = "Search"
-        static let sort = "Sort"
         static let errorMessage = "Something went wrong, Try Again!"
         static let noDsta = "Could not fetch record"
         static let noInternet = "No intenet available, Please check."

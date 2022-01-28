@@ -7,25 +7,6 @@
 
 import Foundation
 
-//@objc(PlanetsAttributeTransformer)
-//class PlanetsAttributeTransformer: NSSecureUnarchiveFromDataTransformer {
-//
-//    override static var allowedTopLevelClasses: [AnyClass] {
-//        [Residents.self, Films.self, Planets.self]
-//    }
-//
-//    static func register() {
-//        let className = String(describing: PlanetsAttributeTransformer.self)
-//        let name = NSValueTransformerName(className)
-//
-//        let transformer = PlanetsAttributeTransformer()
-//        ValueTransformer.setValueTransformer(transformer, forName: name)
-//    }
-//
-//}
-
-import UIKit
-
 class PlanetsAttributeTransformer: NSSecureUnarchiveFromDataTransformer {
 
     override class func allowsReverseTransformation() -> Bool {
@@ -39,6 +20,14 @@ class PlanetsAttributeTransformer: NSSecureUnarchiveFromDataTransformer {
     override class var allowedTopLevelClasses: [AnyClass] {
         return [Residents.self, NSArray.self, Planets.self, Films.self]
     }
+    
+    static func register() {
+         let className = String(describing: PlanetsAttributeTransformer.self)
+         let name = NSValueTransformerName(className)
+
+         let transformer = PlanetsAttributeTransformer()
+         ValueTransformer.setValueTransformer(transformer, forName: name)
+     }
 
     override func transformedValue(_ value: Any?) -> Any? {
         guard let data = value as? Data else {
@@ -53,8 +42,4 @@ class PlanetsAttributeTransformer: NSSecureUnarchiveFromDataTransformer {
         }
         return super.reverseTransformedValue(color)
     }
-}
-
-extension NSValueTransformerName {
-    static let colorToDataTransformer = NSValueTransformerName(rawValue: "PlanetsAttributeTransformer")
 }

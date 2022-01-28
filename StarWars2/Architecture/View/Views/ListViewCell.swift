@@ -41,10 +41,17 @@ extension ListViewCell {
 
     private func configureCell() {
         nameLabel.text = data?.name
-        descriptionLabel.text = "Having"
-        //\(String(describing: data.)) residents and appeared in \(String(describing: data?.films?.count)) films.
-        //Also, having \(String(describing: data?.climate)) and \(String(describing: data?.surfaceWater))
-        //% water sources "
+        var description = ""
+        if let peopleCount = data?.people?.peopleList?.count {
+            description += "\(peopleCount) residents,\n"
+        }
+        if let filmCount = data?.films?.filmList?.count {
+            description += "Appeared in \(filmCount) films\n"
+        }
+        if let surfaceWater = data?.surfaceWater {
+            description += "Having \(surfaceWater) % water sources"
+        }
+        descriptionLabel.text = description
     }
 
 }
