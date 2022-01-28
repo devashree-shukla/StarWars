@@ -121,10 +121,10 @@ It is very important how user is going to interact with your application. Writin
 <img width="909" alt="Screenshot 2022-01-27 at 10 20 19 AM" src="https://user-images.githubusercontent.com/38584944/151294259-cfd3ed93-4abb-4a64-aa39-01c7a2adfcc9.png">
 
 - Enabled auto correct as below commands in terminal :
-    cd /Users/devashreeks/Desktop/(PROJECT_DIRECTORY)
-    swiftlint autocorrect
+    - cd /Users/devashreeks/Desktop/(PROJECT_DIRECTORY)
+    - swiftlint autocorrect
     
-Above steps to bee followed before any push request to succeed CI/CD pipelines
+- Above steps to be executed before any push request to succeed CI/CD pipelines
 
 ## Other Wireframes for future improvements and new features 
 
