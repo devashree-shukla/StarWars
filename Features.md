@@ -1,7 +1,5 @@
 # Features
 
-- YET TO BE DONE
-
 1. [YET TO BE FIXED ISSUE] Show linked data
 2. [YET TO BE DONE] Genric classes & implementation
 3. [YET TO BE DONE] Lazy loading of all images for all records if available api
