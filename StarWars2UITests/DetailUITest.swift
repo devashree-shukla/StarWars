@@ -135,14 +135,9 @@ extension DetailPageTest {
         XCTAssert(nav.exists)
     }
 
-    func testIfBackButtonExists() {
-        let backButton = application.buttons["Star Wars"]
-        XCTAssert(backButton.exists)
-    }
-
     func testIfBackNavigatable() {
         let backButton = application.buttons["Star Wars"]
-        backButton.tap()
+        backButton.tapOnUIElement()
     }
 
 }

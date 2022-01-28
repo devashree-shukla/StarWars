@@ -28,7 +28,7 @@ class ListPageTest: StarWars2UITests {
     func testIfListTableViewAppearsAndHaveTenRows() {
         let listTable = application.tables
         let initialTableRows = listTable.children(matching: .cell).count
-        XCTAssert(initialTableRows == 10)
+        XCTAssertEqual(initialTableRows, 10)
     }
 
     func testIfListTableViewScrollable() {

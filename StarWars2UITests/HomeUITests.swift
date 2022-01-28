@@ -93,7 +93,6 @@ extension HomePageTest {
         for index in 0..<6 {
             let cell = homeTable.cells.element(boundBy: index)
             cell.tapOnUIElement()
-            cell.tap()
         }
     }
 

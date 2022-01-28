@@ -57,7 +57,7 @@ class ListViewModelTests: XCTestCase {
         viewModel.planetFromCoreData = [Planets()]
         XCTAssertFalse(viewModel.navigationTitle == "Loading...")
         XCTAssertTrue(viewModel.navigationTitle ==
-                      "\(viewModel.starWarsItem.description) + \(viewModel.planetFromCoreData.count) records)")
+                      "\(viewModel.starWarsItem.description)(\(viewModel.planetFromCoreData.count) records)")
     }
 
     func testNavigationTitleValueAfterDataFetchedFail() {
@@ -201,10 +201,10 @@ extension ListViewModelTests {
                     XCTAssert(results.count == 10)
                 }
                 if let previous = item["previous"] as? String {
-                    XCTAssertNil(previous)
+                    XCTAssertNotNil(previous)
                 }
                 if let previous = item["next"] as? String {
-                    XCTAssertNil(previous)
+                    XCTAssertNotNil(previous)
                 }
             }
             expect.fulfill()
@@ -233,7 +233,7 @@ extension ListViewModelTests {
                     XCTAssertNil(previous)
                 }
                 if let previous = item["next"] as? String {
-                    XCTAssertNil(previous)
+                    XCTAssertNotNil(previous)
                 }
             }
             expect.fulfill()
