@@ -10,27 +10,27 @@ import Foundation
 import XCTest
 
 class MockDetailViewModelProtocol: DetailViewModelProtocol {
-    var item: Planets? = nil
-    
+    var item: Planets?
+
     var fields: [(DetailDisplayFields, Any?)] {
         items.map { ($0, getValue(key: $0)) }
     }
-    
+
     var items: [DetailDisplayFields] {
         DetailDisplayFields.getDisplayFields(type: starWarsItem)
     }
-    
+
     var starWarsItem: StarWars = .planets
-    
+
     func getValue(key: DetailDisplayFields) -> Any? {
         switch starWarsItem {
         case .planets:
             return getValuesForPlanets(key: key)
-       default:
+        default:
             return nil
         }
     }
-    
+
     // swiftlint:disable:next cyclomatic_complexity
     private func getValuesForPlanets(key: DetailDisplayFields) -> Any? {
         switch key {
@@ -66,4 +66,3 @@ class MockDetailViewModelProtocol: DetailViewModelProtocol {
         }
     }
 }
-

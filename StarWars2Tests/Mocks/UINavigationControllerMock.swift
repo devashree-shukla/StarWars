@@ -16,7 +16,7 @@ final class UINavigationControllerMock: UINavigationController {
         super.pushViewController(viewController, animated: animated)
         pushViewControllerCalled = true
     }
-    
+
     var presentCalled = false
     override func present(
         _ viewControllerToPresent: UIViewController,

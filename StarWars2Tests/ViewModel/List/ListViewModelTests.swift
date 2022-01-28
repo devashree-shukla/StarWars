@@ -21,7 +21,7 @@ class ListViewModelTests: XCTestCase {
     func testListViewModelShouldNotBeNil() {
         XCTAssertNotNil(viewModel, "List view model should not be nil")
     }
-    
+
     func testListViewModelProtocolShouldNotBeNil() {
         XCTAssertNotNil(viewModelProtocol, "List view model should not be nil")
     }
@@ -29,18 +29,18 @@ class ListViewModelTests: XCTestCase {
     func testListViewModelStarWarsItemsShouldNotBeNil() {
         XCTAssertNotNil(viewModel.starWarsItem, "Star wars items should not be empty")
     }
-    
+
     func testDefaultListViewModelShouldBePlanets() {
         XCTAssertNotNil(viewModel.starWarsItem == .planets, "ListViewModel items should be palnets by default")
     }
-    
+
     func testListViewModelStarWarsItemShouldBeChangeable() {
         XCTAssertTrue(viewModel.starWarsItem == .planets, "ListViewModel have planets type")
         viewModel.starWarsItem = .people
         XCTAssertTrue(viewModel.starWarsItem == .people, "ListViewModel have people type")
         XCTAssertFalse(viewModel.starWarsItem == .planets, "ListViewModel don't have planets type now")
     }
-    
+
     func testDefaultNavigationTitleValueWhenNoDataFetched() {
         XCTAssert(viewModel.planetFromCoreData.count == 0, "Planet data have no items")
         XCTAssertEqual(viewModel.navigationTitle, "Loading...")
@@ -49,32 +49,39 @@ class ListViewModelTests: XCTestCase {
         viewModel.planetFromCoreData = []
         XCTAssertEqual(viewModel.navigationTitle, "Loading...")
     }
-    
+
     func testNavigationTitleValueAfterDataFetched() {
         XCTAssert(viewModel.planetFromCoreData.count == 0, "Planet data have no items")
         XCTAssertEqual(viewModel.navigationTitle, "Loading...")
         XCTAssert(viewModel.planetFromCoreData.count == 0, "Planet data have no items")
         viewModel.planetFromCoreData = [Planets()]
         XCTAssertFalse(viewModel.navigationTitle == "Loading...")
-        XCTAssertFalse(viewModel.navigationTitle == "\(viewModel.starWarsItem.description) + \(viewModel.planetFromCoreData.count) records)")
+        XCTAssertTrue(viewModel.navigationTitle ==
+                      "\(viewModel.starWarsItem.description) + \(viewModel.planetFromCoreData.count) records)")
     }
-    
+
     func testNavigationTitleValueAfterDataFetchedFail() {
         XCTAssert(viewModel.planetFromCoreData.count == 0, "Planet data have no items")
         XCTAssertEqual(viewModel.navigationTitle, "Loading...")
         XCTAssert(viewModel.planetFromCoreData.count == 0, "Planet data have no items")
         viewModel.planetFromCoreData = [Planets()]
         XCTAssertFalse(viewModel.navigationTitle == "Loading...")
-        XCTAssert(viewModel.navigationTitle == "\(viewModel.starWarsItem.description)(\(viewModel.planetFromCoreData.count) records)")
+        XCTAssert(viewModel.navigationTitle ==
+                  "\(viewModel.starWarsItem.description)(\(viewModel.planetFromCoreData.count) records)")
         viewModel.planetFromCoreData = []
-        XCTAssertFalse(viewModel.navigationTitle == "\(viewModel.starWarsItem.description)(\(viewModel.planetFromCoreData.count) records)")
+        XCTAssertFalse(viewModel.navigationTitle ==
+                       "\(viewModel.starWarsItem.description)(\(viewModel.planetFromCoreData.count) records)")
         XCTAssertTrue(viewModel.navigationTitle == "Loading...")
-        viewModel.data = [PlanetModel(name: "", population: "", films: [], residents: [], created: "", edited: "", climate: "", diameter: "", gravity: "", surfaceWater: "", orbitalPeriod: "", rotationPeriod: "", terrain: "", filmArray: [], residentArray: [])]
+        viewModel.data = [PlanetModel(name: "", population: "", films: [], residents: [],
+                                      created: "", edited: "", climate: "", diameter: "",
+                                      gravity: "", surfaceWater: "", orbitalPeriod: "",
+                                      rotationPeriod: "", terrain: "", filmArray: [], residentArray: [])]
         viewModel.planetFromCoreData = []
         XCTAssertFalse(viewModel.navigationTitle == "Loading...")
-        XCTAssertTrue(viewModel.navigationTitle == "\(viewModel.starWarsItem.description)(\(viewModel.data.count) records)")
+        XCTAssertTrue(viewModel.navigationTitle ==
+                      "\(viewModel.starWarsItem.description)(\(viewModel.data.count) records)")
     }
-    
+
     func testListViewModelShouldBeSelectable() {
         viewModel.planetFromCoreData.first?.name = "Test Name"
         if viewModel.planetFromCoreData.count > 0 {
@@ -83,25 +90,25 @@ class ListViewModelTests: XCTestCase {
             }
         }
     }
-    
+
     func testListViewModelFetchDataAPI() {
-        viewModel.fetchData { result in
-            
+        viewModel.fetchData { _ in
+
         }
     }
-    
+
 }
 
 extension ListViewModelTests {
-    
+
     func testLinkViewModelAPIForNoNetworkError() {
         let expect = expectation(description: "Wait for network call")
         viewModelProtocol.planetFromCoreData = []
         viewModelProtocol.createMockData(data: Data(),
                                          response: nil,
                                          error: ErrorResult.network(string: "No network error"))
-        viewModelProtocol.fetchData { result in
-            
+        viewModelProtocol.fetchData { _ in
+
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             XCTAssertTrue(self.viewModelProtocol.planetFromCoreData.isEmpty, "No network error")
@@ -113,7 +120,7 @@ extension ListViewModelTests {
             }
         }
     }
-    
+
     func testLinkViewModelAPIForSuccessResponse() {
         let expect = expectation(description: "Wait for network call")
         viewModelProtocol.planetFromCoreData = []
@@ -128,7 +135,7 @@ extension ListViewModelTests {
             }
         }
     }
-    
+
     func testLinkViewModelAPIForNoRecordsInResponse() {
         let expect = expectation(description: "Wait for network call")
         viewModelProtocol.planetFromCoreData = []
@@ -153,7 +160,7 @@ extension ListViewModelTests {
             }
         }
     }
-    
+
     func testLinkViewModelAPIForFirstPageResponse() {
         let expect = expectation(description: "Wait for network call")
         viewModelProtocol.planetFromCoreData = []
@@ -164,8 +171,8 @@ extension ListViewModelTests {
                 if let count = item["count"] as? Int {
                     XCTAssert(count == 60)
                 }
-                if let r = item["results"] as? [String: Any] {
-                    XCTAssert(r.count == 10)
+                if let results = item["results"] as? [String: Any] {
+                    XCTAssert(results.count == 10)
                 }
                 if let previous = item["previous"] as? String {
                     XCTAssertNil(previous)
@@ -179,7 +186,7 @@ extension ListViewModelTests {
             }
         }
     }
-    
+
     func testLinkViewModelAPIForMidPageResponse() {
         let expect = expectation(description: "Wait for network call")
         viewModelProtocol.planetFromCoreData = []
@@ -190,8 +197,8 @@ extension ListViewModelTests {
                 if let count = item["count"] as? Int {
                     XCTAssert(count == 60)
                 }
-                if let r = item["results"] as? [String: Any] {
-                    XCTAssert(r.count == 10)
+                if let results = item["results"] as? [String: Any] {
+                    XCTAssert(results.count == 10)
                 }
                 if let previous = item["previous"] as? String {
                     XCTAssertNil(previous)
@@ -208,7 +215,7 @@ extension ListViewModelTests {
             }
         }
     }
-    
+
     func testLinkViewModelAPIForLastPageResponse() {
         let expect = expectation(description: "Wait for network call")
         viewModelProtocol.planetFromCoreData = []
@@ -219,8 +226,8 @@ extension ListViewModelTests {
                 if let count = item["count"] as? Int {
                     XCTAssert(count == 60)
                 }
-                if let r = item["results"] as? [String: Any] {
-                    XCTAssert(r.count == 10)
+                if let results = item["results"] as? [String: Any] {
+                    XCTAssert(results.count == 10)
                 }
                 if let previous = item["previous"] as? String {
                     XCTAssertNil(previous)
@@ -237,5 +244,5 @@ extension ListViewModelTests {
             }
         }
     }
-    
+
 }

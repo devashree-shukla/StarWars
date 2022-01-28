@@ -13,7 +13,7 @@ enum MockReesponse {
     case firstPageResponse
     case midPageResponse
     case lastPageResponse
-    
+
     var mockedResponse: Data? {
         switch self {
         case .noRecords:
@@ -21,27 +21,28 @@ enum MockReesponse {
         case .firstPageResponse:
             return Data(firstPageResponse().utf8)
         case .midPageResponse:
-            return midPageResponse()
+            return Data(firstPageResponse().utf8)
         case .lastPageResponse:
-            return lastPageResponse()
+            return Data(firstPageResponse().utf8)
         }
     }
-    
+
     var serializedResponse: Any? {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
-        if let result = try? JSONSerialization.jsonObject(with: self.mockedResponse ?? Data() , options: .fragmentsAllowed) {
+        if let result = try? JSONSerialization.jsonObject(with: self.mockedResponse ?? Data(),
+                                                          options: .fragmentsAllowed) {
             print(result)
             return result
         } else {
             return nil
         }
     }
-    
+
 }
 
 extension MockReesponse {
-    
+
     private func noRecords() -> String {
         let jsonString = """
         {
@@ -56,7 +57,7 @@ extension MockReesponse {
         """
         return jsonString
     }
-    
+
     private func firstPageResponse() -> String {
         let jsonString = """
         {
@@ -301,7 +302,7 @@ extension MockReesponse {
         """
         return jsonString
     }
-    
+
     private func midPageResponse() -> String {
         let jsonString = """
         {
@@ -697,5 +698,4 @@ extension MockReesponse {
         """
         return jsonString
     }
-    
 }

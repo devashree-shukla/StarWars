@@ -20,7 +20,7 @@ class PlanetsAttributeTransformer: NSSecureUnarchiveFromDataTransformer {
     override class var allowedTopLevelClasses: [AnyClass] {
         return [Residents.self, NSArray.self, Planets.self, Films.self]
     }
-    
+
     static func register() {
          let className = String(describing: PlanetsAttributeTransformer.self)
          let name = NSValueTransformerName(className)
@@ -38,7 +38,7 @@ class PlanetsAttributeTransformer: NSSecureUnarchiveFromDataTransformer {
 
     override func reverseTransformedValue(_ value: Any?) -> Any? {
         guard let color = value as? [Planets] else {
-            return nil 
+            return nil
         }
         return super.reverseTransformedValue(color)
     }

@@ -15,6 +15,6 @@ class MockHomeViewModelProtocol: HomeViewModelProtocol {
         XCTAssertNotNil(index)
         return StarWars.allCases[index]
     }
-    
+
     var starWarsItems: [StarWars] = StarWars.allCases
 }

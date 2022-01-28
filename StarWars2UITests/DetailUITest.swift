@@ -8,10 +8,10 @@
 import Foundation
 import XCTest
 
-//MARK: - Detail table view
+// MARK: - Detail table view
 
 class DetailPageTest: StarWars2UITests {
-    
+
     override func setUp() {
         super.setUp()
         HomePageTest.setUp()
@@ -26,13 +26,13 @@ class DetailPageTest: StarWars2UITests {
         let table = listTable.element
         XCTAssertTrue(table.exists)
     }
-    
+
     func testIfListTableViewAppearsAndHaveSomeRows() {
         let listTable = application.tables
         let initialTableRows = listTable.children(matching: .cell).count
         XCTAssert(initialTableRows != 0)
     }
-    
+
     func testIfListTableViewScrollable() {
         let listTable = application.tables
         listTable.element.swipeUp()
@@ -40,22 +40,22 @@ class DetailPageTest: StarWars2UITests {
         listTable.element.swipeUp()
         listTable.element.swipeDown()
     }
-    
+
 }
 
-//MARK: - Detail table rows
+// MARK: - Detail table rows
 
 extension DetailPageTest {
-    
+
     func testIfListTableHaveRowHaveTitleLabels() {
         let listTable = application.tables
-        for i in 0..<9 {
-            let initialTableRows = listTable.children(matching: .cell).element(boundBy: i)
+        for index in 0..<9 {
+            let initialTableRows = listTable.children(matching: .cell).element(boundBy: index)
             let indexedText = initialTableRows.staticTexts
             XCTAssertTrue(indexedText.element.exists)
         }
     }
-    
+
     func testIfListTableHaveRowHaveValueLabels() {
         let listTable = application.tables
         for _ in 0..<9 {
@@ -63,11 +63,11 @@ extension DetailPageTest {
             XCTAssertTrue(initialTableRows > 1)
         }
     }
-    
+
     func testIfAllRowsAreTabppable() {
         let listTable = application.tables
-        for i in 0..<6 {
-            let cell = listTable.cells.element(boundBy: i)
+        for index in 0..<6 {
+            let cell = listTable.cells.element(boundBy: index)
             cell.tap()
         }
     }
@@ -77,7 +77,7 @@ extension DetailPageTest {
 // MARK: - Detail fields
 
 extension DetailPageTest {
-   
+
     func testIfListTableHaveRowShoulldHaveSurfaceWaterPercentageLabels() {
         let detailTable = application.tables
         let cell = detailTable.cells.element(boundBy: 0)
@@ -86,7 +86,7 @@ extension DetailPageTest {
         let item = application.tables.staticTexts.matching(predicate).element(boundBy: 0)
         XCTAssert(item.exists)
     }
-    
+
     func testIfListTableHaveRowShoulldHaveHoursLabels() {
         let detailTable = application.tables
         let cell = detailTable.cells.element(boundBy: 0)
@@ -95,7 +95,7 @@ extension DetailPageTest {
         let item = application.tables.staticTexts.matching(predicate).element(boundBy: 0)
         XCTAssert(item.exists)
     }
-    
+
     func testIfListTableHaveRowShoulldHaveDaysLabels() {
         let detailTable = application.tables
         let cell = detailTable.cells.element(boundBy: 0)
@@ -104,7 +104,7 @@ extension DetailPageTest {
         let item = application.tables.staticTexts.matching(predicate).element(boundBy: 0)
         XCTAssert(item.exists)
     }
-    
+
     func testIfListTableHaveRowShoulldHaveGravityLabels() {
         let detailTable = application.tables
         let cell = detailTable.cells.element(boundBy: 0)
@@ -113,7 +113,7 @@ extension DetailPageTest {
         let item = application.tables.staticTexts.matching(predicate).element(boundBy: 0)
         XCTAssert(item.exists)
     }
-    
+
     func testIfListTableHaveRowShoulldHaveDiametersLabels() {
         let detailTable = application.tables
         let cell = detailTable.cells.element(boundBy: 0)
@@ -122,30 +122,27 @@ extension DetailPageTest {
         let item = application.tables.staticTexts.matching(predicate).element(boundBy: 0)
         XCTAssert(item.exists)
     }
-    
+
 }
 
-//MARK: - Detail Navigation bar
+// MARK: - Detail Navigation bar
 
 extension DetailPageTest {
-    
+
     func testIfNavigationBarExists() {
         let predicate = NSPredicate(format: "identifier CONTAINS 'Planets('")
         let nav = application.navigationBars.matching(predicate).element(boundBy: 0)
         XCTAssert(nav.exists)
     }
-    
+
     func testIfBackButtonExists() {
         let backButton = application.buttons["Star Wars"]
         XCTAssert(backButton.exists)
     }
-    
+
     func testIfBackNavigatable() {
         let backButton = application.buttons["Star Wars"]
         backButton.tap()
     }
-    
+
 }
-
-
-

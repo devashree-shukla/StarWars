@@ -11,14 +11,14 @@ import CoreData
 // MARK: - Planets
 
 extension CoreDataHelper {
-    
+
     private static let currentContext = CoreDataHelper.sharedInstance.persistentContainer.viewContext
-    
+
     class func saveObjectsInEntity(objects: [PlanetModel], _ completion: (_ result: Bool) -> Void) {
         _ = objects.map { createPlanet($0, context: currentContext) }
         CoreDataHelper.sharedInstance.saveDatabase(completion: completion)
     }
-    
+
     class func createPlanet(_ model: PlanetModel, context: NSManagedObjectContext) -> NSManagedObject? {
         if let entity = CoreDataHelper.sharedInstance.createManagedObject(StarWars.planets.entityName) as? Planets {
             entity.name = model.name
@@ -32,7 +32,7 @@ extension CoreDataHelper {
             entity.edited = model.edited.toDate()
             entity.created = model.created.toDate()
             entity.climate = model.climate
-            
+
             if let residents = model.residentArray?.map({ createPeople($0, context: context) }) as? [Residents] {
                 entity.people = PeopleNSSecureCoding(people: residents)
                 entity.people?.peopleList = residents
@@ -45,7 +45,7 @@ extension CoreDataHelper {
         }
         return nil
     }
-    
+
     class func getSelectedItem(name: String) -> Planets? {
         let fetchRequest: NSFetchRequest<Planets> = Planets.fetchRequest()
         let search = NSPredicate(format: "name == %@", name)
@@ -57,22 +57,22 @@ extension CoreDataHelper {
         let items = try? currentContext.fetch(fetchRequest)
         return items?.first
     }
-    
+
     class func getAllPlanets() -> [Planets] {
         let planets: [Planets] = Planets.findAll(in: currentContext)
         return planets
     }
-    
+
     class func numberOfPlanets() -> Int? {
         Planets.getCount(in: currentContext)
     }
-    
+
 }
 
 // MARK: - People
 
 extension CoreDataHelper {
-    
+
     class func createPeople(_ model: PeopleModel, context: NSManagedObjectContext) -> NSManagedObject? {
         if let entity = CoreDataHelper.sharedInstance.createManagedObject(StarWars.people.entityName) as? Residents {
             entity.birthYear = model.birthYear
@@ -86,25 +86,25 @@ extension CoreDataHelper {
             entity.edited = model.edited.toDate()
             entity.created = model.created.toDate()
             entity.skinColor = model.skinColor
-            
+
             if let items = model.filmArray?.map({ createFilm($0, context: context) }) as? [Films] {
                 entity.films = FilmsNSSecureCoding(filmsList: items)
             }
-            //            entity.starships = model.starshipsArray?.map { createStarships($0, context: context) } as? [Starships]
-            //            entity.species = model.speciesArray?.map { createSpices($0, context: context) } as? [Spices]
-            //            entity.vehicles = model.vehiclesArray?.map { createVehicles($0, context: context) } as? [Vehicles]
-            
+//            entity.starships = model.starshipsArray?.map { createStarships($0, context: context) } as? [Starships]
+//            entity.species = model.speciesArray?.map { createSpices($0, context: context) } as? [Spices]
+//            entity.vehicles = model.vehiclesArray?.map { createVehicles($0, context: context) } as? [Vehicles]
+
             return entity
         }
         return nil
     }
-    
+
 }
 
 // MARK: - Film
 
 extension CoreDataHelper {
-    
+
     class func createFilm(_ model: FilmModel, context: NSManagedObjectContext) -> NSManagedObject? {
         if let entity = CoreDataHelper.sharedInstance.createManagedObject(StarWars.films.entityName) as? Films {
             entity.episodeid = model.episodeId.description
@@ -119,44 +119,44 @@ extension CoreDataHelper {
         }
         return nil
     }
-    
+
 }
 
 // MARK: - Starship
 
 extension CoreDataHelper {
-    
+
     class func createStarship(_ model: StarshipModel, context: NSManagedObjectContext) -> NSManagedObject? {
         if let entity = CoreDataHelper.sharedInstance.createManagedObject(StarWars.starships.entityName) as? Starships {
             return entity
         }
         return nil
     }
-    
+
 }
 
 // MARK: - Spices
 
 extension CoreDataHelper {
-    
+
     class func createSpice(_ model: SpicesModel, context: NSManagedObjectContext) -> NSManagedObject? {
         if let entity = CoreDataHelper.sharedInstance.createManagedObject(StarWars.spices.entityName) as? Spices {
             return entity
         }
         return nil
     }
-    
+
 }
 
 // MARK: - Vehicles
 
 extension CoreDataHelper {
-    
+
     class func createVehicle(_ model: VehicleModel, context: NSManagedObjectContext) -> NSManagedObject? {
         if let entity = CoreDataHelper.sharedInstance.createManagedObject(StarWars.vehicles.entityName) as? Vehicles {
             return entity
         }
         return nil
     }
-    
+
 }

@@ -10,25 +10,25 @@ import Foundation
 import XCTest
 
 class MockListViewModelProtocol: ListViewModelProtocol {
-   
+
     func fetchData(_ completion: ((Result<Bool, ErrorResult>) -> Void)?) {
-        
+
     }
-    
+
     func selectItem(index: Int, _ completion: ((Planets?) -> Void)?) {
-        
+
     }
-    
+
     var onErrorHandling: ((ErrorResult?) -> Void)?
-    
+
     var starWarsItem: StarWars = .planets
-    
+
     var navigationTitle: String?
-    
+
     var planetFromCoreData: [Planets] = []
-    
+
     var selectedItem: Planets?
-    
+
     func createMockData(data: Data? = nil,
                         response: HTTPURLResponse? = nil,
                         error: Error? = nil) {
@@ -40,5 +40,5 @@ class MockListViewModelProtocol: ListViewModelProtocol {
                                                   httpVersion: nil, headerFields: nil)
         MockURLSession.error = error
     }
-    
+
 }

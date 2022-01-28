@@ -55,44 +55,63 @@ extension DetailRowViewCell {
         stackView.removeAllSubviews()
         descriptionLabel.text = ""
         if let value = (field?.1 as? String) {
-            switch field?.0 {
-            case .terrain, .climate:
-                value.split(separator: ",").forEach {
-                    self.createLabel(String($0))
-                }
-            case .surfaceWater:
-                descriptionLabel.text = value.percetageString
-            case .rotationPeriod:
-                descriptionLabel.text = value.hoursString
-            case .orbitalPeriod:
-                descriptionLabel.text = value.daysString
-            case .gravity:
-                descriptionLabel.text = value.gravityString
-            case .diameter:
-                descriptionLabel.text = value.diameterString
-            default: descriptionLabel.text = value
-            }
+            setStringTypes(value)
         } else if let value = (field?.1 as? Date) {
             descriptionLabel.text = value.description
         } else if let value = (field?.1 as? FilmsNSSecureCoding) {
-            if let peoplCount = value.filmList?.count {
-                descriptionLabel.text = "In \(peoplCount) films this planet was appeared."
-                descriptionLabel.font = .systemFont(ofSize: 14)
-                value.filmList?.forEach {
-                    self.createButton(String($0.title ?? "---"))
-                }
-            } else {
-                descriptionLabel.text = "---"
-            }
+            setFilmsType(value)
         } else if let value = (field?.1 as? PeopleNSSecureCoding) {
-            if let peoplCount = value.peopleList?.count {
-                descriptionLabel.text = "\(peoplCount) people leave on this planet."
-                descriptionLabel.font = .systemFont(ofSize: 14)
-                value.peopleList?.forEach {
-                    self.createButton(String($0.name ?? "---"))
-                }
-            } else {
-                descriptionLabel.text = "---"
+            setPeopleType(value)
+        } else {
+            descriptionLabel.text = "---"
+        }
+    }
+
+    @objc private func itemSelected() {
+        onButtonSelected?(field?.1)
+    }
+}
+
+private extension DetailRowViewCell {
+
+    private func setStringTypes(_ value: String) {
+        switch field?.0 {
+        case .terrain, .climate:
+            value.split(separator: ",").forEach {
+                self.createLabel(String($0))
+            }
+        case .surfaceWater:
+            descriptionLabel.text = value.percetageString
+        case .rotationPeriod:
+            descriptionLabel.text = value.hoursString
+        case .orbitalPeriod:
+            descriptionLabel.text = value.daysString
+        case .gravity:
+            descriptionLabel.text = value.gravityString
+        case .diameter:
+            descriptionLabel.text = value.diameterString
+        default: descriptionLabel.text = value
+        }
+    }
+
+    private func setFilmsType(_ value: FilmsNSSecureCoding) {
+        if let peoplCount = value.filmList?.count {
+            descriptionLabel.text = "In \(peoplCount) films this planet was appeared."
+            descriptionLabel.font = .systemFont(ofSize: 14)
+            value.filmList?.forEach {
+                self.createButton(String($0.title ?? "---"))
+            }
+        } else {
+            descriptionLabel.text = "---"
+        }
+    }
+
+    private func setPeopleType(_ value: PeopleNSSecureCoding) {
+        if let peoplCount = value.peopleList?.count {
+            descriptionLabel.text = "\(peoplCount) people leave on this planet."
+            descriptionLabel.font = .systemFont(ofSize: 14)
+            value.peopleList?.forEach {
+                self.createButton(String($0.name ?? "---"))
             }
         } else {
             descriptionLabel.text = "---"
@@ -134,7 +153,4 @@ extension DetailRowViewCell {
         button.cornerRadius = 4
     }
 
-    @objc private func itemSelected() {
-        onButtonSelected?(field?.1)
-    }
 }

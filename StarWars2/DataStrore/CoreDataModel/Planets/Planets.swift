@@ -36,7 +36,6 @@ extension Planets {
 
 }
 
-
 extension Planets: Identifiable {
 
 }

@@ -30,6 +30,6 @@ extension Bundle {
                 return URL(fileURLWithPath: filePath)
             }
         }
-        return nil 
+        return nil
     }
 }

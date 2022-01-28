@@ -17,7 +17,6 @@ extension XCUIElement {
         tap()
     }
 
-
     // MARK: - Validations
 
     func waitForElementToAppear(_ description: String? = nil, timeout: TimeInterval = 1.0) {
@@ -29,6 +28,5 @@ extension XCUIElement {
     func assertExists() {
         XCTAssert(self.exists)
     }
-    
-}
 
+}

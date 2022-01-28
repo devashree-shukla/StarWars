@@ -7,16 +7,15 @@
 
 import Foundation
 
-
 extension ListViewModel {
-    
+
     func callListAPI(_ completion: ((Result<Bool, ErrorResult>) -> Void)? = nil) {
         guard let service = self.starWarsItem.serviceName else {
             self.errorUpdate()
             completion?(Result.failure(ErrorResult.parser(string: StarWarsConstants.Texts.errorMessage)))
             return
         }
-        
+
         service.fetchConverter { [weak self] result in
             DispatchQueue.main.async {
                 switch result {
@@ -33,10 +32,10 @@ extension ListViewModel {
 }
 
 extension ListViewModel {
-    
+
     private func callNestedListAPI(_ completion: ((Result<Bool, ErrorResult>) -> Void)? = nil) {
         let queue = OperationQueue()
-        
+
         for (ith, planet) in self.data.enumerated() {
             print("\n\nNESTED API START\(ith)===\(planet.name)===\(planet.residents.count)\n")
             queue.addOperation(addPeopleOperation(obj: planet, atIndex: ith))
@@ -53,28 +52,27 @@ extension ListViewModel {
     }
 }
 
-
 extension ListViewModel {
-    
+
     private func addPeopleOperation(obj: PlanetModel, atIndex: Int) -> BlockOperation {
         let peopleOperation = BlockOperation {
             self.callNestedPeopleAPI(planet: obj, atIndex: atIndex)
         }
         return peopleOperation
     }
-    
+
     private func addFilmsOperation(obj: PlanetModel, atIndex: Int) -> BlockOperation {
         let filmOperation = BlockOperation {
             self.callNestedFilmsAPI(planet: obj, atIndex: atIndex)
         }
         return filmOperation
     }
-    
+
 }
 
 extension ListViewModel {
-    
-    private func callNestedPeopleAPI(planet: PlanetModel, atIndex: Int)  {
+
+    private func callNestedPeopleAPI(planet: PlanetModel, atIndex: Int) {
         for (jth, residentUrl) in planet.residents.enumerated() {
             print("\n\nPeople===\(jth)===\(planet.name)\n\n")
             self.planetsGroup.enter()
@@ -84,7 +82,7 @@ extension ListViewModel {
                     switch result {
                     case .success(let people):
                         self?.inititializeResidentsIfNeeded(index: atIndex, resident: people)
-                        
+
                     case .failure(_):
                         self?.errorUpdate(error: ErrorResult.network(string: StarWarsConstants.Texts.noInternet))
                     }
@@ -93,8 +91,8 @@ extension ListViewModel {
             }
         }
     }
-    
-    private func callNestedFilmsAPI(planet: PlanetModel, atIndex: Int)  {
+
+    private func callNestedFilmsAPI(planet: PlanetModel, atIndex: Int) {
         for (jth, filmsUrl) in planet.films.enumerated() {
             print("\n\nFilm===\(jth)===\(planet.name)\n\n")
             self.planetsGroup.enter()
@@ -112,7 +110,7 @@ extension ListViewModel {
             }
         }
     }
-    
+
 }
 
 private extension ListViewModel {

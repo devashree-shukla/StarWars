@@ -19,12 +19,12 @@ protocol ListViewModelProtocol {
 }
 
 class ListViewModel: ListViewModelProtocol {
-    
+
     // MARK: - Input
     var starWarsItem: StarWars = .planets
     var data: [PlanetModel] = []
     let planetsGroup = DispatchGroup()
-    
+
     // MARK: - Output
     var onErrorHandling: ((ErrorResult?) -> Void)?
     var selectedItem: Planets?
@@ -38,7 +38,7 @@ class ListViewModel: ListViewModelProtocol {
         }
     }
     var planetFromCoreData: [Planets] = []
-    
+
     func selectItem(index: Int, _ completion: ((Planets?) -> Void)?) {
         guard self.planetFromCoreData.count > 0,
                 let name = self.planetFromCoreData[index].name else {
@@ -48,29 +48,29 @@ class ListViewModel: ListViewModelProtocol {
         selectedItem = CoreDataHelper.getSelectedItem(name: name)
         completion?(selectedItem)
     }
-    
+
     func fetchData(_ completion: ((Result<Bool, ErrorResult>) -> Void)? = nil) {
         getListData(completion)
     }
-    
+
 }
 
 extension ListViewModel {
-    
+
     func inititializeResidentsIfNeeded(index: Int, resident: PeopleModel) {
         if self.data[index].residentArray == nil {
             self.data[index].residentArray = []
         }
         self.data[index].residentArray?.append(resident)
     }
-    
+
     func inititializeFilmsIfNeeded(index: Int, film: FilmModel) {
         if self.data[index].filmArray == nil {
             self.data[index].filmArray = []
         }
         self.data[index].filmArray?.append(film)
     }
-    
+
 }
 
 private extension ListViewModel {

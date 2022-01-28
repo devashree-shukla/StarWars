@@ -180,4 +180,3 @@ class NetworkLayerUnitTests: XCTestCase {
         }
     }
 }
-
