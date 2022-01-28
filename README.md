@@ -52,6 +52,11 @@ An iOS application about Star Wars that allows users to see all reelated informa
 
 ## Architecture
 
+Have choosen MVVM over any other options as it's faster for developement for such medium scale app. Also, enabled reusability, scalability, modularity, cleanness, code sepration. It's more better going forward when to support other type using generics, enums, extension. In this, core ViewModel helps as it's totally UIKit independent. ViewModel is at core handling all tasks and coordinating between views/viewcontrollers effectively. 
+
+![IMG_C723FAD3720B-1](https://user-images.githubusercontent.com/38584944/151563142-e54a5f8e-ade0-4f6d-a551-4029237e09fd.jpeg)
+
+
 
     
 ## Folder structure
@@ -93,6 +98,13 @@ An iOS application about Star Wars that allows users to see all reelated informa
 
 
 ## Testing Approach 
+
+- For Unit tests focused for ViewModels, Network classes, Mocks responses
+- UI tests for all views and controllers for Home/List/Detail screens
+
+It is very important how user is going to interact with your application. Writing test cases gives assurance that application is stable and safe for your user. It allows you to refactor code easily. It captures business requirements in form of test cases.
+
+
 
 
 ## CI/CD
