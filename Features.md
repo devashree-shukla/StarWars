@@ -14,23 +14,24 @@
     
 # Future Enhancement Recomendations
     
-1. Accessibility, voice over assistance for disabled people
-2. Localization of local data
-3. UX improvements 
+1. Fine animations can be added to views
+2. Accessibility, voice over assistance for disabled people
+3. Localization of local data
+4. UX improvements 
     - Better visual representation of data for attributes like gender, terrain, climate, rating, water level etc
     - Loader UI : image related to app theme while fetching data -  can be implemented using various planets-people-starships images etc 
     - Landscape mode support and UI update if needed
     - Ipad UI update if needed
-4. Search on data based on below entities or their various attributes
+5. Search on data based on below entities or their various attributes
     - Planets
     - People
     - Film
     - Starships
     - Spices
     - Vehicles 
-5. Audio search option to user
-6. Sorting in listing screen
-7. Filter on data of below entities based their attributes
+6. Audio search option to user
+7. Sorting in listing screen
+8. Filter on data of below entities based their attributes
     - Planets
     - People
     - Film
