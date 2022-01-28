@@ -18,7 +18,7 @@ An iOS application about Star Wars that allows users to see all reelated informa
 
 ## How it looks like ?
 
-### iOS :
+### iOS : https://drive.google.com/file/d/1GyO0Dsl0nUwuMdLp0t8YMapRICNJB4Z7/view?usp=sharing
 
 ## Application and work flow
 
