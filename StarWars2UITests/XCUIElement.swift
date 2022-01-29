@@ -28,5 +28,4 @@ extension XCUIElement {
     func assertExists() {
         XCTAssert(self.exists)
     }
-
 }
