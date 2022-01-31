@@ -14,9 +14,12 @@ class DetailPageTest: StarWars2UITests {
 
     override func setUp() {
         super.setUp()
-        let detailTable = application.tables
-        let cell = detailTable.cells.element(boundBy: 0)
+        HomePageTest.setUp()
+        ListPageTest.setUp()
+        let listTable = application.tables
+        let cell = listTable.cells.element(boundBy: 0)
         cell.tapOnUIElement()
+        sleep(15)
     }
 
     func testIfScreenContainsTable() {
