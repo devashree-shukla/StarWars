@@ -19,7 +19,7 @@ extension XCUIElement {
 
     // MARK: - Validations
 
-    func waitForElementToAppear(_ description: String? = nil, timeout: TimeInterval = 1.0) {
+    func waitForElementToAppear(_ description: String? = nil, timeout: TimeInterval = 10.0) {
         let predicate = NSPredicate(format: "exists == true")
         let hasAppeared = XCTNSPredicateExpectation(predicate: predicate, object: self)
         _ = XCTWaiter.wait(for: [hasAppeared], timeout: timeout)

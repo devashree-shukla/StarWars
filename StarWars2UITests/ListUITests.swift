@@ -14,9 +14,11 @@ class ListPageTest: StarWars2UITests {
 
     override func setUp() {
         super.setUp()
-        let homeTable = application.tables
-        let cell = homeTable.cells.element(boundBy: 0)
-        cell.tap()
+        HomePageTest.setUp()
+        let listTable = application.tables
+        let cell = listTable.cells.element(boundBy: 0)
+        cell.tapOnUIElement()
+        sleep(15)
     }
 
     func testIfScreenContainsTable() {
@@ -95,7 +97,7 @@ extension ListPageTest {
         let listTable = application.tables
         for index in 0..<6 {
             let cell = listTable.cells.element(boundBy: index)
-            cell.tap()
+            cell.tapOnUIElement()
         }
     }
 
@@ -118,7 +120,7 @@ extension ListPageTest {
 
     func testIfBackNavigatable() {
         let backButton = application.buttons["Star Wars"]
-        backButton.tap()
+        backButton.tapOnUIElement()
     }
 
 }

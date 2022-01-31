@@ -14,11 +14,9 @@ class DetailPageTest: StarWars2UITests {
 
     override func setUp() {
         super.setUp()
-        HomePageTest.setUp()
-        ListPageTest.setUp()
         let detailTable = application.tables
         let cell = detailTable.cells.element(boundBy: 0)
-        cell.tap()
+        cell.tapOnUIElement()
     }
 
     func testIfScreenContainsTable() {
@@ -81,7 +79,7 @@ extension DetailPageTest {
     func testIfListTableHaveRowShoulldHaveSurfaceWaterPercentageLabels() {
         let detailTable = application.tables
         let cell = detailTable.cells.element(boundBy: 0)
-        cell.tap()
+        cell.tapOnUIElement()
         let predicate = NSPredicate(format: "label CONTAINS '%'")
         let item = application.tables.staticTexts.matching(predicate).element(boundBy: 0)
         XCTAssert(item.exists)
@@ -90,7 +88,7 @@ extension DetailPageTest {
     func testIfListTableHaveRowShoulldHaveHoursLabels() {
         let detailTable = application.tables
         let cell = detailTable.cells.element(boundBy: 0)
-        cell.tap()
+        cell.tapOnUIElement()
         let predicate = NSPredicate(format: "label CONTAINS '(HOURS)'")
         let item = application.tables.staticTexts.matching(predicate).element(boundBy: 0)
         XCTAssert(item.exists)
@@ -99,7 +97,7 @@ extension DetailPageTest {
     func testIfListTableHaveRowShoulldHaveDaysLabels() {
         let detailTable = application.tables
         let cell = detailTable.cells.element(boundBy: 0)
-        cell.tap()
+        cell.tapOnUIElement()
         let predicate = NSPredicate(format: "label CONTAINS '(DAYS)'")
         let item = application.tables.staticTexts.matching(predicate).element(boundBy: 0)
         XCTAssert(item.exists)
@@ -108,7 +106,7 @@ extension DetailPageTest {
     func testIfListTableHaveRowShoulldHaveGravityLabels() {
         let detailTable = application.tables
         let cell = detailTable.cells.element(boundBy: 0)
-        cell.tap()
+        cell.tapOnUIElement()
         let predicate = NSPredicate(format: "label CONTAINS '(G)'")
         let item = application.tables.staticTexts.matching(predicate).element(boundBy: 0)
         XCTAssert(item.exists)
@@ -117,7 +115,7 @@ extension DetailPageTest {
     func testIfListTableHaveRowShoulldHaveDiametersLabels() {
         let detailTable = application.tables
         let cell = detailTable.cells.element(boundBy: 0)
-        cell.tap()
+        cell.tapOnUIElement()
         let predicate = NSPredicate(format: "label CONTAINS '(KM)'")
         let item = application.tables.staticTexts.matching(predicate).element(boundBy: 0)
         XCTAssert(item.exists)
