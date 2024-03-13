@@ -68,8 +68,6 @@ Have choosen MVVM over any other options as it's faster for developement for suc
 - Many Spices relates to Many Films/People
 - Mnay Vehicles relates to Many Films/People
 
-#
-
 - This image shows database design for Root, Planet, Films and People table.
 
 <img width="1355" alt="Screenshot 2022-01-23 at 11 21 43 AM" src="https://user-images.githubusercontent.com/38584944/150696950-9e09ac39-b626-49d4-8111-a9d2ebe8d5f5.png">
@@ -92,9 +90,6 @@ Have choosen MVVM over any other options as it's faster for developement for suc
 - App Specific : Contains all unique app level files 
 - Data Store : Contains core database and it's models and helper method
 - Helpers : Contains helpers for coredata, network reachability, extensions, constants
-
-
-## Sequence diagram (For planet module)
 
 
 ## Testing Approach 
@@ -128,7 +123,3 @@ It is very important how user is going to interact with your application. Writin
     - swiftlint autocorrect
     
 - Above steps to be executed before any push request to succeed CI/CD pipelines
-
-## Other Wireframes for future improvements and new features 
-
-- [YET TO BE DONE]
