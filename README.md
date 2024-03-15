@@ -18,17 +18,17 @@ An iOS application about Star Wars that allows users to see all reelated informa
 
 ## How it looks like ?
 
-<img src="https://github.com/devashree-shukla/StarWars/assets/38584944/aa31178c-0d10-4fa7-9614-a3c3bf8650a3" width="100">
-
-<img src="https://github.com/devashree-shukla/StarWars/assets/38584944/b2fb8b93-5fd5-4a51-8875-02e8226fb683" width="100">
-
-<img src="https://github.com/devashree-shukla/StarWars/assets/38584944/181d95af-9a78-4e30-a206-d5fe3029c12f" width="100">
-
-<img src="https://github.com/devashree-shukla/StarWars/assets/38584944/c180ca75-1d82-4359-8db5-132209f10511" width="100">
+<img src="https://github.com/devashree-shukla/StarWars/assets/38584944/179a99ea-1497-426a-8a73-45d3e8e8b692" width="100">
 
 <img src="https://github.com/devashree-shukla/StarWars/assets/38584944/62496cae-3578-46ad-a54e-7b85ea927a91" width="100">
 
-<img src="https://github.com/devashree-shukla/StarWars/assets/38584944/179a99ea-1497-426a-8a73-45d3e8e8b692" width="100">
+<img src="https://github.com/devashree-shukla/StarWars/assets/38584944/c180ca75-1d82-4359-8db5-132209f10511" width="100">
+
+<img src="https://github.com/devashree-shukla/StarWars/assets/38584944/aa31178c-0d10-4fa7-9614-a3c3bf8650a3" width="100">
+
+<img src="https://github.com/devashree-shukla/StarWars/assets/38584944/181d95af-9a78-4e30-a206-d5fe3029c12f" width="100">
+
+<img src="https://github.com/devashree-shukla/StarWars/assets/38584944/b2fb8b93-5fd5-4a51-8875-02e8226fb683" width="100">
 
 
 ## Application and work flow
