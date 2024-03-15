@@ -18,6 +18,8 @@ An iOS application about Star Wars that allows users to see all reelated informa
 
 ## How it looks like ?
 
+<img src="https://github.com/devashree-shukla/StarWars/assets/38584944/aa31178c-0d10-4fa7-9614-a3c3bf8650a3" width="100">
+
 ![Simulator Screenshot - iPhone 15 - 2024-03-15 at 11 23 53](https://github.com/devashree-shukla/StarWars/assets/38584944/aa31178c-0d10-4fa7-9614-a3c3bf8650a3)
 ![Simulator Screenshot - iPhone 15 - 2024-03-15 at 11 23 48](https://github.com/devashree-shukla/StarWars/assets/38584944/b2fb8b93-5fd5-4a51-8875-02e8226fb683)
 ![Simulator Screenshot - iPhone 15 - 2024-03-15 at 11 23 39](https://github.com/devashree-shukla/StarWars/assets/38584944/181d95af-9a78-4e30-a206-d5fe3029c12f)
