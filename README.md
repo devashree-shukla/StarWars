@@ -18,10 +18,13 @@ An iOS application about Star Wars that allows users to see all reelated informa
 
 ## How it looks like ?
 
-![Simulator Screenshot - iPhone 15 - 2024-03-13 at 18 50 06](https://github.com/devashree-shukla/StarWars/assets/38584944/45c8a80f-d9e9-4d0e-99ba-238507cd1246)
+![Simulator Screenshot - iPhone 15 - 2024-03-15 at 11 23 53](https://github.com/devashree-shukla/StarWars/assets/38584944/aa31178c-0d10-4fa7-9614-a3c3bf8650a3)
+![Simulator Screenshot - iPhone 15 - 2024-03-15 at 11 23 48](https://github.com/devashree-shukla/StarWars/assets/38584944/b2fb8b93-5fd5-4a51-8875-02e8226fb683)
+![Simulator Screenshot - iPhone 15 - 2024-03-15 at 11 23 39](https://github.com/devashree-shukla/StarWars/assets/38584944/181d95af-9a78-4e30-a206-d5fe3029c12f)
+![Simulator Screenshot - iPhone 15 - 2024-03-15 at 11 23 35](https://github.com/devashree-shukla/StarWars/assets/38584944/c180ca75-1d82-4359-8db5-132209f10511)
+![Simulator Screenshot - iPhone 15 - 2024-03-15 at 11 23 32](https://github.com/devashree-shukla/StarWars/assets/38584944/62496cae-3578-46ad-a54e-7b85ea927a91)
+![Simulator Screenshot - iPhone 15 - 2024-03-15 at 11 23 28](https://github.com/devashree-shukla/StarWars/assets/38584944/179a99ea-1497-426a-8a73-45d3e8e8b692)
 
-
-### iOS : https://drive.google.com/file/d/1GyO0Dsl0nUwuMdLp0t8YMapRICNJB4Z7/view?usp=sharing
 
 ## Application and work flow
 
